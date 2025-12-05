@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deepak Kumar | Research</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <style>
+      /* --- General Typography & Spacing --- */
+      .page-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2c3e50;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 2rem;
+      }
+
+      .section-heading {
+        font-size: 1.3rem;
+        color: #444;
+        border-bottom: 2px solid #3498db;
+        display: inline-block;
+        padding-bottom: 0.3rem;
+        margin: 2.5rem 0 1.5rem 0;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      /* --- Section 1: Future Goals (Horizontal Layout) --- */
+      .future-goals-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .future-card {
+        background: #f8fbfd; /* Very subtle blue tint */
+        border: 1px solid #e1e8ed;
+        border-left: 4px solid #3498db;
+        padding: 1.5rem;
+        border-radius: 6px;
+      }
+
+      .future-card h3 {
+        margin-top: 0;
+        color: #2980b9;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .future-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+        margin: 0;
+      }
+
+      /* --- Section 2: Established Research (Accordion Layout) --- */
+      .research-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .accordion-item {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      }
+
+      .accordion-header {
+        width: 100%;
+        padding: 1.5rem;
+        background: #fff;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+      }
+
+      .accordion-header:hover {
+        background: #f8f9fa;
+      }
+
+      .accordion-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0;
+      }
+
+      .accordion-icon {
+        font-size: 1.5rem;
+        color: #3498db;
+        font-weight: bold;
+        display: inline-block;
+        width: 1.5rem;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .accordion-icon::after {
+        content: "+";
+      }
+
+      .accordion-item.active .accordion-icon::after {
+        content: "−";
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background: #fcfcfc;
+        border-top: 1px solid #eee;
+      }
+
+      .accordion-body {
+        padding: 1.5rem;
+        display: flex;
+        gap: 2rem;
+      }
+
+      .accordion-image {
+        flex: 0 0 300px;
+        height: 200px;
+        background: #ecf0f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        color: #95a5a6;
+      }
+
+      .accordion-text {
+        flex: 1;
+      }
+
+      .accordion-text p {
+        margin-top: 0;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .accordion-text ul {
+        margin-bottom: 1.5rem;
+        color: #666;
+      }
+
+      .btn-view-pubs {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+
+      .btn-view-pubs:hover {
+        background-color: #2980b9;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .future-goals-container {
+          grid-template-columns: 1fr;
+        }
+        .accordion-body {
+          flex-direction: column;
+        }
+        .accordion-image {
+          flex: auto;
+          width: 100%;
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-text">Deepak Kumar</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="research.html" class="active">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content container">
+      
+      <!-- <h1 class="page-title">Research Focus</h1> -->
+
+      <div>
+        <h2 class="section-heading">Future Research Goals</h2>
+        <div class="future-goals-container">
+          <div class="future-card">
+            <h3>Automatic Derivation of New Discoveries with Known Laws</h3>
+            <p>
+              Current data-driven approaches often identify patterns that may violate fundamental physical constraints, lacking the necessary scientific rigor for safety-critical applications. My research vision is to develop autonomous AI frameworks that utilize Large Language Models (LLMs) to identify data patterns in the form of symbolic equations derived directly from known physical laws (e.g., conservation of mass and energy). By integrating LLMs, the system can reason through established scientific principles to ensure strict physical consistency. Key applications include Process Systems Engineering for reaction kinetics and Bio-sensing for robust soft sensors.
+            </p>
+          </div>
+
+          <div class="future-card">
+            <h3>Digital Process Lab</h3>
+            <p>
+              Physical experimentation in chemical engineering is resource-intensive and often sub-optimal due to traditional trial-and-error methods. My goal is to digitize the laboratory scenario by creating high-fidelity "Digital Twins" of experimental setups. By moving the iteration loop into a virtual environment, we can utilize AI to simulate outcomes and optimize the path to discovery using techniques like active learning and Bayesian optimization. This virtual prototyping reduces material waste and accelerates development timelines.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-heading">Past Research Outcomes</h2>
+        <div class="research-accordion">
+          
+          <!-- Area 1 -->
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <h3 class="accordion-title">Symbolic Neural Integration for Process Modeling (SyNISM)</h3>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <div class="accordion-image">
+                  <!-- Place SyNISM diagram here -->
+                  <div class="image-placeholder">Image: SyNISM diagram</div>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    Developing symbolic neural models that learn interpretable equations for chemical and biochemical processes directly from data. SyNISM bridges neural networks and first-principles modeling for transparent, physics-consistent process analysis.
+                  </p>
+                  <ul>
+                    <li>Applications: nanofluid property prediction, chemical reactors.</li>
+                    <li>Enables sensitivity analysis and control design.</li>
+                    <li>Supports discovery of governing relationships.</li>
+                  </ul>
+                  <a href="publications.html?area=Symbolic%20AI%20(SyNISM)" class="btn-view-pubs">View Related Publications</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Area 2 -->
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <h3 class="accordion-title">KAN-based Physics-informed Models for Greenhouse &amp; CO₂ Capture</h3>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <div class="accordion-image">
+                  <!-- Place greenhouse/CO2BOLs figure here -->
+                  <div class="image-placeholder">Image: Greenhouse/CO₂ capture</div>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    Integrating Kolmogorov–Arnold Networks (KANs) with physics-informed objectives to model greenhouse environments and CO₂-binding organic liquids. Focused on accurate, data-efficient models that respect physical laws for sustainable process optimization.
+                  </p>
+                  <ul>
+                    <li>Greenhouse crop optimization (Cornell collaboration).</li>
+                    <li>Quantum-descriptor-based CO₂BOL property prediction.</li>
+                    <li>Flowsheet optimization for post-combustion CO₂ capture.</li>
+                  </ul>
+                  <a href="publications.html?area=KANs%20%26%20Sustainable%20Processes" class="btn-view-pubs">View Related Publications</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Area 3 -->
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <h3 class="accordion-title">Interpretable Koopman Representations for Nonlinear Dynamics</h3>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <div class="accordion-image">
+                  <!-- Place Koopman dynamics visualization here -->
+                  <div class="image-placeholder">Image: Koopman dynamics</div>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    Learning Koopman observables and operators from process data to build linear surrogate models of nonlinear dynamics. These models facilitate stability analysis, controller design, and system interpretation for complex chemical processes.
+                  </p>
+                  <ul>
+                    <li>Equation-learning networks for Koopman space.</li>
+                    <li>Benchmarks: nonlinear reactors, process systems.</li>
+                    <li>Integration with model predictive control frameworks.</li>
+                  </ul>
+                  <a href="publications.html?area=Koopman%20%26%20Dynamics" class="btn-view-pubs">View Related Publications</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Area 4 -->
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <h3 class="accordion-title">Bioprocess Optimization &amp; Health Analytics</h3>
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <div class="accordion-image">
+                  <!-- Place bioreactor/mHealth graphic here -->
+                  <div class="image-placeholder">Image: Bioreactor/mHealth</div>
+                </div>
+                <div class="accordion-text">
+                  <p>
+                    Combining Bayesian design of experiments, deep learning, and reinforcement learning to optimize bioreactors and predict health events from mHealth data. Emphasis on deployable models that respect process constraints and enable real-time decision-making.
+                  </p>
+                  <ul>
+                    <li>Multiobjective optimization for antibody production.</li>
+                    <li>Fault detection using autoencoders and forward-forward networks.</li>
+                    <li>Deep RL (DDPG, PPO) for process control and health prediction.</li>
+                  </ul>
+                  <a href="publications.html?area=Bioprocess%20Optimization" class="btn-view-pubs">View Related Publications</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; Deepak Kumar. Last updated 2025.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const accordions = document.querySelectorAll('.accordion-item');
+
+        accordions.forEach(item => {
+          const header = item.querySelector('.accordion-header');
+          const content = item.querySelector('.accordion-content');
+          
+          // Initialize: If active by default, set max-height so it's visible
+          if (item.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+
+          header.addEventListener('click', () => {
+            // Toggle active class
+            item.classList.toggle('active');
+            
+            // Toggle max-height for animation
+            if (item.classList.contains('active')) {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              content.style.maxHeight = 0;
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
