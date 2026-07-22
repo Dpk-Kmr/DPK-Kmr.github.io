@@ -66,10 +66,20 @@ textarea,
     opacity: 0.84;
 }
 
+.nav-cluster,
+.catalog-cluster {
+    justify-items: stretch;
+    text-align: center;
+}
+
 .nav-cluster a,
 .catalog-cluster a {
     position: relative;
     isolation: isolate;
+    width: 100%;
+    justify-self: stretch;
+    justify-content: center;
+    text-align: center;
     gap: 7px;
     border-radius: 10px;
     letter-spacing: 0.055em;
@@ -78,19 +88,6 @@ textarea,
     hyphens: none;
     background: rgba(148, 163, 184, 0.025);
     transition: color 200ms ease, border-color 200ms ease, background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-}
-
-.nav-cluster a::before,
-.catalog-cluster a::before {
-    content: "";
-    flex: 0 0 auto;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: currentColor;
-    box-shadow: 0 0 8px currentColor;
-    opacity: 0.34;
-    transition: opacity 200ms ease, transform 200ms ease;
 }
 
 .nav-cluster a::after,
@@ -117,16 +114,6 @@ textarea,
     border-color: rgba(94, 234, 212, 0.28);
     background: linear-gradient(180deg, rgba(94, 234, 212, 0.09), rgba(59, 130, 246, 0.045));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 20px rgba(3, 10, 18, 0.12);
-}
-
-.nav-cluster a:hover::before,
-.nav-cluster a:focus-visible::before,
-.nav-cluster a.is-current::before,
-.catalog-cluster a:hover::before,
-.catalog-cluster a:focus-visible::before,
-.catalog-cluster a.is-current::before {
-    opacity: 0.9;
-    transform: scale(1.35);
 }
 
 .nav-cluster a:hover::after,
@@ -771,11 +758,6 @@ html[data-theme="light"] .theme-toggle-symbol {
     .catalog-cluster a {
         gap: 3px;
         letter-spacing: 0.018em;
-    }
-
-    .nav-cluster a::before,
-    .catalog-cluster a::before {
-        display: none;
     }
 
     .theme-toggle {
