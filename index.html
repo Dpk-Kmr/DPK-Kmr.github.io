@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Atriksha builds precision mechanical systems, AI-integrated engineering workflows, and advanced workforce skill programs.">
     <title>Atriksha</title>
+    <link rel="icon" href="./src/assets/atriksha-mark.svg" type="image/svg+xml">
+    <script src="./src/scripts/theme.js"></script>
     <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/theme.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer src="./src/scripts/homeExperience.js"></script>
@@ -20,8 +23,8 @@
             </div>
 
             <a class="brand-lockup" href="#home" aria-label="Atriksha home">
-                <span class="brand-name">ATRIKSHA</span>
-                <span class="brand-subtitle">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span>
+                <span class="brand-primary"><img class="brand-mark" src="./src/assets/atriksha-mark.svg" alt="" aria-hidden="true"><span class="brand-name">ATRIKSHA</span></span>
+                <span class="brand-subtitle" data-header-tagline aria-hidden="true"><span data-tagline-target="tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span></span>
             </a>
 
             <div class="nav-cluster nav-right">
@@ -36,7 +39,7 @@
         <section class="hero-section" aria-label="Atriksha deep technology core">
             <div class="hero-copy reveal">
                 <!-- <p class="section-kicker">Mechanical Engineering / Artificial Intelligence / Workforce Systems</p> -->
-                <h1>Quality Built, Intelligence Delivered.</h1>
+                <h1 data-hero-tagline><span data-tagline-source="tagline">Quality Built &bull; Intelligence Delivered</span></h1>
                 <p class="hero-subtext">Atriksha designs validated mechanical hardware, inserts adaptive intelligence into sensor-rich systems, and prepares engineering teams to operate the next generation of industrial technology.</p>
             </div>
 
@@ -307,5 +310,10 @@
             </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Atriksha Engineering Solutions Pvt Ltd. All rights reserved.</p>
+        <strong class="footer-tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</strong>
+    </footer>
 </body>
 </html>

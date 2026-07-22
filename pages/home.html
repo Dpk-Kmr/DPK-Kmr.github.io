@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atriksha Home</title>
+    <link rel="icon" href="../src/assets/atriksha-mark.svg" type="image/svg+xml">
+    <script src="../src/scripts/theme.js"></script>
     <link rel="stylesheet" href="../src/styles/page.css">
+    <link rel="stylesheet" href="../src/styles/theme.css">
 </head>
 <body class="home-body">
     <main class="home-page">
@@ -16,8 +19,8 @@
             </div>
 
             <a class="catalog-brand-lockup" href="../index.html" aria-label="Atriksha home">
-                <span class="catalog-brand-name">ATRIKSHA</span>
-                <span class="catalog-brand-subtitle">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span>
+                <span class="brand-primary"><img class="brand-mark" src="../src/assets/atriksha-mark.svg" alt="" aria-hidden="true"><span class="catalog-brand-name">ATRIKSHA</span></span>
+                <span class="catalog-brand-subtitle" data-header-tagline aria-hidden="true"><span data-tagline-target="tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span></span>
             </a>
 
             <div class="catalog-cluster catalog-right">
@@ -30,7 +33,7 @@
         <section class="hero-section" aria-label="Atriksha homepage">
             <div class="hero-copy">
                 <span class="eyebrow">Atriksha Technologies</span>
-                <h1>Quality Built,<br>Intelligence Delivered.</h1>
+                <h1 data-hero-tagline><span data-tagline-source="tagline">Quality Built &bull; Intelligence Delivered</span></h1>
                 <p>Atriksha creates physical-first engineering systems, embeds intelligence into real machines, and equips teams to operate Industry 4.0 ecosystems.</p>
             </div>
 
@@ -218,6 +221,11 @@
                 <a href="./services.html#deep-tech">Explore Services</a>
             </div>
         </section>
+
+        <footer class="catalog-footer">
+            <p>&copy; 2026 Atriksha Engineering Solutions Pvt Ltd. All rights reserved.</p>
+            <strong class="footer-tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</strong>
+        </footer>
     </main>
     <script src="../src/scripts/homeExperience.js"></script>
 </body>

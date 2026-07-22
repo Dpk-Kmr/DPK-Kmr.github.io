@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupEntryMotion(reducedMotion);
     setupCurrentNav();
+    setupTaglineHandoff(reducedMotion);
 
     const heroGear = new HeroGearCore({
         canvas: document.getElementById("heroPhysicsCanvas"),
@@ -43,6 +44,118 @@ document.addEventListener("DOMContentLoaded", () => {
         window.requestAnimationFrame(frame);
     }
 });
+
+function setupTaglineHandoff(reducedMotion) {
+    const heroTagline = document.querySelector("[data-hero-tagline]");
+    const headerTagline = document.querySelector("[data-header-tagline]");
+    const brandLockup = headerTagline?.closest(".brand-lockup, .catalog-brand-lockup");
+    const headerShell = headerTagline?.closest(".site-nav, .catalog-nav");
+    const sourcePart = document.querySelector("[data-tagline-source]");
+    const targetPart = document.querySelector("[data-tagline-target]");
+    const supportingCopy = heroTagline?.parentElement?.querySelector(".hero-subtext, p");
+
+    if (!heroTagline || !headerTagline || !brandLockup || !headerShell || !sourcePart || !targetPart || !supportingCopy) {
+        return;
+    }
+
+    document.body.classList.add("tagline-handoff-ready");
+
+    const placeholder = sourcePart.cloneNode(true);
+    placeholder.removeAttribute("data-tagline-source");
+    placeholder.className = "tagline-layout-placeholder";
+    sourcePart.replaceWith(placeholder);
+
+    sourcePart.className = "tagline-moving-part";
+    sourcePart.setAttribute("aria-hidden", "true");
+    document.body.append(sourcePart);
+
+    let startScroll = 0;
+    let endScroll = 1;
+    let sourcePageLeft = 0;
+    let sourcePageTop = 0;
+    let sourceWidth = 1;
+    let sourceHeight = 1;
+    let supportingCopyPageTop = 0;
+    let sourceFontSize = "1rem";
+    let sourceFontWeight = "900";
+    let sourceLineHeight = "1";
+    let sourceLetterSpacing = "normal";
+    let ticking = false;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const lerp = (start, end, progress) => start + (end - start) * progress;
+
+    const measure = () => {
+        const sourceRect = placeholder.getBoundingClientRect();
+        const headerRect = headerShell.getBoundingClientRect();
+        const sourceStyle = getComputedStyle(placeholder);
+
+        sourcePageLeft = sourceRect.left + window.scrollX;
+        sourcePageTop = sourceRect.top + window.scrollY;
+        sourceWidth = Math.max(sourceRect.width, 1);
+        sourceHeight = Math.max(sourceRect.height, 1);
+        supportingCopyPageTop = supportingCopy.getBoundingClientRect().top + window.scrollY;
+        sourceFontSize = sourceStyle.fontSize;
+        sourceFontWeight = sourceStyle.fontWeight;
+        sourceLineHeight = sourceStyle.lineHeight;
+        sourceLetterSpacing = sourceStyle.letterSpacing;
+
+        startScroll = Math.max(0, sourcePageTop - headerRect.bottom - 120);
+        endScroll = Math.max(startScroll + 160, sourcePageTop - headerRect.bottom + 36);
+    };
+
+    const render = () => {
+        ticking = false;
+        const rawProgress = clamp((window.scrollY - startScroll) / (endScroll - startScroll), 0, 1);
+        const progress = reducedMotion ? (rawProgress >= 0.5 ? 1 : 0) : rawProgress;
+        const targetReveal = clamp((progress - 0.78) / 0.22, 0, 1);
+        const movingOpacity = 1 - clamp((progress - 0.7) / 0.24, 0, 1);
+        const headerRect = headerShell.getBoundingClientRect();
+        const targetRect = targetPart.getBoundingClientRect();
+        const targetScale = targetRect.width / sourceWidth;
+        const scale = lerp(1, targetScale, progress);
+        const naturalSourceTop = sourcePageTop - window.scrollY;
+        const safeTop = headerRect.bottom + 14;
+        const supportingCopyTop = supportingCopyPageTop - window.scrollY;
+        const maximumTop = supportingCopyTop - (sourceHeight * scale) - 18;
+        const availableLane = maximumTop - safeTop;
+        const destinationX = lerp(sourcePageLeft - window.scrollX, targetRect.left, progress);
+        const destinationY = Math.min(Math.max(lerp(naturalSourceTop, safeTop, progress), safeTop), maximumTop);
+        const laneOpacity = clamp(availableLane / 28, 0, 1);
+
+        headerTagline.style.opacity = String(targetReveal);
+        headerTagline.style.maxHeight = `${(18 * targetReveal).toFixed(2)}px`;
+        headerTagline.style.transform = `translate3d(0, ${(4 * (1 - targetReveal)).toFixed(2)}px, 0)`;
+        brandLockup.style.gap = `${(4 * targetReveal).toFixed(2)}px`;
+
+        sourcePart.style.left = `${destinationX.toFixed(2)}px`;
+        sourcePart.style.top = `${destinationY.toFixed(2)}px`;
+        sourcePart.style.fontSize = sourceFontSize;
+        sourcePart.style.fontWeight = sourceFontWeight;
+        sourcePart.style.lineHeight = sourceLineHeight;
+        sourcePart.style.letterSpacing = sourceLetterSpacing;
+        sourcePart.style.transform = `scale(${scale.toFixed(5)})`;
+        sourcePart.style.opacity = String((reducedMotion ? 1 - progress : movingOpacity) * laneOpacity);
+    };
+
+    const requestRender = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(render);
+    };
+
+    const remeasure = () => {
+        measure();
+        requestRender();
+    };
+
+    measure();
+    render();
+    window.addEventListener("scroll", requestRender, { passive: true });
+    window.addEventListener("resize", remeasure, { passive: true });
+    window.addEventListener("load", remeasure, { once: true });
+    document.fonts?.ready.then(remeasure);
+}
 
 function setupEntryMotion(reducedMotion) {
     if (reducedMotion) {
