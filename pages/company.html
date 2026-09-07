@@ -1,62 +1,261 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Company profile and focus areas for Atriksha Engineering Solutions Pvt Ltd.">
-    <title>Atriksha Company</title>
-    <link rel="icon" href="../src/assets/atriksha-mark.svg" type="image/svg+xml">
-    <script src="../src/scripts/theme.js"></script>
-    <link rel="stylesheet" href="../src/styles/page.css">
-    <link rel="stylesheet" href="../src/styles/theme.css">
-</head>
-<body class="catalog-body">
-    <main class="catalog-page">
-        <nav class="catalog-nav" aria-label="Company page navigation">
-            <div class="catalog-cluster catalog-left">
-                <a href="./services.html#manufacturing">Precision Manufacturing</a>
-                <a href="./services.html#deep-tech">AI Integration</a>
-                <a href="./services.html#training">Skill Development</a>
+  <head>
+    <script src="../src/scripts/appearance.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101210" />
+    <meta
+      name="description"
+      content="Atriksha Engineering Solutions connects precision manufacturing, industrial intelligence, and practical technical skills."
+    />
+    <title>About Atriksha | Atriksha</title>
+    <link
+      rel="icon"
+      href="../src/assets/atriksha-mark.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="../src/styles/design-system.css" />
+    <link rel="stylesheet" href="../src/styles/interior.css" />
+    <script src="../src/scripts/site.js" defer></script>
+    <script src="../src/scripts/interior.js" defer></script>
+  <link rel="stylesheet" href="../src/styles/themes.css">
+  </head>
+  <body class="interior-page company-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><nav class="nav-shell container" aria-label="Main navigation"><a class="brand" href="../index.html" aria-label="Atriksha home"><img class="brand-icon" src="../src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><div class="nav-links" id="main-navigation"><a class="nav-link" href="./services.html">Services</a><a class="nav-link" href="./products.html">Products</a><a class="nav-link" href="./research.html">Research</a><a class="nav-link" href="./learn.html">Learn & play</a><a class="nav-link is-current" href="./company.html" aria-current="page">About</a><a class="nav-link" href="./contact.html">Contact</a></div><div class="header-actions"><div class="theme-picker"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Background theme: Midnight" aria-expanded="false" aria-controls="color-theme-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg><span class="theme-toggle-label">Theme</span></button><div class="theme-panel" id="color-theme-panel" data-theme-panel role="group" aria-label="Background theme" hidden></div></div><a class="button button-small button-primary nav-quotation" href="./quotation.html"><span class="quote-label-full">Get quotation</span><span class="quote-label-short">Quote</span> <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button></div></nav></header>
+    <main id="main-content">
+      <nav class="page-breadcrumb container" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a><span aria-hidden="true">/</span
+        ><span aria-current="page">About Atriksha</span>
+      </nav>
+      <section class="interior-hero container">
+        <h1>About <em>Atriksha.</em></h1>
+        <p class="hero-description">
+          We are an engineering team based in New Delhi. We help businesses
+          design and build products, connect their machines, and train their
+          people.
+        </p>
+        <div class="page-actions">
+          <a class="button button-primary" href="./services.html"
+            >Explore our services <span aria-hidden="true">↗</span></a
+          ><a class="button button-secondary" href="./research.html"
+            >Read our research <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <div class="container">
+        <details class="optional-exploration company-exploration">
+          <summary>
+            <span
+              ><strong>See how our services connect</strong
+              ><small
+                >An interactive look at design, automation, and training.</small
+              ></span
+            ><span class="detail-toggle" aria-hidden="true">+</span>
+          </summary>
+          <section class="company-model" aria-labelledby="company-model-title">
+            <div class="company-model-visual system-panel">
+              <div class="panel-topline">
+                <span>DESIGN · AUTOMATE · LEARN</span
+                ><span>Choose an area below</span>
+              </div>
+              <svg
+                class="connection-map"
+                viewBox="0 0 500 360"
+                role="img"
+                aria-label="A connected engineering system: design, intelligence, and skills"
+              >
+                <defs>
+                  <pattern
+                    id="grid"
+                    width="24"
+                    height="24"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M24 0H0V24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-opacity=".1"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="500" height="360" fill="url(#grid)" />
+                <path class="map-link" d="M126 244L250 90L376 244Z" />
+                <circle class="map-orbit" cx="250" cy="191" r="136" />
+                <g class="map-node map-node-precision">
+                  <circle cx="250" cy="90" r="41" />
+                  <path
+                    d="M231 80L250 69L269 80V102L250 113L231 102ZM231 80L250 91L269 80M250 91V113"
+                  />
+                  <text x="250" y="155">BUILD</text>
+                </g>
+                <g class="map-node map-node-intelligence">
+                  <circle cx="376" cy="244" r="41" />
+                  <rect x="361" y="229" width="30" height="30" rx="2" />
+                  <path
+                    d="M367 218V229M377 218V229M387 218V229M367 259V270M377 259V270M387 259V270M350 234H361M350 244H361M350 254H361M391 234H402M391 244H402M391 254H402"
+                  />
+                  <text x="376" y="310">CONNECT</text>
+                </g>
+                <g class="map-node map-node-academy">
+                  <circle cx="126" cy="244" r="41" />
+                  <path
+                    d="M100 237L126 224L152 237L126 250ZM109 244V257Q126 270 143 257V244M152 237V260"
+                  />
+                  <text x="126" y="310">EMPOWER</text>
+                </g>
+                <circle class="map-center" cx="250" cy="191" r="6" />
+                <path
+                  d="M250 185V137M256 194L338 226M244 194L164 226"
+                  stroke="currentColor"
+                  stroke-opacity=".2"
+                  fill="none"
+                />
+              </svg>
+              <div
+                class="model-selector"
+                aria-label="Explore an engineering discipline"
+              >
+                <button
+                  type="button"
+                  class="is-active"
+                  data-model="precision"
+                  aria-pressed="true"
+                >
+                  Design</button
+                ><button
+                  type="button"
+                  data-model="intelligence"
+                  aria-pressed="false"
+                >
+                  Automation</button
+                ><button
+                  type="button"
+                  data-model="academy"
+                  aria-pressed="false"
+                >
+                  Training
+                </button>
+              </div>
             </div>
-
-            <a class="catalog-brand-lockup" href="../index.html" aria-label="Atriksha home">
-                <span class="brand-primary"><img class="brand-mark" src="../src/assets/atriksha-mark.svg" alt="" aria-hidden="true"><span class="catalog-brand-name">ATRIKSHA</span></span>
-                <span class="catalog-brand-subtitle">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span>
-            </a>
-
-            <div class="catalog-cluster catalog-right">
-                <a href="./career.html">Careers</a>
-                <a href="./products.html">Products</a>
-                <a href="./contact.html">Contact</a>
+            <div class="company-model-copy" aria-live="polite">
+              <p class="eyebrow" data-model-eyebrow>
+                Design &amp; manufacturing
+              </p>
+              <h2 id="company-model-title" data-model-title>
+                From an idea to a finished part.
+              </h2>
+              <p data-model-copy>
+                We create CAD models, test designs, and make prototypes and
+                production parts.
+              </p>
+              <div class="model-tags" data-model-tags>
+                <span class="tag">Design</span><span class="tag">Prototype</span
+                ><span class="tag">Manufacture</span>
+              </div>
+              <a
+                class="text-link"
+                data-model-link
+                href="./services.html#manufacturing"
+                >View design &amp; manufacturing services
+                <span aria-hidden="true">↗</span></a
+              >
             </div>
-        </nav>
-
-        <section class="route-panel" aria-labelledby="company-title">
-            <p class="catalog-eyebrow">Company / Engineering Execution / Intelligence Delivery</p>
-            <h2 id="company-title">Atriksha connects mechanical engineering, AI systems, and workforce capability.</h2>
-            <div class="route-grid">
-                <a class="route-card route-blue" href="./services.html#manufacturing">
-                    <span>What we build</span>
-                    <strong>Precision products, prototypes, tooling, and manufacturing-ready parts</strong>
-                    <small>Explore productization and advanced manufacturing capability.</small>
-                </a>
-                <a class="route-card route-cyan" href="./services.html#deep-tech">
-                    <span>How we modernize</span>
-                    <strong>Industry 4.0 transformation, IoT systems, AI automation, and digital twins</strong>
-                    <small>Move existing operations toward connected, measurable systems.</small>
-                </a>
-                <a class="route-card route-amber" href="./services.html#training">
-                    <span>Who we enable</span>
-                    <strong>Industrial teams, academic institutions, students, and R&amp;D groups</strong>
-                    <small>Build practical technical capability through training and collaboration.</small>
-                </a>
-            </div>
-        </section>
-
-        <footer class="catalog-footer">
-            <p>&copy; 2026 Atriksha Engineering Solutions Pvt Ltd. All rights reserved.</p>
-            <strong class="footer-tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</strong>
-        </footer>
+          </section>
+        </details>
+      </div>
+      <section class="principles-section container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">How we think</p>
+            <h2>How we work</h2>
+          </div>
+          <p>
+            A clear process, from understanding your requirements to testing the
+            result.
+          </p>
+        </div>
+        <div class="principle-grid">
+          <article>
+            <h3>Understand your needs</h3>
+            <p>
+              Understand the requirement, constraints, and operating environment
+              before choosing a technology.
+            </p>
+          </article>
+          <article>
+            <h3>Build and test</h3>
+            <p>
+              Use prototypes, simulation, and practical validation to move an
+              idea toward a working solution.
+            </p>
+          </article>
+          <article>
+            <h3>Help your team learn</h3>
+            <p>
+              Connect industrial teams, students, researchers, and academic
+              partners through hands-on learning.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        class="research-invite container"
+        aria-labelledby="company-research-title"
+      >
+        <div>
+          <p class="eyebrow">Research</p>
+          <h2 id="company-research-title">
+            Explore the ideas behind the work.
+          </h2>
+          <p>
+            Read published research through simple visual stories, with links to
+            the original papers.
+          </p>
+        </div>
+        <a class="button button-secondary" href="./research.html"
+          >Explore research <span aria-hidden="true">↗</span></a
+        >
+      </section>
+      <section class="company-location container">
+        <div>
+          <p class="eyebrow">Our base</p>
+          <h2>Find us in <em>New Delhi.</em></h2>
+          <p>
+            28A/7, Jia Sarai, IIT Delhi Gate, Hauz Khas,<br />New Delhi South
+            West Delhi-110016, Delhi
+          </p>
+          <a class="text-link" href="./contact.html">Contact details ↗</a>
+        </div>
+        <div class="coordinate-art" aria-hidden="true">
+          <div class="coordinate-ring ring-1"></div>
+          <div class="coordinate-ring ring-2"></div>
+          <div class="coordinate-ring ring-3"></div>
+          <div class="coordinate-cross"></div>
+          <span class="location-pin"></span
+          ><span class="coordinate-label"
+            >NEW DELHI / INDIA<br /><small
+              >ATRIKSHA ENGINEERING SOLUTIONS</small
+            ></span
+          >
+        </div>
+      </section>
+      <section class="interior-cta container">
+        <div>
+          <p class="eyebrow">Join our team</p>
+          <h2>Careers at Atriksha</h2>
+          <p>
+            Explore opportunities across design, AI, IoT, marketing, and
+            technical communication.
+          </p>
+        </div>
+        <a class="button button-primary" href="./career.html"
+          >Explore careers <span aria-hidden="true">↗</span></a
+        >
+      </section>
     </main>
-</body>
+    <footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="../index.html" aria-label="Atriksha home"><img class="brand-icon" src="../src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><p>Engineering, made practical.<br>New Delhi, India.</p></div><nav class="footer-links" aria-label="Footer navigation"><div><span>GET STARTED</span><a href="./services.html">Services</a><a href="./quotation.html">Get a quotation</a><a href="./contact.html">Contact us</a></div><div><span>EXPLORE</span><a href="./research.html">Research</a><a href="./products.html">Products</a><a href="./learn.html">Learn through games</a><a href="./playground.html">Interactive demos</a></div><div><span>ATRIKSHA</span><a href="./company.html">About us</a><a href="./career.html">Careers</a><a href="mailto:info@atriksha.com">info@atriksha.com ↗</a><a href="tel:+918770423437">+91 87704 23437</a></div></nav></div><div class="footer-bottom"><p>© <span data-year>2026</span> Atriksha Engineering Solutions Pvt Ltd.</p><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false" aria-label="Pause animations"><span class="motion-symbol" aria-hidden="true"></span><span data-motion-label>Pause motion</span></button></div></div></footer>
+  </body>
 </html>

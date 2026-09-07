@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="../src/scripts/appearance.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101210" />
+    <meta
+      name="description"
+      content="Ten real-time game worlds. Fifty missions. Race, swing, fly, build and survive while learning data science, AI, IoT and engineering. Watch a live AI agent play and explore its code."
+    />
+    <title>Live learning arcade | Atriksha</title>
+    <link
+      rel="icon"
+      href="../src/assets/atriksha-mark.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="../src/styles/design-system.css" />
+    <link rel="stylesheet" href="../src/styles/live-arcade.css" />
+    <script src="../src/scripts/site.js" defer></script>
+    <script src="../src/data/live-games.js" defer></script>
+    <script src="../src/data/live-learning.js" defer></script>
+    <script src="../src/scripts/live-worlds-motion.js" defer></script>
+    <script src="../src/scripts/live-worlds-systems.js" defer></script>
+    <script src="../src/scripts/live-runtime.js" defer></script>
+    <script src="../src/scripts/live-progress.js" defer></script>
+    <script src="../src/scripts/live-arcade.js" defer></script>
+    <link rel="stylesheet" href="../src/styles/themes.css" />
+  </head>
+  <body class="arcade-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav-shell container" aria-label="Main navigation">
+        <a class="brand" href="../index.html" aria-label="Atriksha home"
+          ><img
+            class="brand-icon"
+            src="../src/assets/atriksha-mark.svg"
+            alt=""
+          /><span class="brand-name"
+            >atriksha<span class="brand-dot">.</span></span
+          ></a
+        >
+        <div class="nav-links" id="main-navigation">
+          <a class="nav-link" href="./services.html">Services</a
+          ><a class="nav-link" href="./products.html">Products</a
+          ><a class="nav-link" href="./research.html">Research</a
+          ><a
+            class="nav-link is-current"
+            href="./learn.html"
+            aria-current="page"
+            >Learn & play</a
+          ><a class="nav-link" href="./company.html">About</a
+          ><a class="nav-link" href="./contact.html">Contact</a>
+        </div>
+        <div class="header-actions">
+          <div class="theme-picker">
+            <button
+              class="theme-toggle"
+              type="button"
+              data-theme-toggle
+              aria-label="Background theme: Midnight"
+              aria-expanded="false"
+              aria-controls="color-theme-panel"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" /></svg
+              ><span class="theme-toggle-label">Theme</span>
+            </button>
+            <div
+              class="theme-panel"
+              id="color-theme-panel"
+              data-theme-panel
+              role="group"
+              aria-label="Background theme"
+              hidden
+            ></div>
+          </div>
+          <a
+            class="button button-small button-primary nav-quotation"
+            href="./quotation.html"
+            ><span class="quote-label-full">Get quotation</span
+            ><span class="quote-label-short">Quote</span>
+            <span aria-hidden="true">↗</span></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="live-hero container" aria-labelledby="arcade-title">
+        <div class="live-intro">
+          <p class="eyebrow">
+            <span class="live-dot" aria-hidden="true"></span> THE ATRIKSHA LIVE
+            ARCADE
+          </p>
+          <h1 id="arcade-title">
+            Get lost in play.<br /><span>Find the science.</span>
+          </h1>
+          <p>
+            Read the signal. Tune the system. Keep the world running. Build
+            engineering instincts through play.
+          </p>
+          <div class="live-hero-actions">
+            <a href="#game-library" class="button button-primary"
+              >Find your world <span aria-hidden="true">↓</span></a
+            ><button
+              type="button"
+              class="button button-secondary"
+              data-surprise
+            >
+              Drop me in ↗
+            </button>
+          </div>
+          <div class="live-facts">
+            <span><strong>10</strong> game worlds</span
+            ><span><strong>50</strong> live missions</span
+            ><span><strong>3</strong> difficulty levels</span>
+          </div>
+        </div>
+        <div class="attract-card">
+          <div class="attract-top">
+            <span
+              ><i class="live-dot" aria-hidden="true"></i> LIVE GAMEPLAY</span
+            ><span data-preview-genre>Physics / racing</span>
+          </div>
+          <canvas
+            data-attract
+            width="960"
+            height="540"
+            aria-hidden="true"
+          ></canvas>
+          <div class="attract-bottom">
+            <div>
+              <small data-preview-concept>Control in motion</small>
+              <h2 data-preview-title>Neural Circuit</h2>
+            </div>
+            <button
+              class="attract-play"
+              type="button"
+              data-preview-play
+              aria-label="Play the featured game"
+            >
+              ↗
+            </button>
+          </div>
+          <div
+            class="preview-picker"
+            aria-label="Preview game worlds"
+            data-preview-picker
+          ></div>
+        </div>
+      </section>
+      <section
+        class="live-progress container"
+        aria-label="Your arcade progress"
+      >
+        <div>
+          <strong data-total-played>0 <small>/ 50</small></strong
+          ><span>Missions played</span>
+        </div>
+        <div>
+          <strong data-total-runs>0</strong><span>Independent runs</span>
+        </div>
+        <div><strong data-total-xp>0</strong><span>Arcade XP</span></div>
+        <p data-storage-note>Progress saved on this browser</p>
+      </section>
+      <section
+        id="game-library"
+        class="live-library container"
+        aria-labelledby="library-title"
+      >
+        <div class="live-library-heading">
+          <div>
+            <p class="eyebrow">CHOOSE YOUR NEXT OBSESSION</p>
+            <h2 id="library-title">Different worlds. Real consequences.</h2>
+          </div>
+          <label class="live-search"
+            ><span class="sr-only">Search missions or concepts</span
+            ><input
+              type="search"
+              id="live-search"
+              placeholder="Search worlds, concepts…"
+          /></label>
+        </div>
+        <div
+          class="world-filters"
+          role="group"
+          aria-label="Filter by game world"
+          data-world-filters
+        ></div>
+        <details class="live-filter-panel">
+          <summary>
+            Refine missions <span data-filter-badge></span
+            ><span aria-hidden="true">＋</span>
+          </summary>
+          <div class="live-filter-grid">
+            <fieldset>
+              <legend>Learning topics</legend>
+              <div data-topic-filters></div>
+            </fieldset>
+            <label
+              >Difficulty<select id="live-level">
+                <option value="0">Foundation</option>
+                <option value="1">Applied</option>
+                <option value="2">Expert</option>
+              </select></label
+            ><label
+              >Run length<select id="live-duration">
+                <option value="any">Any duration</option>
+                <option value="short">Up to 90 seconds</option>
+                <option value="long">Over 90 seconds</option>
+              </select></label
+            ><label
+              >Progress<select id="live-progress-filter">
+                <option value="all">All missions</option>
+                <option value="new">Not played</option>
+                <option value="played">Played independently</option>
+                <option value="practice">AI practice</option>
+              </select></label
+            ><label class="live-favorite-filter"
+              ><input type="checkbox" id="live-saved" /> Saved missions
+              only</label
+            >
+          </div>
+        </details>
+        <div class="live-library-controls">
+          <div>
+            <p data-result-count role="status">Loading worlds…</p>
+            <button type="button" data-reset-filters hidden>
+              Reset filters
+            </button>
+          </div>
+          <label
+            >Sort by<select id="live-sort">
+              <option value="recommended">Recommended</option>
+              <option value="title">Name · A–Z</option>
+              <option value="shortest">Shortest run</option>
+              <option value="longest">Longest run</option>
+              <option value="score">Personal best</option>
+              <option value="recent">Recently played</option>
+            </select></label
+          >
+        </div>
+        <div class="live-game-grid" data-game-grid></div>
+        <div class="live-empty" data-empty hidden>
+          <h3>No missions found.</h3>
+          <button
+            class="button button-secondary"
+            type="button"
+            data-reset-filters
+          >
+            Clear filters
+          </button>
+        </div>
+        <div class="live-load-more">
+          <button class="button button-secondary" type="button" data-load-more>
+            More missions ↓
+          </button>
+        </div>
+        <noscript
+          ><p>
+            Live gameplay needs JavaScript. Explore our
+            <a href="./services.html#research-support">research mentoring</a>
+            and <a href="./services.html#training">training services</a>.
+          </p></noscript
+        >
+      </section>
+      <section class="live-learning container">
+        <div class="live-learning-icon" aria-hidden="true">↗</div>
+        <div>
+          <p class="eyebrow">FROM PLAYER TO BUILDER</p>
+          <h2>The next move is yours.</h2>
+          <p>
+            Take the controls, then watch an algorithm face the same world.
+            Inspect what it sees, follow its decisions, and take its Python
+            policy into your own project.
+          </p>
+        </div>
+        <a
+          href="./services.html#research-support"
+          class="button button-secondary"
+          >Explore mentoring ↗</a
+        >
+      </section>
+    </main>
+    <dialog class="live-dialog" aria-labelledby="live-game-title">
+      <div class="live-player-frame">
+        <div class="live-dialog-header">
+          <div>
+            <p class="eyebrow" data-game-world></p>
+            <h2 id="live-game-title" tabindex="-1"></h2>
+          </div>
+          <div>
+            <span class="live-practice-tag" data-practice-tag hidden
+              >AI PRACTICE</span
+            ><button
+              type="button"
+              class="live-icon-button"
+              data-close-game
+              aria-label="Close game"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="live-workspace">
+          <div class="live-play-column">
+            <div class="live-hud" aria-label="Live score">
+              <div><span>SCORE</span><strong data-run-score>0</strong></div>
+              <div><span>COMBO</span><strong data-run-combo>1×</strong></div>
+              <div><span>HULL</span><strong data-run-health>100</strong></div>
+              <div><span>TIME</span><strong data-run-time>90</strong></div>
+            </div>
+            <section
+              class="live-engineering-console"
+              aria-label="Engineering controls"
+              data-engineering-console
+            >
+              <div class="engineering-console-top">
+                <div>
+                  <span
+                    class="engineering-domain"
+                    data-engineering-domain
+                  ></span>
+                  <h3 data-engineering-control></h3>
+                </div>
+                <span class="engineering-status" data-engineering-status
+                  >Ready</span
+                >
+              </div>
+              <div class="engineering-setting-row">
+                <div
+                  role="group"
+                  data-engineering-settings
+                  aria-label="Engineering setting"
+                ></div>
+                <kbd class="engineering-shortcut">Z / X</kbd>
+              </div>
+              <p class="engineering-readout" data-engineering-readout></p>
+            </section>
+            <div class="live-stage">
+              <canvas
+                width="960"
+                height="540"
+                tabindex="0"
+                data-game-canvas
+                aria-label="Live game. Use the controls described beside the game, or the touch buttons below."
+              ></canvas>
+              <div class="live-stage-cover" data-stage-cover>
+                <div data-stage-message></div>
+              </div>
+            </div>
+            <div
+              class="live-telemetry"
+              data-live-metrics
+              aria-label="Game telemetry"
+            ></div>
+            <div class="live-toolbar">
+              <button type="button" data-pause disabled>Pause Ⅱ</button
+              ><button type="button" data-restart>Restart ↺</button
+              ><button type="button" data-sound aria-pressed="false">
+                Sound off</button
+              ><button type="button" data-fullscreen>Fullscreen ⛶</button
+              ><button type="button" data-review-run hidden>Run notes ↓</button
+              ><button type="button" data-coach-toggle>AI & rules ↗</button>
+            </div>
+            <div
+              class="live-touch-controls"
+              data-touch-controls
+              aria-label="Game controls"
+            >
+              <div class="live-dpad">
+                <button data-hold="up" aria-label="Up" type="button">↑</button
+                ><button data-hold="left" aria-label="Left" type="button">
+                  ←</button
+                ><button data-hold="down" aria-label="Down" type="button">
+                  ↓</button
+                ><button data-hold="right" aria-label="Right" type="button">
+                  →
+                </button>
+              </div>
+              <div class="live-action-buttons">
+                <button data-hold="action" type="button">
+                  <kbd>SPACE</kbd><span data-action-label>Action</span></button
+                ><button data-hold="secondary" type="button">
+                  <kbd>E</kbd><span data-secondary-label>Ability</span>
+                </button>
+              </div>
+            </div>
+            <p class="live-control-line" data-control-line></p>
+            <p class="live-game-status" role="status" data-game-status></p>
+            <section
+              class="live-run-learning"
+              data-run-learning
+              hidden
+              aria-labelledby="run-learning-title"
+            ></section>
+          </div>
+          <aside class="live-companion" aria-label="Mission and AI companion">
+            <div
+              class="live-companion-tabs"
+              role="tablist"
+              aria-label="Game companion"
+            >
+              <button
+                role="tab"
+                aria-selected="true"
+                aria-controls="mission-panel"
+                id="mission-tab"
+                data-panel="mission"
+              >
+                Mission</button
+              ><button
+                role="tab"
+                aria-selected="false"
+                aria-controls="ai-panel"
+                id="ai-tab"
+                data-panel="ai"
+                tabindex="-1"
+              >
+                How AI plays
+              </button>
+            </div>
+            <div
+              id="mission-panel"
+              role="tabpanel"
+              aria-labelledby="mission-tab"
+            >
+              <div
+                class="live-levels"
+                role="group"
+                aria-label="Difficulty"
+                data-game-levels
+              ></div>
+              <h3 data-mission-objective></h3>
+              <p data-mission-twist></p>
+              <div class="live-level-note" data-level-note></div>
+              <h4>Controls</h4>
+              <dl class="live-controls-list" data-controls-list></dl>
+              <details>
+                <summary>Rules & scoring</summary>
+                <div data-game-rules></div>
+              </details>
+              <div class="live-science">
+                <span class="eyebrow">SCIENCE IN THE WORLD</span>
+                <p data-game-science></p>
+                <dl class="engineering-learning-loop" data-learning-loop></dl>
+                <details class="engineering-model">
+                  <summary>The model</summary>
+                  <code data-engineering-formula></code>
+                  <p data-engineering-explanation></p>
+                  <div
+                    class="engineering-references"
+                    data-engineering-references
+                  ></div>
+                </details>
+                <h4>At Atriksha</h4>
+                <p data-engineering-application></p>
+              </div>
+            </div>
+            <div id="ai-panel" role="tabpanel" aria-labelledby="ai-tab" hidden>
+              <p class="eyebrow">OBSERVE → DECIDE → ACT</p>
+              <h3 data-ai-name></h3>
+              <p data-ai-summary></p>
+              <button
+                class="button button-primary"
+                type="button"
+                data-ai-toggle
+              >
+                Watch AI play →
+              </button>
+              <p class="live-ai-note">AI control makes this a practice run.</p>
+              <ol data-ai-steps></ol>
+              <details class="live-ai-inspector">
+                <summary>Live observation & action</summary>
+                <p>The same world state the agent receives at each step.</p>
+                <pre
+                  tabindex="0"
+                  data-ai-observation
+                  aria-label="Agent observation"
+                ></pre>
+                <pre
+                  tabindex="0"
+                  data-ai-action
+                  aria-label="Agent action"
+                ></pre>
+                <button type="button" data-refresh-observation>
+                  Refresh snapshot
+                </button>
+              </details>
+              <details class="live-ai-code">
+                <summary>Build the policy in Python</summary>
+                <div>
+                  <button type="button" data-copy-code>Copy</button
+                  ><button type="button" data-download-code>
+                    Download .py
+                  </button>
+                </div>
+                <pre tabindex="0"><code data-ai-code></code></pre>
+                <p data-code-status role="status"></p>
+              </details>
+              <p class="live-ai-limit" data-ai-limits></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </dialog>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="../index.html" aria-label="Atriksha home"
+              ><img
+                class="brand-icon"
+                src="../src/assets/atriksha-mark.svg"
+                alt=""
+              /><span class="brand-name"
+                >atriksha<span class="brand-dot">.</span></span
+              ></a
+            >
+            <p>Engineering, made practical.<br />New Delhi, India.</p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <div>
+              <span>GET STARTED</span><a href="./services.html">Services</a
+              ><a href="./quotation.html">Get a quotation</a
+              ><a href="./contact.html">Contact us</a>
+            </div>
+            <div>
+              <span>EXPLORE</span><a href="./research.html">Research</a
+              ><a href="./products.html">Products</a
+              ><a href="./learn.html">Learn through games</a
+              ><a href="./playground.html">Interactive demos</a>
+            </div>
+            <div>
+              <span>ATRIKSHA</span><a href="./company.html">About us</a
+              ><a href="./career.html">Careers</a
+              ><a href="mailto:info@atriksha.com">info@atriksha.com ↗</a
+              ><a href="tel:+918770423437">+91 87704 23437</a>
+            </div>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © <span data-year>2026</span> Atriksha Engineering Solutions Pvt
+            Ltd.
+          </p>
+          <button
+            type="button"
+            class="motion-toggle"
+            data-motion-toggle
+            aria-pressed="false"
+            aria-label="Pause animations"
+          >
+            <span class="motion-symbol" aria-hidden="true"></span
+            ><span data-motion-label>Pause motion</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

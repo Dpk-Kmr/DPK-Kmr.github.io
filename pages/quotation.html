@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="../src/scripts/appearance.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101210" />
+    <meta
+      name="description"
+      content="Get separate CAD design and manufacturing estimates in Indian rupees, with editable rates and itemized costs. Describe your design or add a CAD model to get started."
+    />
+    <title>Get a CAD quotation | Atriksha</title>
+    <link
+      rel="icon"
+      href="../src/assets/atriksha-mark.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="../src/styles/design-system.css" />
+    <link rel="stylesheet" href="../src/styles/quotation.css" />
+    <script src="../src/scripts/site.js" defer></script>
+    <script src="../src/scripts/quotation-model.js" defer></script>
+    <script src="../src/scripts/quotation.js" defer></script>
+  <link rel="stylesheet" href="../src/styles/themes.css">
+  </head>
+  <body class="quotation-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><nav class="nav-shell container" aria-label="Main navigation"><a class="brand" href="../index.html" aria-label="Atriksha home"><img class="brand-icon" src="../src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><div class="nav-links" id="main-navigation"><a class="nav-link" href="./services.html">Services</a><a class="nav-link" href="./products.html">Products</a><a class="nav-link" href="./research.html">Research</a><a class="nav-link" href="./learn.html">Learn & play</a><a class="nav-link" href="./company.html">About</a><a class="nav-link" href="./contact.html">Contact</a></div><div class="header-actions"><div class="theme-picker"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Background theme: Midnight" aria-expanded="false" aria-controls="color-theme-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg><span class="theme-toggle-label">Theme</span></button><div class="theme-panel" id="color-theme-panel" data-theme-panel role="group" aria-label="Background theme" hidden></div></div><a class="button button-small button-primary nav-quotation" href="./quotation.html" aria-current="page"><span class="quote-label-full">Get quotation</span><span class="quote-label-short">Quote</span> <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button></div></nav></header>
+    <main id="main-content" class="container">
+      <section class="quote-hero">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Get quotation</span>
+        </nav>
+        <p class="eyebrow">CAD quotation</p>
+        <h1>Get a<br /><span>CAD quotation.</span></h1>
+        <p>
+          Get a CAD design made, or manufacture an existing part.<br
+            class="desktop-break"
+          />
+          Two separate estimates. Every cost in Indian rupees.
+        </p>
+        <div class="quote-mode-switch" role="group" aria-label="Quotation type">
+          <button
+            type="button"
+            data-quote-mode="design"
+            class="is-active"
+            aria-pressed="true"
+          >
+            <span aria-hidden="true">◇</span><strong>CAD design services</strong
+            ><small>Turn your idea into a CAD model</small></button
+          ><button
+            type="button"
+            data-quote-mode="manufacturing"
+            aria-pressed="false"
+          >
+            <span aria-hidden="true">⬡</span><strong>Manufacture a part</strong
+            ><small>Make parts from an existing design</small>
+          </button>
+        </div>
+        <div class="quote-journey" aria-label="Three steps">
+          <a id="journey-one" href="#design-service-step"
+            >1. Describe the design</a
+          ><span aria-hidden="true">→</span
+          ><a id="journey-two" href="#deliverables-step"
+            >2. Choose deliverables</a
+          ><span aria-hidden="true">→</span
+          ><a href="#estimate-step">3. See the breakdown</a>
+        </div>
+      </section>
+      <noscript
+        ><p class="quote-notice">
+          Enable JavaScript to use the estimator, or
+          <a href="./contact.html">contact us for a quotation</a>.
+        </p></noscript
+      >
+      <div class="quote-workspace">
+        <form class="quote-form" id="design-form" novalidate>
+          <section
+            class="quote-card"
+            id="design-service-step"
+            aria-labelledby="design-service-heading"
+          >
+            <div class="quote-step-heading">
+              <span class="step-number">01</span>
+              <div>
+                <h2 id="design-service-heading">Describe your design</h2>
+                <p>Estimate the work to turn your idea into a CAD model.</p>
+              </div>
+            </div>
+            <label class="quote-field"
+              ><span>What are you making? <small>(optional)</small></span
+              ><input
+                type="text"
+                id="design-name"
+                maxlength="100"
+                placeholder="e.g. A mounting bracket for a sensor"
+            /></label>
+            <div class="field-grid">
+              <label class="quote-field"
+                ><span>Number of distinct parts</span
+                ><input
+                  id="design-parts"
+                  type="number"
+                  min="1"
+                  max="100"
+                  step="1"
+                  value="1" /></label
+              ><label class="quote-field"
+                ><span>Design complexity</span
+                ><select id="design-complexity">
+                  <option value="simple">Simple</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="complex">Complex</option>
+                </select></label
+              >
+            </div>
+            <div class="complexity-guide">
+              <svg
+                id="design-scope-icon"
+                viewBox="0 0 120 100"
+                aria-hidden="true"
+              >
+                <path
+                  d="m25 35 35-20 35 20v40L60 95 25 75Zm0 0 35 20 35-20M60 55v40"
+                />
+                <path d="m44 37 16-9 16 9-16 9Z" />
+              </svg>
+              <div>
+                <strong id="complexity-title"
+                  >Simple · a clearly defined part</strong
+                >
+                <p id="complexity-description">
+                  Brackets, spacers or basic enclosures with a few features.
+                </p>
+                <span id="modeling-hours">2 modeling hours per part</span>
+              </div>
+            </div>
+            <label class="quote-field design-reference"
+              ><span
+                >Reference file <small>(optional · up to 20 MB)</small></span
+              ><input
+                type="file"
+                id="design-reference"
+                accept=".stl,.step,.stp,.iges,.igs,.pdf,.png,.jpg,.jpeg"
+            /></label>
+            <p class="file-status" id="design-reference-status" role="status">
+              A sketch, drawing or CAD file. It stays in your browser.
+            </p>
+          </section>
+          <section
+            class="quote-card"
+            id="deliverables-step"
+            aria-labelledby="deliverables-heading"
+          >
+            <div class="quote-step-heading">
+              <span class="step-number">02</span>
+              <div>
+                <h2 id="deliverables-heading">Choose your deliverables</h2>
+                <p>The 3D model and design review are included.</p>
+              </div>
+            </div>
+            <div class="field-grid">
+              <label class="quote-field"
+                ><span>Technical drawings</span
+                ><input
+                  id="design-drawings"
+                  type="number"
+                  min="0"
+                  max="200"
+                  step="1"
+                  value="1"
+                /><small>Use 0 if you only need a 3D model.</small></label
+              ><label class="quote-field"
+                ><span>Revision rounds</span
+                ><input
+                  id="design-revisions"
+                  type="number"
+                  min="0"
+                  max="10"
+                  step="1"
+                  value="1"
+                /><small>Each round covers all selected parts.</small></label
+              >
+            </div>
+            <p class="design-scope-note">
+              Engineering analysis, simulation, major concept changes and
+              physical manufacturing are scoped separately.
+            </p>
+            <details class="quote-details rate-details">
+              <summary>Pricing formula &amp; editable rates</summary>
+              <div>
+                <p class="rate-notice">
+                  Example planning assumptions, not an approved Atriksha rate
+                  card. Design hours come from the scope you choose, not an
+                  automatic analysis of your file.
+                </p>
+                <p class="formula-explanation">
+                  <strong
+                    >Total = (briefing + modeling + drawings + revisions +
+                    review) × hourly rate + tax.</strong
+                  ><br />Modeling = parts × complexity hours. Drawings = drawing
+                  count × drawing hours. Revisions = rounds × parts × revision
+                  hours. Review = parts × review hours. Each cost is rounded to
+                  paise before adding.
+                </p>
+                <div class="field-grid rate-grid">
+                  <label class="quote-field"
+                    ><span>Design rate (₹ / hour)</span
+                    ><input
+                      id="design-rate-hourly"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any"
+                      value="800" /></label
+                  ><label class="quote-field"
+                    ><span>Briefing (hours / project)</span
+                    ><input
+                      id="design-rate-briefing"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="1" /></label
+                  ><label class="quote-field"
+                    ><span>Simple modeling (hours / part)</span
+                    ><input
+                      id="design-rate-simple"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="2" /></label
+                  ><label class="quote-field"
+                    ><span>Moderate modeling (hours / part)</span
+                    ><input
+                      id="design-rate-moderate"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="5" /></label
+                  ><label class="quote-field"
+                    ><span>Complex modeling (hours / part)</span
+                    ><input
+                      id="design-rate-complex"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="12" /></label
+                  ><label class="quote-field"
+                    ><span>Drawing (hours / drawing)</span
+                    ><input
+                      id="design-rate-drawing"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="1.5" /></label
+                  ><label class="quote-field"
+                    ><span>Revision (hours / part / round)</span
+                    ><input
+                      id="design-rate-revision"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="0.5" /></label
+                  ><label class="quote-field"
+                    ><span>Review (hours / part)</span
+                    ><input
+                      id="design-rate-review"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      step="any"
+                      value="0.5" /></label
+                  ><label class="quote-field"
+                    ><span>GST / tax (%)</span
+                    ><input
+                      id="design-tax"
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="any"
+                      value="0"
+                  /></label>
+                </div>
+                <p>
+                  Tax is not included by default. The applicable rate and final
+                  scope are confirmed during review.
+                </p>
+                <button class="text-link" type="button" id="reset-design-rates">
+                  Reset example rates <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+            </details>
+          </section>
+        </form>
+        <form class="quote-form" id="quote-form" novalidate hidden>
+          <section
+            class="quote-card"
+            id="design-step"
+            aria-labelledby="design-heading"
+          >
+            <div class="quote-step-heading">
+              <span class="step-number">01</span>
+              <div>
+                <h2 id="design-heading">Add your design</h2>
+                <p>A file or a few dimensions. That’s all you need.</p>
+              </div>
+            </div>
+            <div
+              class="design-tabs"
+              role="group"
+              aria-label="Design input method"
+            >
+              <button
+                type="button"
+                id="upload-tab"
+                class="is-active"
+                aria-pressed="true"
+              >
+                Upload a CAD file</button
+              ><button type="button" id="manual-tab" aria-pressed="false">
+                Enter dimensions
+              </button>
+            </div>
+            <div id="upload-panel">
+              <label class="file-zone" id="file-zone" for="cad-file"
+                ><span class="file-symbol" aria-hidden="true">↥</span
+                ><strong>Drop your CAD file here</strong
+                ><span>or choose a file · up to 20 MB</span
+                ><input
+                  type="file"
+                  id="cad-file"
+                  accept=".stl,.step,.stp,.iges,.igs"
+                /><small
+                  >STL for automatic geometry · STEP / IGES as a
+                  reference</small
+                ></label
+              >
+              <div class="sample-row">
+                <span>Just exploring?</span
+                ><button class="text-link" type="button" id="sample-button">
+                  Try a sample part <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </div>
+            <p id="file-status" class="file-status" role="status">
+              Your file stays in your browser.
+            </p>
+            <div class="geometry-controls">
+              <label class="quote-field unit-field"
+                ><span>Design units</span
+                ><select id="design-unit">
+                  <option value="mm">Millimetres (mm)</option>
+                  <option value="cm">Centimetres (cm)</option>
+                  <option value="inch">Inches (in)</option>
+                </select></label
+              >
+              <p>
+                STL files don’t store units. Match the units used when
+                exporting.
+              </p>
+            </div>
+            <div id="manual-panel" hidden>
+              <div class="field-grid dimensions-grid">
+                <label class="quote-field"
+                  ><span>Length <span data-unit-label>(mm)</span></span
+                  ><input
+                    id="length"
+                    type="number"
+                    min="0.001"
+                    max="5000"
+                    step="any"
+                    inputmode="decimal"
+                    placeholder="40" /></label
+                ><label class="quote-field"
+                  ><span>Width <span data-unit-label>(mm)</span></span
+                  ><input
+                    id="width"
+                    type="number"
+                    min="0.001"
+                    max="5000"
+                    step="any"
+                    inputmode="decimal"
+                    placeholder="30" /></label
+                ><label class="quote-field"
+                  ><span>Height <span data-unit-label>(mm)</span></span
+                  ><input
+                    id="height"
+                    type="number"
+                    min="0.001"
+                    max="5000"
+                    step="any"
+                    inputmode="decimal"
+                    placeholder="20"
+                /></label>
+              </div>
+              <details class="quote-details volume-details">
+                <summary>
+                  Know the solid volume? Make your estimate closer.
+                </summary>
+                <div>
+                  <label class="quote-field"
+                    ><span>Solid volume (cm³, always)</span
+                    ><input
+                      type="number"
+                      id="solid-volume"
+                      min="0.000001"
+                      step="any"
+                      inputmode="decimal"
+                      placeholder="Optional"
+                  /></label>
+                  <p>
+                    Copy the solid volume from your CAD software. Otherwise we
+                    estimate a solid box using your dimensions. Surface area
+                    uses the same box approximation.
+                  </p>
+                </div>
+              </details>
+            </div>
+            <div class="part-preview" id="part-preview" hidden>
+              <div class="preview-topline">
+                <span id="preview-name">YOUR PART</span
+                ><button
+                  type="button"
+                  id="rotate-part"
+                  aria-label="Rotate part preview 30 degrees"
+                >
+                  Rotate <span aria-hidden="true">↻</span>
+                </button>
+              </div>
+              <canvas
+                id="part-canvas"
+                width="600"
+                height="280"
+                role="img"
+                aria-label="Wireframe preview of your CAD geometry"
+              ></canvas>
+              <div class="geometry-readout">
+                <span
+                  ><small>Dimensions</small
+                  ><strong id="geometry-dimensions">—</strong></span
+                ><span
+                  ><small id="volume-label">Solid volume</small
+                  ><strong id="geometry-volume">—</strong></span
+                >
+              </div>
+              <p class="preview-hint">
+                Drag to turn your part, or use the Rotate button.
+              </p>
+            </div>
+            <details class="quote-details">
+              <summary>Which files work?</summary>
+              <div>
+                <p>
+                  <strong>STL:</strong> binary or ASCII, up to 200,000
+                  triangles. We check for open edges, inconsistent faces and
+                  separate shells before calculating volume. Use one closed
+                  solid; self-intersections, internal cavities and
+                  manufacturability still need review.
+                </p>
+                <p>
+                  <strong>STEP / IGES:</strong> accepted as reference files.
+                  Enter dimensions and, if available, solid volume from your CAD
+                  software. Their geometry is not extracted by this tool.
+                </p>
+              </div>
+            </details>
+          </section>
+          <section
+            class="quote-card"
+            id="make-step"
+            aria-labelledby="make-heading"
+          >
+            <div class="quote-step-heading">
+              <span class="step-number">02</span>
+              <div>
+                <h2 id="make-heading">Choose how it’s made</h2>
+                <p>Change an option. Your estimate updates.</p>
+              </div>
+            </div>
+            <div
+              class="process-options"
+              role="group"
+              aria-label="Manufacturing process"
+            >
+              <button
+                type="button"
+                data-process="fdm"
+                class="is-active"
+                aria-pressed="true"
+              >
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                  <path
+                    d="m8 24 12 7 12-7M8 19l12 7 12-7M8 14l12 7 12-7-12-7z"
+                  /></svg
+                ><strong>3D printing</strong
+                ><span>Plastic prototypes · FDM</span></button
+              ><button type="button" data-process="cnc" aria-pressed="false">
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                  <path
+                    d="M9 28h22v6H9zM16 5h8v12l-4 6-4-6zM20 26v3M11 20l-3 3M29 20l3 3"
+                  /></svg
+                ><strong>CNC machining</strong
+                ><span>Metal parts · milling</span>
+              </button>
+            </div>
+            <div class="field-grid">
+              <label class="quote-field"
+                ><span>Material</span
+                ><select id="material">
+                  <option value="pla">PLA</option>
+                  <option value="petg">PETG</option>
+                  <option value="abs">ABS</option>
+                </select></label
+              ><label class="quote-field"
+                ><span>Number of parts</span
+                ><input
+                  id="quantity"
+                  type="number"
+                  min="1"
+                  max="10000"
+                  step="1"
+                  value="1"
+                  inputmode="numeric"
+              /></label>
+            </div>
+            <label class="quote-checkbox"
+              ><input id="finishing" type="checkbox" checked /><span
+                >Add basic finishing
+                <small id="finishing-description"
+                  >Support removal and light cleanup</small
+                ></span
+              ></label
+            >
+            <details class="quote-details" id="print-options">
+              <summary>Print options</summary>
+              <div class="field-grid">
+                <label class="quote-field"
+                  ><span>Infill (%)</span
+                  ><input
+                    id="infill"
+                    type="number"
+                    min="5"
+                    max="100"
+                    step="1"
+                    value="25" /></label
+                ><label class="quote-field"
+                  ><span>Support allowance (%)</span
+                  ><input
+                    id="support"
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="10"
+                /></label>
+                <p class="full-width">
+                  Uses a 1.2 mm shell approximation plus infill and supports.
+                  This is a volume model, not a slicer prediction.
+                </p>
+              </div>
+            </details>
+            <details class="quote-details rate-details">
+              <summary>Pricing formula &amp; editable rates</summary>
+              <div>
+                <p class="rate-notice">
+                  These example planning rates are editable. They are not an
+                  approved Atriksha rate card.
+                </p>
+                <div class="formula-explanation" id="formula-explanation"></div>
+                <div class="field-grid rate-grid">
+                  <label class="quote-field"
+                    ><span>Material (₹ / kg)</span
+                    ><input
+                      id="rate-material"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>Setup (₹ / order)</span
+                    ><input
+                      id="rate-setup"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>Machine (₹ / hour)</span
+                    ><input
+                      id="rate-machine"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span id="throughput-label">Print flow (cm³ / hour)</span
+                    ><input
+                      id="rate-throughput"
+                      type="number"
+                      min="0.01"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>Finishing (₹ / part)</span
+                    ><input
+                      id="rate-finishing"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>Inspection (₹ / part)</span
+                    ><input
+                      id="rate-inspection"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>Material waste (%)</span
+                    ><input
+                      id="rate-waste"
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="any" /></label
+                  ><label class="quote-field"
+                    ><span>GST / tax (%)</span
+                    ><input
+                      id="tax-percent"
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="any"
+                      value="0"
+                  /></label>
+                </div>
+                <p>
+                  Tax is not included by default; the applicable classification
+                  and rate need confirmation. Delivery is excluded. No
+                  minimum-order surcharge.
+                </p>
+                <button class="text-link" type="button" id="reset-rates">
+                  Reset example rates <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+            </details>
+          </section>
+        </form>
+        <aside
+          class="quote-receipt"
+          id="estimate-step"
+          aria-labelledby="estimate-heading"
+        >
+          <div class="receipt-heading">
+            <span class="step-number">03</span
+            ><span class="receipt-badge">INR · ₹</span>
+          </div>
+          <h2 id="estimate-heading">Your estimate</h2>
+          <p class="estimate-label">Indicative estimate</p>
+          <div id="receipt-empty">
+            <div class="empty-receipt-icon" aria-hidden="true">
+              ₹<span>— — —</span>
+            </div>
+            <h3>Every rupee, explained.</h3>
+            <p>
+              Add your design to see material, machine time, finishing and more.
+            </p>
+            <button
+              class="button button-secondary"
+              type="button"
+              id="receipt-sample"
+            >
+              Try a sample part <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div id="receipt-result" hidden>
+            <p class="receipt-summary" id="receipt-summary"></p>
+            <p class="geometry-basis" id="geometry-basis"></p>
+            <dl class="receipt-lines" id="receipt-lines"></dl>
+            <div class="receipt-subtotal">
+              <span>Subtotal</span><strong id="subtotal">—</strong>
+            </div>
+            <div class="receipt-tax">
+              <span id="tax-label">Tax not included</span
+              ><strong id="tax">—</strong>
+            </div>
+            <div class="receipt-total">
+              <span>Estimated total</span
+              ><strong
+                id="total"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                >—</strong
+              >
+            </div>
+            <p class="per-part" id="per-part"></p>
+            <div class="receipt-usage" id="receipt-usage"></div>
+            <a
+              class="button button-primary review-button"
+              id="review-quote"
+              href="mailto:info@atriksha.com"
+              >Request reviewed quote <span aria-hidden="true">↗</span></a
+            >
+            <p class="email-note">
+              Opens an email draft. Attach your reference file before sending.
+            </p>
+            <div class="receipt-actions">
+              <button type="button" id="download-quote">
+                Download estimate ↓</button
+              ><button type="button" id="print-quote">Print ↗</button>
+            </div>
+          </div>
+          <p class="quote-error" id="quote-error" role="status" hidden></p>
+          <p class="receipt-note" id="receipt-note">
+            Final price, deliverables and design scope are confirmed after the
+            team reviews your requirements.
+          </p>
+          <span class="receipt-tear" aria-hidden="true"></span>
+        </aside>
+      </div>
+      <section class="quote-help">
+        <div>
+          <h2>Need a custom quote?</h2>
+          <p>
+            Share your idea, drawings or reference part. We’ll help scope a
+            project that needs a closer look.
+          </p>
+        </div>
+        <a
+          class="button button-secondary"
+          href="./contact.html?interest=precision"
+          >Discuss your project <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="../index.html" aria-label="Atriksha home"><img class="brand-icon" src="../src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><p>Engineering, made practical.<br>New Delhi, India.</p></div><nav class="footer-links" aria-label="Footer navigation"><div><span>GET STARTED</span><a href="./services.html">Services</a><a href="./quotation.html">Get a quotation</a><a href="./contact.html">Contact us</a></div><div><span>EXPLORE</span><a href="./research.html">Research</a><a href="./products.html">Products</a><a href="./learn.html">Learn through games</a><a href="./playground.html">Interactive demos</a></div><div><span>ATRIKSHA</span><a href="./company.html">About us</a><a href="./career.html">Careers</a><a href="mailto:info@atriksha.com">info@atriksha.com ↗</a><a href="tel:+918770423437">+91 87704 23437</a></div></nav></div><div class="footer-bottom"><p>© <span data-year>2026</span> Atriksha Engineering Solutions Pvt Ltd.</p><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false" aria-label="Pause animations"><span class="motion-symbol" aria-hidden="true"></span><span data-motion-label>Pause motion</span></button></div></div></footer>
+  </body>
+</html>

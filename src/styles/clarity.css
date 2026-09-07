@@ -1,0 +1,543 @@
+/* Clear routes and readable content, with interactive exploration kept optional. */
+.clarity-home .hero {
+  min-height: 580px;
+  padding-top: 38px;
+  padding-bottom: 44px;
+}
+.clarity-home .hero-copy {
+  padding-bottom: 20px;
+}
+.clarity-home .hero-copy .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.035em;
+  white-space: normal;
+}
+.clarity-home .hero h1 {
+  font-size: clamp(62px, 6vw, 84px);
+}
+.clarity-home .hero-description {
+  max-width: 455px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.clarity-home .hero-actions {
+  gap: 12px;
+  margin-top: 27px;
+}
+.clarity-home .hero-actions .button {
+  min-height: 49px;
+  font-size: 13px;
+  gap: 16px;
+  padding-inline: 18px;
+}
+.clarity-home .hero-visual {
+  align-self: center;
+}
+.clarity-home .visual-topline {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.clarity-home .visual-topline > span:last-child {
+  font-size: 11px;
+  color: var(--muted);
+}
+.clarity-home .assembly-view {
+  aspect-ratio: 1.4;
+}
+.clarity-home .assembly-controls label {
+  font: 11px var(--font-body);
+}
+.clarity-home .view-modes button {
+  font: 11px var(--font-body);
+  min-height: 30px;
+  padding: 6px 11px;
+}
+.clarity-home .assembly-controls output {
+  font-size: 11px;
+  min-width: 35px;
+}
+.assembly-caption {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 13px;
+}
+.clarity-home .section-space {
+  padding-block: 65px;
+}
+.clarity-home .capabilities {
+  border-top: 1px solid var(--line);
+}
+.clarity-home .capabilities .section-heading {
+  align-items: start;
+}
+.clarity-home .section-heading h2 {
+  font-size: clamp(31px, 3.3vw, 43px);
+}
+.clarity-home .section-heading > p {
+  font-size: 15px;
+  max-width: 290px;
+}
+.clarity-home .section-heading .eyebrow {
+  margin-bottom: 12px;
+}
+.clarity-home .capability-grid {
+  margin-top: 29px;
+}
+.clarity-home .capability-art {
+  height: 170px;
+  margin-bottom: 10px;
+}
+.clarity-home .capability-art svg text {
+  display: none;
+}
+.clarity-home .card-number {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+.clarity-home .capability-card h3 {
+  white-space: normal;
+  font-size: clamp(23px, 2.2vw, 29px);
+  min-height: 66px;
+  line-height: 1.2;
+}
+.clarity-home .capability-card > p {
+  font-size: 14px;
+  min-height: 86px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+.clarity-home .card-link {
+  font-size: 12px;
+  margin-top: 18px;
+}
+.next-steps {
+  padding-block: 25px 65px;
+}
+.next-step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 28px;
+}
+.next-step {
+  display: flex;
+  align-items: start;
+  gap: 25px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 31px;
+}
+.shortcut-icon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  border-radius: 7px;
+  color: var(--accent);
+  font-size: 30px;
+  flex-shrink: 0;
+}
+.research-shortcut .shortcut-icon {
+  color: var(--cyan);
+  background: var(--soft-cyan);
+  border-color: var(--line-strong);
+}
+.next-step h3 {
+  font-size: 25px;
+  line-height: 1.2;
+}
+.next-step p {
+  margin-block: 15px 23px;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 390px;
+}
+.next-step .button {
+  font-size: 12px;
+  min-height: 44px;
+}
+.playground-invite {
+  padding-block: 0 35px;
+}
+.playground-invite-inner {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 28px 32px;
+}
+.invite-symbol {
+  color: var(--accent);
+  font-size: 52px;
+  line-height: 1;
+}
+.playground-invite h2 {
+  font-size: 26px;
+}
+.playground-invite p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+.playground-invite .button {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.simple-contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding-block: 35px 65px;
+}
+.simple-contact h2 {
+  font-size: 29px;
+}
+.simple-contact p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.simple-contact .button {
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.page-intro {
+  padding-top: 32px;
+  padding-bottom: 30px;
+}
+.page-intro h1 {
+  font-size: clamp(40px, 4.8vw, 65px);
+  margin-top: 30px;
+}
+.page-intro > p {
+  font-size: 17px;
+  margin-top: 18px;
+}
+.page-intro .text-link {
+  margin-top: 22px;
+  color: var(--accent);
+}
+.playground-page .playground {
+  border-bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.playground-page .playground .section-heading {
+  display: block;
+}
+.playground-page .playground .section-heading h2 {
+  font-size: 31px;
+}
+.playground-page .playground .section-heading > p {
+  max-width: none;
+  font-size: 14px;
+  margin-top: 13px;
+}
+.playground-page .playground .section-heading .eyebrow {
+  display: none;
+}
+.playground-page .lab {
+  margin-top: 23px;
+}
+.playground-page .lab-indicator,
+.playground-page .lab-kicker,
+.playground-page .lab-bottom > span:last-child {
+  display: none;
+}
+.playground-page .lab-tabs {
+  width: 100%;
+  justify-content: space-around;
+  gap: 16px;
+}
+.playground-page .lab-tabs button {
+  font-size: 14px;
+  min-height: 59px;
+}
+.playground-page .lab-tabs button span {
+  display: none;
+}
+.playground-page .lab-copy > p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.playground-page .lab-copy h3 {
+  margin-top: 0;
+  font-size: 31px;
+}
+.playground-page .lab-copy .text-link {
+  font-size: 13px;
+}
+.playground-page .lab-copy .button {
+  font-size: 13px;
+}
+.playground-page .lab-control label {
+  font-size: 12px;
+}
+.playground-page .experiment-status {
+  font: 12px/1.6 var(--font-body);
+}
+.playground-page .simulation-label {
+  font: 10px/1.5 var(--font-body);
+  letter-spacing: 0;
+}
+.playground-page .visual-explanation {
+  font: 11px/1.5 var(--font-body);
+}
+.playground-page .flow-node > span {
+  font-size: 10px;
+}
+.playground-page .flow-node small {
+  font-size: 10px;
+  white-space: normal;
+}
+.playground-page .chart-heading,
+.playground-page .chart-footer {
+  font-size: 8px;
+}
+.playground-page .skill-select button {
+  font-size: 12px;
+}
+.playground-page .milestone strong {
+  font-size: 11px;
+  white-space: normal;
+}
+.playground-page .milestone-detail > span:first-child {
+  font-size: 10px;
+}
+.playground-page .milestone-detail h4 {
+  font-size: 23px;
+}
+.playground-page .milestone-detail p {
+  font-size: 13px;
+}
+.playground-page .milestone-detail .tag {
+  font-size: 9px;
+}
+.playground-page .lab-bottom {
+  font: 11px/1.5 var(--font-body);
+  letter-spacing: 0;
+}
+@media (max-width: 1100px) {
+  .clarity-home .hero-actions {
+    flex-direction: column;
+    align-items: start;
+  }
+  .next-step {
+    padding: 25px;
+    gap: 18px;
+  }
+  .next-step h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 800px) {
+  .clarity-home .hero-description {
+    font-size: 15px;
+  }
+  .clarity-home .hero-copy .eyebrow {
+    font-size: 9px;
+  }
+  .clarity-home .hero h1 {
+    font-size: 65px;
+  }
+  .next-step-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .playground-invite-inner {
+    gap: 19px;
+    padding: 25px;
+    flex-wrap: wrap;
+  }
+  .playground-invite-inner > div {
+    flex: 1;
+    min-width: 240px;
+  }
+  .playground-invite .button {
+    margin-left: 66px;
+  }
+  .simple-contact {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .clarity-home .hero {
+    min-height: 0;
+    padding-block: 30px 32px;
+  }
+  .clarity-home .hero h1 {
+    font-size: clamp(54px, 10.5vw, 72px);
+    margin-top: 17px;
+  }
+  .clarity-home .hero-description {
+    max-width: 480px;
+    font-size: 15px;
+    margin-top: 25px;
+  }
+  .clarity-home .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .clarity-home .hero-actions .button {
+    padding-inline: 14px;
+    font-size: 12px;
+    gap: 10px;
+  }
+  .clarity-home .hero-visual {
+    margin-top: 28px;
+  }
+  .clarity-home .assembly-view {
+    aspect-ratio: 1.45;
+  }
+  .clarity-home .visual-topline {
+    font-size: 11px;
+  }
+  .clarity-home .visual-topline > span:last-child {
+    font-size: 10px;
+  }
+  .clarity-home .assembly-controls {
+    gap: 8px;
+  }
+  .clarity-home .assembly-controls label {
+    font-size: 10px;
+  }
+  .clarity-home .assembly-controls output {
+    min-width: 29px;
+    font-size: 10px;
+  }
+  .clarity-home .assembly-caption {
+    font-size: 11px;
+  }
+  .clarity-home .section-space {
+    padding-block: 45px;
+  }
+  .clarity-home .capability-card h3 {
+    min-height: 0;
+    font-size: 27px;
+  }
+  .clarity-home .capability-card > p {
+    min-height: 0;
+    margin-top: 11px;
+  }
+  .clarity-home .capability-art {
+    height: 180px;
+  }
+  .clarity-home .section-heading > p {
+    max-width: none;
+    margin-top: 16px;
+  }
+  .next-steps {
+    padding-block: 0 40px;
+  }
+  .next-step-grid {
+    margin-top: 23px;
+  }
+  .next-step {
+    padding: 24px 20px;
+    gap: 17px;
+  }
+  .shortcut-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+  }
+  .next-step h3 {
+    font-size: 24px;
+  }
+  .next-step p {
+    font-size: 13px;
+  }
+  .next-step .button {
+    padding-inline: 13px;
+    font-size: 11px;
+  }
+  .invite-symbol {
+    font-size: 37px;
+  }
+  .playground-invite-inner {
+    padding: 24px 20px;
+  }
+  .playground-invite-inner > div {
+    min-width: 190px;
+  }
+  .playground-invite h2 {
+    font-size: 25px;
+  }
+  .playground-invite .button {
+    margin-left: 0;
+  }
+  .simple-contact {
+    padding-block: 15px 45px;
+  }
+  .simple-contact h2 {
+    font-size: 28px;
+  }
+  .page-intro h1 {
+    font-size: 43px;
+  }
+  .page-intro > p {
+    font-size: 15px;
+  }
+  .playground-page .lab-tabs {
+    gap: 7px;
+  }
+  .playground-page .lab-tabs button {
+    font-size: 12px;
+  }
+  .playground-page .simulation-label {
+    font-size: 9px;
+  }
+  .playground-page .lab-copy h3 {
+    font-size: 29px;
+  }
+  .playground-page .lab-copy > p {
+    font-size: 13px;
+  }
+  .playground-page .flow-node small {
+    font-size: 8px;
+  }
+  .playground-page .flow-node > span {
+    font-size: 9px;
+  }
+  .playground-page .milestone strong {
+    font-size: 10px;
+  }
+  .playground-page .milestone-detail p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .clarity-home .hero-copy .eyebrow {
+    font-size: 8px;
+  }
+  .clarity-home .hero-actions .button {
+    font-size: 11px;
+    padding-inline: 10px;
+  }
+  .clarity-home .assembly-controls label {
+    font-size: 9px;
+  }
+  .clarity-home .assembly-controls {
+    gap: 6px;
+    padding-inline: 5px;
+  }
+  .clarity-home .visual-topline {
+    font-size: 10px;
+  }
+  .next-step {
+    display: block;
+  }
+  .next-step .shortcut-icon {
+    margin-bottom: 17px;
+  }
+}

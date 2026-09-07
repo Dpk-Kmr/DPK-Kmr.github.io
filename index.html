@@ -1,319 +1,392 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Atriksha builds precision mechanical systems, AI-integrated engineering workflows, and advanced workforce skill programs.">
-    <title>Atriksha</title>
-    <link rel="icon" href="./src/assets/atriksha-mark.svg" type="image/svg+xml">
-    <script src="./src/scripts/theme.js"></script>
-    <link rel="stylesheet" href="./src/styles/main.css">
-    <link rel="stylesheet" href="./src/styles/theme.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="./src/scripts/homeExperience.js"></script>
-</head>
-<body>
-    <header class="site-header" aria-label="Primary navigation">
-        <nav class="site-nav">
-            <div class="nav-cluster nav-left">
-                <a href="./pages/services.html#manufacturing">Precision Manufacturing</a>
-                <a href="./pages/services.html#deep-tech">AI Integration</a>
-                <a href="./pages/services.html#training">Skill Development</a>
+  <head>
+    <script src="./src/scripts/appearance.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Atriksha connects precision engineering, embedded intelligence, and practical skill development. Explore the systems, experiment in our interactive lab, and build what comes next."
+    />
+    <meta name="theme-color" content="#101210" />
+    <title>Atriksha — Engineering what’s next.</title>
+    <link
+      rel="icon"
+      href="./src/assets/atriksha-mark.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="./src/styles/design-system.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/clarity.css" />
+    <script defer src="./src/scripts/site.js"></script>
+    <script defer src="./src/scripts/assembly.js"></script>
+    <link rel="stylesheet" href="./src/styles/themes.css" />
+  </head>
+  <body class="clarity-home">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><nav class="nav-shell container" aria-label="Main navigation"><a class="brand" href="./index.html" aria-label="Atriksha home"><img class="brand-icon" src="./src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><div class="nav-links" id="main-navigation"><a class="nav-link" href="./pages/services.html">Services</a><a class="nav-link" href="./pages/products.html">Products</a><a class="nav-link" href="./pages/research.html">Research</a><a class="nav-link" href="./pages/learn.html">Learn & play</a><a class="nav-link" href="./pages/company.html">About</a><a class="nav-link" href="./pages/contact.html">Contact</a></div><div class="header-actions"><div class="theme-picker"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Background theme: Midnight" aria-expanded="false" aria-controls="color-theme-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg><span class="theme-toggle-label">Theme</span></button><div class="theme-panel" id="color-theme-panel" data-theme-panel role="group" aria-label="Background theme" hidden></div></div><a class="button button-small button-primary nav-quotation" href="./pages/quotation.html"><span class="quote-label-full">Get quotation</span><span class="quote-label-short">Quote</span> <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button></div></nav></header>
+    <main id="main">
+      <section id="home" class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            CAD DESIGN · MANUFACTURING · AUTOMATION · TRAINING
+          </p>
+          <h1 id="hero-title">
+            Engineering<br />what’s
+            <span class="next-word"
+              >next<svg viewBox="0 0 250 16" aria-hidden="true">
+                <path d="M3 12Q115 0 245 6" /></svg></span
+            ><span class="hero-period">.</span>
+          </h1>
+          <p class="hero-description">
+            We design parts, build working products, automate machines, and
+            train technical teams. From an initial idea to a working solution.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./pages/quotation.html"
+              >Get a CAD quotation <span aria-hidden="true">↗</span></a
+            ><a class="button button-secondary" href="#capabilities"
+              >Find a service <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-topline">
+            <span>Explore a mechanical assembly</span
+            ><span>Drag to rotate</span>
+          </div>
+          <div class="assembly-view">
+            <div class="assembly-orbit orbit-one" aria-hidden="true"></div>
+            <div class="assembly-orbit orbit-two" aria-hidden="true"></div>
+            <canvas
+              id="assembly-canvas"
+              tabindex="0"
+              role="img"
+              aria-label="Interactive 3D turbine assembly. Drag or use arrow keys to rotate. Use the controls below to separate its components or switch to wireframe."
+            ></canvas>
+
+            <div class="view-modes" aria-label="Assembly display mode">
+              <button
+                type="button"
+                data-assembly-mode="solid"
+                aria-pressed="true"
+              >
+                Solid</button
+              ><button
+                type="button"
+                data-assembly-mode="wireframe"
+                aria-pressed="false"
+              >
+                Wireframe
+              </button>
             </div>
+          </div>
+          <div class="assembly-controls">
+            <button
+              type="button"
+              id="assembly-rotate"
+              class="icon-button"
+              aria-label="Pause rotation"
+              aria-pressed="true"
+            >
+              <span aria-hidden="true">Ⅱ</span></button
+            ><label for="assembly-explode">Separate parts</label
+            ><input
+              type="range"
+              id="assembly-explode"
+              min="0"
+              max="100"
+              value="35"
+              aria-label="Assembly separation"
+            /><output for="assembly-explode" data-assembly-value>35%</output
+            ><button
+              type="button"
+              id="assembly-reset"
+              class="icon-button"
+              aria-label="Reset assembly"
+              title="Reset assembly"
+            >
+              ↺
+            </button>
+          </div>
+        </div>
+      </section>
 
-            <a class="brand-lockup" href="#home" aria-label="Atriksha home">
-                <span class="brand-primary"><img class="brand-mark" src="./src/assets/atriksha-mark.svg" alt="" aria-hidden="true"><span class="brand-name">ATRIKSHA</span></span>
-                <span class="brand-subtitle" data-header-tagline aria-hidden="true"><span data-tagline-target="tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</span></span>
-            </a>
-
-            <div class="nav-cluster nav-right">
-                <a href="./pages/career.html">Careers</a>
-                <a href="./pages/products.html">Products</a>
-                <a href="./pages/contact.html">Contact</a>
+      <section
+        class="capabilities section-space container"
+        id="capabilities"
+        aria-labelledby="capabilities-title"
+      >
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2 id="capabilities-title">What do you need help with?</h2>
+          </div>
+        </div>
+        <div class="capability-grid">
+          <article
+            id="precision"
+            class="capability-card precision-card"
+            data-reveal
+          >
+            <div class="card-top">
+              <span class="card-number">01 / DESIGN & BUILD</span
+              ><span class="card-glyph" aria-hidden="true">⌘</span>
             </div>
-        </nav>
-    </header>
-
-    <main id="home" class="site-main">
-        <section class="hero-section" aria-label="Atriksha deep technology core">
-            <div class="hero-copy reveal">
-                <!-- <p class="section-kicker">Mechanical Engineering / Artificial Intelligence / Workforce Systems</p> -->
-                <h1 data-hero-tagline><span data-tagline-source="tagline">Quality Built &bull; Intelligence Delivered</span></h1>
-                <p class="hero-subtext">Atriksha designs validated mechanical hardware, inserts adaptive intelligence into sensor-rich systems, and prepares engineering teams to operate the next generation of industrial technology.</p>
+            <div class="capability-art gear-art" aria-hidden="true">
+              <svg viewBox="0 0 360 220">
+                <defs>
+                  <linearGradient id="gear-face" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#84936a" />
+                    <stop offset=".45" stop-color="#303c23" />
+                    <stop offset="1" stop-color="#d5f56b" stop-opacity=".5" />
+                  </linearGradient>
+                </defs>
+                <g class="art-grid">
+                  <path
+                    d="M15 170 180 85 345 170M15 125 180 40 345 125M75 200 75 80M180 210V25M285 200V80"
+                  />
+                </g>
+                <ellipse
+                  cx="180"
+                  cy="173"
+                  rx="113"
+                  ry="27"
+                  fill="#000"
+                  opacity=".3"
+                />
+                <g transform="translate(180 112) scale(1 .61)">
+                  <g class="gear-spin">
+                    <path
+                      d="M-22-99H22L28-81 44-74 63-81 88-55 81-38 88-22 107-15V20L87 27 80 43 87 61 63 85 43 78 28 85 22 105H-14L-21 84-41 78-60 85-86 59-79 42-86 22-104 15V-20L-85-27-78-46-86-64-60-89-42-80-25-87Z"
+                      fill="url(#gear-face)"
+                      stroke="#d5f56b"
+                      stroke-opacity=".6"
+                      stroke-width="1.5"
+                    />
+                    <circle r="64" fill="#1b2516" stroke="#879f5b" />
+                    <circle
+                      r="51"
+                      fill="none"
+                      stroke="#b9d485"
+                      stroke-dasharray="2 10"
+                      stroke-width="5"
+                    />
+                    <circle
+                      r="30"
+                      fill="#11170e"
+                      stroke="#bdd77a"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M-55-63-46-52M55-63 46-52M68 51 56 41M-68 51-56 41"
+                      stroke="#d5f56b"
+                      stroke-width="8"
+                    />
+                  </g>
+                </g>
+                <path
+                  d="M54 54H109M82 47V62M258 155H305M281 148V162"
+                  stroke="#87a756"
+                  stroke-width="1"
+                />
+                <text x="28" y="39">IDEA → FORM → FUNCTION</text>
+              </svg>
             </div>
+            <h3>Design &amp; manufacturing</h3>
+            <p>
+              CAD design, simulation, prototyping, and manufacturing. Turn your
+              idea into a part that works.
+            </p>
 
-            <div class="hero-core reveal" aria-label="Interactive engineering gear core">
-                <canvas id="heroPhysicsCanvas" class="hero-canvas" width="1120" height="760"></canvas>
-                <div class="core-hud" aria-live="polite">
-                    <span>PRECISION DRIVE</span>
-                    <strong data-speed-readout>speed 24 RPM</strong>
-                    <small data-direction-readout>direction CW</small>
-                </div>
-
-                <div class="orbit-nav" data-orbit-nav aria-label="Primary capability anchors">
-                    <a class="action-button orbit-button action-blue" data-orbit-button href="./pages/services.html#manufacturing">Precision Engineering</a>
-                    <a class="action-button orbit-button action-cyan" data-orbit-button href="./pages/services.html#deep-tech">Embedded Intelligence</a>
-                    <a class="action-button orbit-button action-amber" data-orbit-button href="./pages/services.html#training">Workforce Empowerment</a>
-                </div>
+            <a href="./pages/services.html#manufacturing" class="card-link"
+              >View design &amp; manufacturing
+              <span aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article
+            id="intelligence"
+            class="capability-card intelligence-card"
+            data-reveal
+          >
+            <div class="card-top">
+              <span class="card-number">02 / CONNECT & AUTOMATE</span
+              ><span class="card-glyph" aria-hidden="true">⌁</span>
             </div>
-
-        </section>
-
-        <section class="guide-section company-snapshot reveal" aria-labelledby="company-snapshot-title">
-            <div class="guide-heading">
-                <p class="section-kicker">Company / Engineering Execution / Intelligence Delivery</p>
-                <h2 id="company-snapshot-title">Atriksha connects physical engineering, AI systems, and workforce capability.</h2>
-                <p>We work where mechanical systems, sensor intelligence, and practical skill development meet: designing real hardware, modernizing industrial workflows, and preparing teams to operate them with confidence.</p>
+            <div class="capability-art neural-art" aria-hidden="true">
+              <svg viewBox="0 0 360 220">
+                <defs>
+                  <radialGradient id="neural-glow">
+                    <stop stop-color="#8ddae4" stop-opacity=".25" />
+                    <stop offset="1" stop-color="#8ddae4" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <circle cx="180" cy="108" r="99" fill="url(#neural-glow)" />
+                <g class="neural-lines">
+                  <path
+                    d="M53 56 129 91 53 154M53 105 129 91 180 49 230 91 307 56M53 105 129 135 180 177 230 135 307 154M53 154 129 135 180 108 230 91 307 105M53 56 129 135M129 91 180 108 230 135 307 56M180 49V177M230 91 307 154M129 135 180 49M129 91 180 177M230 135 307 105"
+                  />
+                </g>
+                <g class="neural-nodes">
+                  <circle cx="53" cy="56" r="5" />
+                  <circle cx="53" cy="105" r="5" />
+                  <circle cx="53" cy="154" r="5" />
+                  <circle cx="129" cy="91" r="7" />
+                  <circle cx="129" cy="135" r="7" />
+                  <circle cx="180" cy="49" r="7" />
+                  <circle cx="180" cy="108" r="15" class="core-node" />
+                  <circle cx="180" cy="177" r="7" />
+                  <circle cx="230" cy="91" r="7" />
+                  <circle cx="230" cy="135" r="7" />
+                  <circle cx="307" cy="56" r="5" />
+                  <circle cx="307" cy="105" r="5" />
+                  <circle cx="307" cy="154" r="5" />
+                </g>
+                <text x="28" y="25">SENSE → UNDERSTAND → ACT</text>
+                <circle
+                  class="neural-pulse"
+                  cx="180"
+                  cy="108"
+                  r="24"
+                  fill="none"
+                  stroke="#8ddae4"
+                  stroke-opacity=".5"
+                />
+              </svg>
             </div>
+            <h3>AI &amp; automation</h3>
+            <p>
+              Connect sensors, monitor equipment, and automate processes with AI
+              and industrial IoT.
+            </p>
 
-            <div class="guide-grid" aria-label="Atriksha company focus areas">
-                <a class="guide-card guide-blue" href="./pages/services.html#manufacturing">
-                    <span>What we build</span>
-                    <strong>Precision prototypes, tooling, fixtures, mechanisms, and manufacturing-ready parts.</strong>
-                    <small>Use this path for CAD, CAE, tolerance planning, validation, rapid prototyping, and precision manufacturing support.</small>
-                </a>
-
-                <a class="guide-card guide-cyan" href="./pages/services.html#deep-tech">
-                    <span>How we modernize</span>
-                    <strong>Industry 4.0 transformation, IoT visibility, AI automation, and digital twins.</strong>
-                    <small>Use this path when machines, processes, or operations need measurable intelligence and connected decision loops.</small>
-                </a>
-
-                <a class="guide-card guide-amber" href="./pages/services.html#training">
-                    <span>Who we enable</span>
-                    <strong>Industrial teams, academic institutions, students, and R&amp;D groups.</strong>
-                    <small>Use this path for practical training, lab enablement, applied projects, and organization-wide upskilling.</small>
-                </a>
+            <a href="./pages/services.html#deep-tech" class="card-link"
+              >View AI &amp; automation <span aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article
+            id="academy"
+            class="capability-card academy-card"
+            data-reveal
+          >
+            <div class="card-top">
+              <span class="card-number">03 / LEARN & APPLY</span
+              ><span class="card-glyph" aria-hidden="true">✧</span>
             </div>
-        </section>
-
-        <section class="gateway-section gateway-precision reveal" id="precision" aria-labelledby="precision-title">
-            <div class="gateway-grid">
-                <div class="gateway-copy">
-                    <p class="section-kicker">Precision Engineering Gateway</p>
-                    <h2 id="precision-title">Precision Hardware &amp; Custom Design</h2>
-                    <p>Rapid prototyping, mechanical CAD/CAE, tolerance planning, fixture design, and validation discipline for teams that need physical systems to perform with measurable confidence.</p>
-                </div>
-
-                <div class="visual-window visual-blue interactive-visual" aria-label="Interactive mechanical linkage visualization">
-                    <div class="visual-hud">
-                        <span>LINKAGE SOLVER</span>
-                        <strong data-mech-angle>&theta; = 45.2&deg;</strong>
-                        <small data-mech-reach>reach 0.72 m</small>
-                    </div>
-                    <svg class="engineering-visual" data-precision-visual viewBox="0 0 720 430" role="img" aria-label="Interactive two-link mechanism">
-                        <g class="blueprint-grid" aria-hidden="true">
-                            <path d="M60 70 H660 M60 130 H660 M60 190 H660 M60 250 H660 M60 310 H660 M60 370 H660"></path>
-                            <path d="M90 48 V390 M180 48 V390 M270 48 V390 M360 48 V390 M450 48 V390 M540 48 V390 M630 48 V390"></path>
-                        </g>
-                        <path class="datum" d="M92 330 H642"></path>
-                        <circle class="origin-arc-guide" cx="150" cy="330" r="58"></circle>
-                        <path class="dimension-arc" data-dimension-arc d="M208 330 L206.8 318.4 L203.2 307.2 L197.3 296.9 L189.4 288.1"></path>
-                        <g class="mechanism-layer">
-                            <path class="reach-ring" d="M150 330 m-255 0 a255 255 0 1 0 510 0 a255 255 0 1 0 -510 0"></path>
-                            <path class="ghost-arm" data-ghost-arm d="M150 330 L308 238 L500 235"></path>
-                            <path class="primary-arm" data-arm-one d="M150 330 L308 238"></path>
-                            <path class="secondary-arm" data-arm-two d="M308 238 L500 235"></path>
-                            <circle class="joint joint-base" cx="150" cy="330" r="16"></circle>
-                            <circle class="joint" data-joint-one cx="308" cy="238" r="11"></circle>
-                            <circle class="joint" data-joint-two cx="500" cy="235" r="11"></circle>
-                            <circle class="tool-node" data-tool-node cx="500" cy="235" r="12"></circle>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="gateway-action">
-                    <a class="action-button action-blue" href="./pages/services.html#manufacturing">View Precision Services</a>
-                </div>
+            <div class="capability-art skills-art" aria-hidden="true">
+              <svg viewBox="0 0 360 220">
+                <g class="skill-art-grid">
+                  <path
+                    d="m44 166 136 39 136-77M44 135 136 40 136-78M82 70v105M146 48v142M211 48v142M278 79v96"
+                  />
+                </g>
+                <g class="skill-step step-one">
+                  <path d="m68 133 42-23 42 23-42 23Z" fill="#b8a3db" />
+                  <path d="m68 133 42 23v30l-42-23Z" fill="#544369" />
+                  <path d="m110 156 42-23v30l-42 23Z" fill="#7d629e" />
+                </g>
+                <g class="skill-step step-two">
+                  <path d="m138 103 42-23 42 23-42 23Z" fill="#cebbec" />
+                  <path d="m138 103 42 23v42l-42-23Z" fill="#594771" />
+                  <path d="m180 126 42-23v42l-42 23Z" fill="#8c6cab" />
+                </g>
+                <g class="skill-step step-three">
+                  <path d="m208 67 42-23 42 23-42 23Z" fill="#e0cff7" />
+                  <path d="m208 67 42 23v59l-42-23Z" fill="#65507f" />
+                  <path d="m250 90 42-23v59l-42 23Z" fill="#9e7fbd" />
+                  <path
+                    d="m239 65 9 5 15-15"
+                    fill="none"
+                    stroke="#55416d"
+                    stroke-width="3"
+                  />
+                </g>
+                <path
+                  d="M88 100 248 22m-19-1 19 1-8 17"
+                  stroke="#cab3ee"
+                  fill="none"
+                  stroke-dasharray="3 5"
+                />
+                <text x="28" y="25">LEARN → EXPERIMENT → CREATE</text>
+              </svg>
             </div>
-        </section>
+            <h3>Technical training</h3>
+            <p>
+              Practical courses, workshops, and lab projects for students,
+              researchers, and engineering teams.
+            </p>
 
-        <section class="gateway-section gateway-intelligence reveal" id="intelligence" aria-labelledby="intelligence-title">
-            <div class="gateway-grid">
-                <div class="gateway-copy">
-                    <p class="section-kicker">Embedded Intelligence Gateway</p>
-                    <h2 id="intelligence-title">AI-Integrated Systems</h2>
-                    <p>Physics-informed machine learning, sensor loop synchronization, predictive digital twins, and embedded decision systems that keep mechanical assets measurable, adaptive, and reliable.</p>
-                </div>
+            <a href="./pages/services.html#training" class="card-link"
+              >View training programs <span aria-hidden="true">↗</span></a
+            >
+          </article>
+        </div>
+      </section>
 
-                <div class="visual-window visual-cyan interactive-visual" aria-label="Interactive AI adaptive control simulation">
-                    <div class="visual-hud">
-                        <span>ADAPTIVE CONTROL</span>
-                        <strong data-ai-primary>mode Sense</strong>
-                        <small data-ai-secondary>confidence 92%</small>
-                    </div>
-                    <svg class="engineering-visual ai-control-visual" data-ai-visual viewBox="0 0 720 430" role="img" aria-label="Interactive AI adaptive control loop">
-                        <defs>
-                            <linearGradient id="aiSignalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.95"></stop>
-                                <stop offset="54%" stop-color="#3b82f6" stop-opacity="0.86"></stop>
-                                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.78"></stop>
-                            </linearGradient>
-                            <radialGradient id="aiCoreGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.28"></stop>
-                                <stop offset="68%" stop-color="#3b82f6" stop-opacity="0.07"></stop>
-                                <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
-                            </radialGradient>
-                        </defs>
-                        <g class="blueprint-grid" aria-hidden="true">
-                            <path d="M60 70 H660 M60 130 H660 M60 190 H660 M60 250 H660 M60 310 H660 M60 370 H660"></path>
-                            <path d="M90 48 V390 M180 48 V390 M270 48 V390 M360 48 V390 M450 48 V390 M540 48 V390 M630 48 V390"></path>
-                        </g>
-                        <path class="ai-loop-track" d="M185 215 H535"></path>
-                        <circle class="ai-signal-pulse" data-ai-pulse cx="185" cy="215" r="9"></circle>
-                        <g class="ai-stage" data-ai-stage="Sense" data-x="185" data-y="215" tabindex="0" role="button" transform="translate(185 215)">
-                            <rect x="-62" y="-44" width="124" height="88" rx="8"></rect>
-                            <circle r="13"></circle>
-                            <text y="-17">SENSE</text>
-                            <text class="ai-stage-subtext" y="23">sensor data</text>
-                        </g>
-                        <g class="ai-stage ai-stage-core" data-ai-stage="AI Core" data-x="360" data-y="215" tabindex="0" role="button" transform="translate(360 215)">
-                            <rect class="ai-core-glow" x="-78" y="-64" width="156" height="128" rx="8"></rect>
-                            <rect x="-60" y="-46" width="120" height="92" rx="8"></rect>
-                            <g class="ai-rotor" data-ai-rotor>
-                                <circle r="26"></circle>
-                                <path d="M0 -26 V-11 M0 11 V26 M-26 0 H-11 M11 0 H26"></path>
-                            </g>
-                            <text y="-65">AI CORE</text>
-                        </g>
-                        <g class="ai-stage" data-ai-stage="Act" data-x="535" data-y="215" tabindex="0" role="button" transform="translate(535 215)">
-                            <rect x="-62" y="-44" width="124" height="88" rx="8"></rect>
-                            <circle r="13"></circle>
-                            <text y="-17">ACT</text>
-                            <text class="ai-stage-subtext" y="23">control output</text>
-                        </g>
-                        <g class="ai-output-gauge">
-                            <rect class="ai-gauge-track" x="240" y="330" width="240" height="12" rx="6"></rect>
-                            <rect class="ai-gauge-fill" data-ai-gauge x="240" y="330" width="142" height="12" rx="6"></rect>
-                        </g>
-                        <g class="ai-control-vector" data-ai-control transform="translate(360 215)">
-                            <circle class="ai-control-field" r="34"></circle>
-                            <circle class="ai-control-dot" r="9"></circle>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="gateway-action">
-                    <a class="action-button action-cyan" href="./pages/services.html#deep-tech">Explore AI Applications</a>
-                </div>
+      <section class="next-steps container" aria-labelledby="next-steps-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Quick links</p>
+            <h2 id="next-steps-title">Your next step, made simple.</h2>
+          </div>
+        </div>
+        <div class="next-step-grid">
+          <article class="next-step quote-shortcut">
+            <span class="shortcut-icon" aria-hidden="true">₹</span>
+            <div>
+              <h3>Get a CAD quotation</h3>
+              <p>
+                Get separate estimates for CAD design or part manufacturing,
+                with a clear cost breakdown in Indian rupees.
+              </p>
+              <a class="button button-primary" href="./pages/quotation.html"
+                >Calculate an estimate <span aria-hidden="true">↗</span></a
+              >
             </div>
-        </section>
-
-        <section class="gateway-section gateway-academy reveal" id="academy" aria-labelledby="academy-title">
-            <div class="gateway-grid">
-                <div class="gateway-copy">
-                    <p class="section-kicker">Workforce Empowerment Gateway</p>
-                    <h2 id="academy-title">Advanced Skill Academy</h2>
-                    <p>Workforce transformation paths, practical Industry 4.0 courses, AI-assisted engineering practice, and organizational upskilling designed for teams moving from tools to capability.</p>
-                </div>
-
-                <div class="visual-window visual-amber interactive-visual" aria-label="Interactive skill trajectory">
-                    <div class="visual-hud">
-                        <span>SKILL LAB</span>
-                        <strong data-skill-readout>CAD track</strong>
-                        <small data-skill-level>practice 74%</small>
-                    </div>
-                    <svg class="engineering-visual" data-skill-visual viewBox="0 0 720 430" role="img" aria-label="Interactive skill lab with CAD Python IoT and AI tracks">
-                        <g class="blueprint-grid" aria-hidden="true">
-                            <path d="M60 70 H660 M60 130 H660 M60 190 H660 M60 250 H660 M60 310 H660 M60 370 H660"></path>
-                            <path d="M90 48 V390 M180 48 V390 M270 48 V390 M360 48 V390 M450 48 V390 M540 48 V390 M630 48 V390"></path>
-                        </g>
-                        <g class="skill-link-layer">
-                            <line data-skill-link x1="360" y1="215" x2="198" y2="136"></line>
-                            <line data-skill-link x1="360" y1="215" x2="522" y2="136"></line>
-                            <line data-skill-link x1="360" y1="215" x2="198" y2="294"></line>
-                            <line data-skill-link x1="360" y1="215" x2="522" y2="294"></line>
-                        </g>
-                        <g class="skill-meter" transform="translate(360 215)">
-                            <circle class="skill-meter-base" r="72"></circle>
-                            <circle class="skill-meter-fill" data-skill-meter r="72" pathLength="100"></circle>
-                            <text data-skill-score y="7">74%</text>
-                        </g>
-                        <g class="skill-tile" data-skill-tile="CAD" data-level="74" data-x="198" data-y="136" tabindex="0" role="button" transform="translate(198 136)">
-                            <rect x="-64" y="-34" width="128" height="68" rx="8"></rect>
-                            <text y="-5">[CAD]</text>
-                            <text class="skill-subtext" y="17">design</text>
-                        </g>
-                        <g class="skill-tile" data-skill-tile="Python" data-level="81" data-x="522" data-y="136" tabindex="0" role="button" transform="translate(522 136)">
-                            <rect x="-64" y="-34" width="128" height="68" rx="8"></rect>
-                            <text y="-5">[Python]</text>
-                            <text class="skill-subtext" y="17">automation</text>
-                        </g>
-                        <g class="skill-tile" data-skill-tile="IoT" data-level="68" data-x="198" data-y="294" tabindex="0" role="button" transform="translate(198 294)">
-                            <rect x="-64" y="-34" width="128" height="68" rx="8"></rect>
-                            <text y="-5">[IoT]</text>
-                            <text class="skill-subtext" y="17">sensing</text>
-                        </g>
-                        <g class="skill-tile" data-skill-tile="AI" data-level="88" data-x="522" data-y="294" tabindex="0" role="button" transform="translate(522 294)">
-                            <rect x="-64" y="-34" width="128" height="68" rx="8"></rect>
-                            <text y="-5">[AI]</text>
-                            <text class="skill-subtext" y="17">models</text>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="gateway-action">
-                    <a class="action-button action-amber" href="./pages/services.html#training">Upskill Your Team</a>
-                </div>
+          </article>
+          <article class="next-step research-shortcut">
+            <span class="shortcut-icon" aria-hidden="true">⌁</span>
+            <div>
+              <h3>Explore our research</h3>
+              <p>
+                Published work, visual research stories, and individual
+                mentoring to build research skills and strengthen your CV.
+              </p>
+              <a class="button button-secondary" href="./pages/research.html"
+                >Read the research <span aria-hidden="true">↗</span></a
+              >
             </div>
-        </section>
-
-        <section class="guide-section reveal" id="contact" aria-labelledby="guide-title">
-            <div class="guide-heading">
-                <!-- <p class="section-kicker">Start Here / Requirement Routing / Contact Desk</p> -->
-                <h2 id="guide-title">Find the right Atriksha path.</h2>
-                <p>A quick guide for founders, engineering leaders, plant teams, and workforce planners to reach the right capability without guessing.</p>
-            </div>
-
-            <div class="guide-grid" aria-label="Website section guide">
-                <a class="guide-card guide-blue" href="./pages/services.html#manufacturing">
-                    <span>For product and hardware teams</span>
-                    <strong>Need a physical system designed, prototyped, simulated, or validated?</strong>
-                    <small>Follow Precision Engineering for CAD/CAE, fixtures, custom mechanisms, tolerance planning, and product validation.</small>
-                </a>
-
-                <a class="guide-card guide-cyan" href="./pages/services.html#deep-tech">
-                    <span>For AI, IoT, and operations teams</span>
-                    <strong>Need intelligence inside machines, sensors, or engineering workflows?</strong>
-                    <small>Follow AI Systems for sensor loops, adaptive control, predictive models, embedded intelligence, and digital twins.</small>
-                </a>
-
-                <a class="guide-card guide-amber" href="./pages/services.html#training">
-                    <span>For HR, L&amp;D, and plant leaders</span>
-                    <strong>Need teams trained for Industry 4.0 execution?</strong>
-                    <small>Follow Academy for CAD, Python, IoT, AI-assisted engineering practice, and organization-wide upskilling.</small>
-                </a>
-            </div>
-
-            <div class="contact-grid" aria-label="Company contact details">
-                <div class="contact-identity">
-                    <!-- <p class="section-kicker">Registered Contact</p> -->
-                    <h3>Atriksha Engineering Solutions Pvt Ltd</h3>
-                    <address>
-                        28A/7, Jia Sarai<br>
-                        IIT Delhi Gate, Hauz Khas<br>
-                        New Delhi-110016, Delhi
-                    </address>
-                </div>
-
-                <div class="contact-actions">
-                    <a class="contact-link contact-phone" href="tel:+918770423437">
-                        <span>Call us</span>
-                        <strong>+91-8770423437</strong>
-                    </a>
-                    <a class="contact-link contact-mail" href="mailto:info@atriksha.com">
-                        <span>Mail</span>
-                        <strong>info@atriksha.com</strong>
-                    </a>
-                </div>
-            </div>
-        </section>
+          </article>
+        </div>
+      </section>
+      <section class="playground-invite container" id="playground">
+        <div class="playground-invite-inner">
+          <span class="invite-symbol" aria-hidden="true">✳</span>
+          <div>
+            <h2>Learn through games.</h2>
+            <p>
+              Ten live game worlds. Fifty missions. Race, swing, fly, build,
+              and survive—with science in every move.
+            </p>
+          </div>
+          <a class="button button-secondary" href="./pages/learn.html"
+            >Enter the arcade <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+      <section class="simple-contact container" id="contact">
+        <div>
+          <h2>Let’s build something.</h2>
+          <p>
+            Tell us what you want to make. We’ll help you find the right
+            service.
+          </p>
+        </div>
+        <a class="button button-primary" href="./pages/contact.html"
+          >Contact the team <span aria-hidden="true">↗</span></a
+        >
+      </section>
     </main>
-
-    <footer class="site-footer">
-        <p>&copy; 2026 Atriksha Engineering Solutions Pvt Ltd. All rights reserved.</p>
-        <strong class="footer-tagline">QUALITY BUILT &bull; INTELLIGENCE DELIVERED</strong>
-    </footer>
-</body>
+    <footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="./index.html" aria-label="Atriksha home"><img class="brand-icon" src="./src/assets/atriksha-mark.svg" alt=""><span class="brand-name">atriksha<span class="brand-dot">.</span></span></a><p>Engineering, made practical.<br>New Delhi, India.</p></div><nav class="footer-links" aria-label="Footer navigation"><div><span>GET STARTED</span><a href="./pages/services.html">Services</a><a href="./pages/quotation.html">Get a quotation</a><a href="./pages/contact.html">Contact us</a></div><div><span>EXPLORE</span><a href="./pages/research.html">Research</a><a href="./pages/products.html">Products</a><a href="./pages/learn.html">Learn through games</a><a href="./pages/playground.html">Interactive demos</a></div><div><span>ATRIKSHA</span><a href="./pages/company.html">About us</a><a href="./pages/career.html">Careers</a><a href="mailto:info@atriksha.com">info@atriksha.com ↗</a><a href="tel:+918770423437">+91 87704 23437</a></div></nav></div><div class="footer-bottom"><p>© <span data-year>2026</span> Atriksha Engineering Solutions Pvt Ltd.</p><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false" aria-label="Pause animations"><span class="motion-symbol" aria-hidden="true"></span><span data-motion-label>Pause motion</span></button></div></div></footer>
+  </body>
 </html>
