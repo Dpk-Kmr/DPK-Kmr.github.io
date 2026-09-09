@@ -10,7 +10,7 @@ From this directory:
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4173. There is no build step or runtime dependency. Scripts, fonts, and original vector illustrations are bundled locally. `CNAME` retains the existing GitHub Pages domain.
+Open http://127.0.0.1:4173. Serving the checked-in files needs no build step or application server. Scripts, fonts, and original vector illustrations are bundled locally. `CNAME` retains the existing GitHub Pages domain.
 
 ## Pages
 
@@ -18,7 +18,8 @@ Open http://127.0.0.1:4173. There is no build step or runtime dependency. Script
 - `pages/services.html`: four service categories, search, and expandable descriptions of all 35 capabilities, including research mentoring.
 - `pages/quotation.html`: separate estimates for CAD design services and manufacturing a part.
 - `pages/research.html`: seven verified publications, original concept illustrations, short stories, publication citations, and individual research support.
-- `pages/learn.html`: ten real-time game worlds, fifty missions, three difficulties, physics and evolving environments, live AI agents, saved scores, and combined filters.
+- `pages/learn.html`: the Little Sprout children's app plus ten real-time game worlds, fifty missions, three difficulties, physics and evolving environments, live AI agents, saved scores, and combined filters.
+- `little-sprout/`: the complete production web copy of Little Sprout, with 100 age-based activities, six cartoon teachers, and six spoken languages.
 - `pages/playground.html`: optional robotic-arm, AI fault-detection, and learning-path demos.
 - `pages/company.html`, `products.html`, `career.html`, and `contact.html`: about, product development, roles, and inquiries.
 - `pages/home.html`: legacy redirect to the homepage, preserving query strings and fragment links.
@@ -42,6 +43,32 @@ Both estimate modes support downloadable details and an email draft for team rev
 Publication content lives in `src/data/research.js`; illustration and story behavior live in `src/scripts/research.js`. To publish another study, follow the record structure and the verification guidance in [docs/research-sources.md](docs/research-sources.md).
 
 The collection is presented as a company research resource, without personal profile links. All authors and equal-contribution notes remain in collapsed publication citations. The site does not relabel collaborative publications as work performed exclusively at Atriksha. Each visual is an original concept illustration, not a reproduced journal figure or a simulated experimental result. Research mentoring supports individual research skills, portfolios, and CVs; contact links use `?interest=research`.
+
+## Little Sprout
+
+The Learn & play page includes a dedicated Little Sprout card and launch button for children aged 3 and up. The app is served at `/little-sprout/` on the same website. Its small navigation bar returns to Learn & play and links to public artwork, font, software, and voice credits. The existing engineering arcade remains available on the same Learn & play page.
+
+`little-sprout/` contains a production Expo SDK 57 web export, including all 5,224 music/effect/narration files and local fonts. The copy is about 68 MB; audio loads as needed after entering the app. The Learn & play card does not embed or preload the app. The 100 activities use 20 mechanics across five age bands, with teacher narration in English, Hindi, Arabic, Spanish, Mandarin Chinese, and Japanese. Preferences, favorites, and history stay in this browser under the app's separate storage key. Website play requires the site and requested assets to load; this web copy is not an offline PWA.
+
+The original Expo project remains at the sibling `../little-sprout/` directory. To update the website copy after changing that project, use Node 22.13+ and install the original app's dependencies with `npm ci`, then run from this website directory:
+
+```sh
+node scripts/sync-little-sprout.mjs
+```
+
+You can pass another source-project path as the first argument. The script builds in a temporary directory, configures Expo's `/little-sprout` asset base path there, verifies every audio hash and unchanged original source files, and replaces only the managed website copy. It copies public license notices and removes temporary build files. No source code, node_modules, Android/iOS binaries, signing files, or development maps are copied into the published app directory. `little-sprout/web-build.json` records the version and asset inventory. The source project is never moved or deleted.
+
+Keep the root **`.nojekyll`** file when syncing this repository: Expo emits an `_expo/` directory, and its files must be served by GitHub Pages. These settings follow [Expo's GitHub Pages guidance](https://docs.expo.dev/guides/publishing-websites/) and [GitHub's static-site instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). No change to the site's custom domain or hosting configuration is needed.
+
+To check the integration, start the static server above, then run:
+
+```sh
+SITE_TEST_URL=http://127.0.0.1:4173 node tests/little-sprout-browser.mjs
+cd ../little-sprout
+GAMEPLAY_URL=http://127.0.0.1:4173/little-sprout/ npm run test:gameplay
+```
+
+The integration test uses Playwright from the original app's installed dependencies. It checks navigation, mobile layouts, all four website themes, 100 catalogue entries, real playback in all six languages, local persistence, and missing/remote asset requests. The gameplay suite checks the static web copy's board types, scoring, retries, and completed history. Reports and screenshots are written to `../little-sprout/artifacts/website-sync/`, outside the published repository.
 
 ## Live learning arcade
 

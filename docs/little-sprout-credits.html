@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Credits and third-party licenses for Little Sprout's artwork, fonts, icons, music and synthetic teaching voices."
+    />
+    <title>Little Sprout — credits &amp; licenses</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #24372e;
+        background: #fffcf5;
+        line-height: 1.65;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      main { width: min(100%, 54rem); margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+      nav { margin-bottom: 2rem; }
+      a { color: #1c624a; text-underline-offset: 0.18em; overflow-wrap: anywhere; }
+      a:hover { color: #103e2f; }
+      a:focus-visible { outline: 3px solid #906900; outline-offset: 4px; border-radius: 2px; }
+      h1, h2, h3 { line-height: 1.25; }
+      h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 0.8rem; }
+      h2 { font-size: 1.4rem; margin-top: 0; }
+      h3 { font-size: 1.1rem; margin-top: 1.6rem; }
+      p { margin: 0.75rem 0; }
+      section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #d9e3d5; }
+      .intro { max-width: 45rem; color: #506255; }
+      .back { display: inline-block; padding: 0.5rem 0; font-weight: 600; }
+      ul { padding-left: 1.3rem; }
+      li { margin: 0.5rem 0; }
+      table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+      caption { text-align: left; font-weight: 600; padding-bottom: 0.6rem; }
+      th, td { padding: 0.65rem 0.45rem; border-bottom: 1px solid #d9e3d5; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+      th { background: #edf3e8; }
+      code { font-size: 0.92em; overflow-wrap: anywhere; }
+      @media (max-width: 420px) {
+        table { table-layout: fixed; font-size: 0.85rem; }
+        th, td { padding: 0.55rem 0.3rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Return to the app">
+        <a class="back" href="../little-sprout/">&larr; Back to Little Sprout</a>
+      </nav>
+      <header>
+        <h1>Credits &amp; licenses</h1>
+        <p class="intro">
+          Little Sprout brings together original playroom artwork and music,
+          open-source fonts and icons, and prerecorded synthetic teaching voices.
+          These are the people and projects behind those materials.
+        </p>
+      </header>
+
+      <section aria-labelledby="artwork-heading">
+        <h2 id="artwork-heading">Artwork &amp; music</h2>
+        <p>
+          The game illustrations, cartoon teachers, classroom environments and
+          handwriting graphics are original vector artwork created for Little
+          Sprout. The app icon is an export of its original vector design.
+        </p>
+        <p>
+          The music and sound effects are original synthesized compositions.
+          Animal sounds are playful electronic sound associations; they do not
+          use sampled animal recordings, commercial songs or licensed loops.
+          Emoji use the fonts supplied by your device.
+        </p>
+      </section>
+
+      <section aria-labelledby="fonts-heading">
+        <h2 id="fonts-heading">Fonts &amp; icons</h2>
+        <ul>
+          <li>
+            <strong>Nunito</strong> — Copyright 2014 The Nunito Project Authors.
+            Distributed under the
+            <a href="../little-sprout/licenses/Nunito-OFL.txt">SIL Open Font License 1.1</a>.
+          </li>
+          <li>
+            <strong>Feather icons</strong> — Copyright 2013–2023 Cole Bemis.
+            Distributed under the
+            <a href="../little-sprout/licenses/Feather-MIT.txt">MIT license</a>.
+            <a href="https://feathericons.com/">Feather project</a>.
+          </li>
+          <li>
+            <strong>Expo Vector Icons / React Native Vector Icons</strong> —
+            Copyright 2015 Joel Arvidsson and 2020 650 Industries.
+            Distributed under the
+            <a href="../little-sprout/licenses/Expo-Vector-Icons.txt">MIT license</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="voices-heading">
+        <h2 id="voices-heading">Synthetic teaching voices</h2>
+        <p>
+          Spoken lessons are prerecorded, AI-generated speech in English, Hindi,
+          Arabic, Spanish, Mandarin Chinese and Japanese. Each language has two
+          recorded base voices. Cartoon teachers apply different pitch and pace
+          settings to those recordings. The app does not record a child, clone
+          a custom human reference voice or contact a speech service during play.
+        </p>
+
+        <h3>Kokoro</h3>
+        <p>
+          English, Hindi, Spanish, Mandarin Chinese and Japanese recordings use
+          <strong>Hexgrad's Kokoro-82M v1.0</strong>. Its source, model and preset
+          files are distributed under the
+          <a href="../little-sprout/licenses/narration/Apache-2.0.txt">Apache License 2.0</a>.
+          See the
+          <a href="https://huggingface.co/hexgrad/Kokoro-82M/blob/main/README.md">model credits</a>,
+          <a href="https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md">voice inventory</a>,
+          <a href="https://github.com/hexgrad/kokoro">Kokoro source</a> and
+          <a href="https://github.com/hexgrad/misaki">Misaki pronunciation project</a>.
+        </p>
+        <table>
+          <caption>Presets used for Little Sprout's recordings</caption>
+          <thead>
+            <tr><th scope="col">Language</th><th scope="col">Female preset</th><th scope="col">Male preset</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">English</th><td><code>af_heart</code></td><td><code>am_michael</code></td></tr>
+            <tr><th scope="row">Hindi</th><td><code>hf_alpha</code></td><td><code>hm_omega</code></td></tr>
+            <tr><th scope="row">Spanish</th><td><code>ef_dora</code></td><td><code>em_alex</code></td></tr>
+            <tr><th scope="row">Mandarin Chinese</th><td><code>zf_xiaoxiao</code></td><td><code>zm_yunjian</code></td></tr>
+            <tr><th scope="row">Japanese</th><td><code>jf_alpha</code></td><td><code>jm_kumo</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Japanese preset source credit</h3>
+        <p>
+          Kokoro's <code>jm_kumo</code> entry credits
+          <strong>Koniwa / Television Nishinippon (TNC)</strong> for
+          <span lang="ja">「蜘蛛の糸」</span>
+          (<cite>Kumonoito / The Spider's Thread</cite>), a reading of
+          Ryūnosuke Akutagawa's public-domain text. Koniwa identifies the TNC
+          announcer recordings as
+          <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
+          See the
+          <a href="https://github.com/koniwa/koniwa">Koniwa collection and credits</a>,
+          <a href="https://github.com/koniwa/koniwa/blob/master/source/tnc/tnc__kumonoito.txt">credited work</a>
+          and <a href="https://www.tnc.co.jp/forchildren/roudoku">TNC reading project</a>.
+        </p>
+        <p>
+          Little Sprout uses the resulting synthetic preset to speak newly
+          authored teaching text and modifies pitch and pace for its characters.
+          It does not redistribute the original reading. No endorsement by these
+          contributors is implied. Kokoro also credits SIWIS (CC BY 4.0) in its
+          overall training data; the SIWIS voice pack is not selected here.
+        </p>
+
+        <h3>Arabic voices</h3>
+        <p>
+          Arabic recordings use <strong>SILMA TTS v1, by SILMA AI</strong>.
+          Its weights use the
+          <a href="../little-sprout/licenses/narration/Apache-2.0.txt">Apache License 2.0</a>,
+          and its inference code uses the
+          <a href="../little-sprout/licenses/narration/SILMA-MIT.txt">MIT license</a>.
+          SILMA uses the F5-TTS architecture with its own pretrained weights.
+          See the
+          <a href="https://huggingface.co/silma-ai/silma-tts">SILMA model card</a>
+          and <a href="https://github.com/SILMA-AI/silma-tts">SILMA source</a>.
+        </p>
+        <p>
+          The vocoder is <strong>Charactr's Vocos mel-24kHz</strong>, distributed
+          under the
+          <a href="../little-sprout/licenses/narration/Vocos-MIT.txt">MIT license</a>.
+          <a href="https://huggingface.co/charactr/vocos-mel-24khz">Vocos model</a>.
+          Arabic conditioning uses a newly synthesized Kokoro
+          <code>am_michael</code> reference, rather than a human recording.
+          The Arabic female base is derived from the male rendition by changing
+          pitch and formants while preserving its pace; it is not a separate
+          female model preset.
+        </p>
+      </section>
+
+      <section aria-labelledby="software-heading">
+        <h2 id="software-heading">App software</h2>
+        <p>
+          Little Sprout also uses open-source software libraries. Their
+          copyright notices and license terms are available in the
+          <a href="../little-sprout/licenses/runtime-notices.txt">runtime software notices</a>.
+          The notices here do not imply endorsement of Little Sprout by any
+          contributor or project.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

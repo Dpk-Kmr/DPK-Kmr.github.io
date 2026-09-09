@@ -1,0 +1,118 @@
+/* A lightweight doorway to Little Sprout; the app loads only after opening it. */
+.sprout-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  margin-top: 18px;
+  color: var(--accent);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sprout-jump-link > span:first-child {
+  font-size: 21px;
+}
+.sprout-entry {
+  padding-bottom: 56px;
+}
+.sprout-entry-card {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.6fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 3.5vw, 48px);
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  background: linear-gradient(125deg, var(--soft-accent), var(--surface) 62%);
+}
+.sprout-entry-art {
+  padding: 6px 8px 18px;
+  border-radius: 24px;
+  background: #f7f8ed;
+  text-align: center;
+}
+.sprout-entry-art svg {
+  width: 100%;
+  height: auto;
+}
+.sprout-art-caption {
+  display: block;
+  color: #365443;
+  font-size: 12px;
+  font-weight: 600;
+}
+.sprout-entry-copy h2 {
+  margin-top: 15px;
+  font-size: clamp(32px, 3.5vw, 48px);
+}
+.sprout-entry-description {
+  margin-top: 18px;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.sprout-entry-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 20px 0 15px;
+  list-style: none;
+}
+.sprout-entry-features li {
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
+  font-size: 12px;
+}
+.sprout-entry-languages {
+  max-width: 580px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.sprout-entry-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  margin-top: 25px;
+}
+.sprout-entry-actions > p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 820px) {
+  .sprout-entry-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+  .sprout-entry-art {
+    max-width: 300px;
+    width: 100%;
+    justify-self: center;
+  }
+}
+@media (max-width: 480px) {
+  .sprout-entry {
+    padding-bottom: 36px;
+  }
+  .sprout-entry-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+  .sprout-entry-art {
+    max-width: 235px;
+  }
+  .sprout-entry-copy > .eyebrow {
+    font-size: 9px;
+  }
+  .sprout-entry-description {
+    font-size: 15px;
+  }
+  .sprout-entry-actions .button {
+    width: 100%;
+  }
+}

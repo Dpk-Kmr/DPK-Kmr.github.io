@@ -1,0 +1,13 @@
+{
+  "name": "Little Sprout",
+  "version": "1.0.0",
+  "expo": "~57.0.20",
+  "baseUrl": "/little-sprout/",
+  "generatedAt": "2026-09-09T10:43:03.096Z",
+  "sourcePreserved": true,
+  "sourceAudioFiles": 5224,
+  "publishedAudioFiles": 5224,
+  "distinctAudioHashes": 5218,
+  "files": 5243,
+  "bytes": 68318879
+}
