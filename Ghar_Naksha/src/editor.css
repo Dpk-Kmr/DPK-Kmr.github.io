@@ -1,0 +1,1166 @@
+/* Compact drafting workspace: the drawing owns the screen. */
+.site-home-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+  min-width: 28px;
+  min-height: 32px;
+  color: #276387;
+  font-size: 11px;
+}
+.site-home-link:focus-visible {
+  outline: 2px solid #276387;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+@media (max-width: 1100px) {
+  .site-home-link span {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .drafting-app .header-export-detail {
+    display: none;
+  }
+}
+.drafting-app {
+  --green: #276387;
+  --border: #dce3e8;
+  --muted: #687987;
+  --lime: #dcecf6;
+  --paper: #fff;
+  color: #253746;
+  background: #eaf0f4;
+  min-height: 420px;
+}
+.drafting-app .app-header {
+  height: 50px;
+  min-height: 50px;
+  padding: 0 14px;
+  gap: 14px;
+  background: #faf8f2;
+}
+.drafting-app .brand {
+  width: auto;
+  font-size: 18px;
+  letter-spacing: -0.65px;
+}
+.drafting-app .brand small,
+.drafting-app .brand-mark > span,
+.drafting-app .project-switcher small,
+.drafting-app .avatar,
+.drafting-app .header-divider {
+  display: none;
+}
+.drafting-app .brand-mark {
+  width: 31px;
+  height: 32px;
+  border-radius: 5px;
+  color: #fff;
+}
+.drafting-app .project-icon {
+  display: none;
+}
+.drafting-app .project-switcher {
+  margin-left: 12px;
+  font-size: 13px;
+  max-width: 300px;
+  min-width: 0;
+}
+.drafting-app .project-switcher > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.drafting-app .button {
+  min-height: 36px;
+  font-size: 12px;
+}
+.drafting-app .save-indicator {
+  font-size: 11px;
+}
+.drafting-app .workspace-nav {
+  height: 32px;
+  min-height: 32px;
+  padding: 0 16px;
+  background: #fff;
+}
+.drafting-app .workspace-tabs {
+  display: none;
+}
+.drafting-app .breadcrumbs {
+  font-size: 11px;
+}
+.drafting-app .workspace-nav > .mobile-panel-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.drafting-app .workspace {
+  position: relative;
+}
+.editor-rail {
+  order: 0;
+  width: 62px;
+  min-width: 62px;
+  background: #465565;
+  color: #f3f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-y: auto;
+  padding: 7px 4px;
+  gap: 3px;
+  z-index: 22;
+}
+.editor-rail button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 51px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: inherit;
+}
+.editor-rail button:hover {
+  background: #586e82;
+}
+.editor-rail button.active {
+  background: #e2eff8;
+  color: #1b5e8c;
+}
+.rail-divider {
+  border-top: 1px solid #ffffff25;
+  margin: 5px 7px;
+}
+.drafting-app .studio {
+  order: 1;
+  min-width: 0;
+}
+.drafting-app .sidebar,
+.drafting-app .inspector {
+  order: 2;
+  width: 304px;
+  min-width: 304px;
+  border-left: 1px solid var(--border);
+  border-right: 0;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  box-shadow: none;
+}
+.drafting-app .sidebar {
+  display: none;
+  overflow-y: auto;
+}
+.drafting-app .inspector {
+  display: flex;
+  padding-top: 0;
+}
+.drafting-app.palette-open .sidebar {
+  display: flex;
+}
+.drafting-app.palette-open .inspector {
+  display: none;
+}
+.drafting-app .sidebar-heading {
+  padding: 15px 16px 12px;
+}
+.drafting-app .sidebar-heading .eyebrow,
+.drafting-app .sidebar-bottom {
+  display: none;
+}
+.drafting-app .sidebar-heading h2 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.palette-close {
+  padding: 7px;
+  color: #647989;
+}
+.drafting-app .sidebar-heading .mobile-close {
+  display: none;
+}
+.drafting-app .sidebar-tabs {
+  margin: 0 12px 10px;
+  background: #edf2f6;
+}
+.drafting-app .sidebar-tabs button {
+  font-size: 12px;
+  color: #526878;
+}
+.drafting-app .sidebar-tabs button.active {
+  color: #22628c;
+}
+.drafting-app .rooms-intro-actions {
+  margin-top: 5px;
+}
+.drafting-app .room-tree .room-info strong,
+.drafting-app .room-info strong {
+  font-size: 12px;
+}
+.drafting-app .room-info small {
+  font-size: 10px;
+}
+.drafting-app .room-row.active {
+  background: #e6f1f9;
+  color: #235b81;
+}
+.drafting-app .room-row.active .room-icon {
+  background: #d3e7f6;
+  color: #235b81;
+}
+.drafting-app .floor-heading {
+  margin-top: 18px;
+}
+.drafting-app .room-list {
+  max-height: 48vh;
+}
+.drafting-app .objects-section {
+  padding-bottom: 20px;
+}
+.drafting-app .studio-toolbar {
+  min-height: 48px;
+  height: 48px;
+  padding: 6px 12px;
+  background: #fff;
+  gap: 8px;
+}
+.drafting-app .view-tabs {
+  background: #edf2f6;
+}
+.drafting-app .view-tabs button {
+  font-size: 12px;
+  height: 34px;
+  color: #526878;
+}
+.drafting-app .view-tabs button.active {
+  color: #1f5d83;
+}
+.drafting-app .new-badge {
+  display: none;
+}
+.drafting-app .toolbar-actions {
+  gap: 4px;
+}
+.drafting-app .toolbar-actions .icon-button {
+  width: 34px;
+  height: 34px;
+}
+.quick-add-room,
+.quick-floor {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid #dce5eb;
+  border-radius: 5px;
+  margin-right: 3px;
+}
+.drafting-app .canvas-title {
+  top: 13px;
+  left: 18px;
+  pointer-events: none;
+}
+.drafting-app .canvas-title .eyebrow {
+  display: none;
+}
+.drafting-app .canvas-title h1 {
+  font-size: 15px;
+  letter-spacing: -0.2px;
+  margin: 0 0 3px;
+  color: #415c70;
+}
+.drafting-app .canvas-title > span:last-child {
+  font-size: 10px;
+  color: #647a8a;
+}
+.drafting-app .canvas-view-badge {
+  top: 14px;
+  right: 16px;
+  font-size: 10px;
+  background: #ffffffbc;
+  border-color: #cbd9e2;
+}
+.drafting-app .compass {
+  top: 54px;
+  right: 16px;
+}
+.drafting-app .viewport,
+.drafting-app .plan-view {
+  background: #eaf1f5;
+}
+.drafting-app .tool-dock {
+  padding: 5px;
+  bottom: 20px;
+  gap: 3px;
+  background: #fff;
+  border-color: #cfdae2;
+  box-shadow: 0 4px 18px #28455b16;
+}
+.drafting-app .tool-dock .icon-button {
+  width: 32px;
+  height: 34px;
+}
+.drafting-app .icon-button.active {
+  background: #dcecf8;
+  color: #245f89;
+}
+.drafting-app .canvas-hint {
+  font-size: 10px;
+  color: #60788b;
+}
+.drafting-app .canvas-bottom-left {
+  left: 16px;
+  bottom: 18px;
+}
+.drafting-app .canvas-bottom-left .canvas-hint {
+  position: absolute;
+  white-space: nowrap;
+  bottom: -14px;
+  left: 0;
+}
+.drafting-app .layers-button {
+  min-height: 36px;
+  font-size: 11px;
+}
+.drafting-app .zoom-controls {
+  bottom: 20px;
+  right: 16px;
+}
+.drafting-app .studio-footer {
+  min-height: 28px;
+  height: 28px;
+  font-size: 10px;
+  background: #fff;
+  gap: 7px;
+  padding: 0 12px;
+}
+.drafting-app .studio-footer button {
+  font-size: 11px;
+  color: #315e7d;
+}
+.drafting-app .inspector-heading {
+  min-height: 48px;
+  padding: 0 16px;
+}
+.drafting-app .inspector-heading h2 {
+  font-size: 13px;
+}
+.drafting-app .live-chip {
+  display: none;
+}
+.drafting-app .selected-element {
+  padding: 16px;
+}
+.drafting-app .selected-preview {
+  display: none;
+}
+.drafting-app .element-name {
+  font-size: 20px;
+}
+.drafting-app .element-room {
+  font-size: 11px;
+}
+.drafting-app .inspector-tabs {
+  margin-top: 0;
+}
+.drafting-app .inspector-tabs button {
+  font-size: 11px;
+}
+.drafting-app .property-section {
+  padding: 15px 16px;
+}
+.drafting-app .section-title h3 {
+  font-size: 12px;
+  color: #334c60;
+}
+.drafting-app .section-title > span {
+  font-size: 9px;
+  color: #6c7e8a;
+}
+.drafting-app .numeric-field > span {
+  color: #587084;
+  font-size: 11px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.drafting-app .numeric-field > div {
+  border-color: #cad8e3;
+  background: #fff;
+  min-height: 38px;
+  padding: 0;
+}
+.drafting-app .numeric-field input {
+  font-size: 13px;
+  height: 36px;
+  padding: 7px 8px;
+  color: #234d6b;
+}
+.drafting-app .numeric-field small {
+  font-size: 10px;
+  color: #6a8192;
+  padding-right: 7px;
+}
+.drafting-app input:focus-visible,
+.drafting-app button:focus-visible,
+.drafting-app select:focus-visible {
+  outline-color: #4b99cf;
+}
+.drafting-app .subtle-hint,
+.drafting-app .floor-hint,
+.drafting-app .floor-inspector > p,
+.drafting-app .floor-check,
+.drafting-app .studio-select-label,
+.drafting-app .room-edit-hint {
+  font-size: 11px;
+  color: #677e8e;
+}
+.drafting-app .studio-select-label select {
+  font-size: 12px;
+  color: #345d78;
+  min-height: 38px;
+  background: #fff;
+  border-color: #cfdae3;
+}
+.drafting-app .systems-section {
+  padding-top: 12px;
+}
+.drafting-app .systems-section h3 {
+  font-size: 12px;
+}
+.drafting-app .system-card {
+  font-size: 11px;
+}
+.drafting-app .system-card small,
+.drafting-app .systems-subtitle {
+  font-size: 10px;
+}
+.drafting-app .inspector-footer {
+  display: none;
+}
+.drafting-app .floor-inspector {
+  padding: 16px;
+}
+.drafting-app .floor-inspector > .eyebrow {
+  display: none;
+}
+.drafting-app .floor-inspector h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+.drafting-app .floor-inspector > .button,
+.drafting-app .assist-buttons button {
+  font-size: 11px;
+}
+.drafting-app .floor-shapes button {
+  min-height: 37px;
+  font-size: 11px;
+  color: #59768c;
+  border-color: #ccdce7;
+}
+.drafting-app .floor-shapes button.active {
+  color: #225d89;
+  background: #e5f0f9;
+  border-color: #92b4cf;
+}
+.drafting-app .floor-preview {
+  height: 205px;
+  background: #edf3f8;
+  border-color: #cfdeea;
+}
+.drafting-app .floor-area-label {
+  color: #3a6686;
+}
+.drafting-app .floor-corners-toggle {
+  font-size: 11px;
+  color: #386889;
+}
+.drafting-app .floor-new-form > p {
+  font-size: 12px;
+  color: #637b8c;
+}
+.drafting-app .modal {
+  width: 640px;
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 10px;
+}
+.drafting-app .modal h2 {
+  font-size: 23px;
+}
+.drafting-app .floor-new-form .floor-preview {
+  height: 240px;
+}
+.drafting-app .floor-sides {
+  gap: 12px 16px;
+}
+.drafting-app .floor-side > button {
+  height: 38px;
+  min-width: 25px;
+}
+.drafting-app .floor-side > button:hover {
+  background: #e5eff8;
+}
+.drafting-app .floor-new-form .floor-step-label {
+  font-size: 11px;
+  color: #476d88;
+}
+.drafting-app .project-name-field {
+  color: #516b7f;
+  font-size: 12px;
+}
+.drafting-app .project-name-field input {
+  font-size: 14px;
+  min-height: 39px;
+  border-color: #d0dce5;
+  background: #fff;
+}
+.drafting-app .library-content {
+  padding: 8px 14px 18px;
+  overflow: visible;
+}
+.drafting-app .search-field {
+  min-height: 38px;
+  background: #f6f9fb;
+  border-color: #d5e0e8;
+}
+.drafting-app .search-field input {
+  font-size: 12px;
+}
+.drafting-app .category-list {
+  gap: 6px;
+}
+.drafting-app .category-list button {
+  font-size: 11px;
+  padding: 7px 9px;
+}
+.drafting-app .category-list button.active {
+  background: #e0edf7;
+  color: #245e85;
+}
+.drafting-app .catalog-grid {
+  gap: 9px;
+}
+.drafting-app .catalog-preview {
+  height: 92px;
+  background: #f1f5f8;
+}
+.drafting-app .catalog-item {
+  padding: 0 0 10px;
+  border: 1px solid #dae4eb;
+  overflow: hidden;
+}
+.drafting-app .catalog-item strong {
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 0 7px;
+}
+.drafting-app .catalog-item small {
+  font-size: 10px;
+  padding: 0 7px;
+}
+.drafting-app .library-count {
+  font-size: 12px;
+}
+.drafting-app .toast {
+  background: #294e68;
+  font-size: 12px;
+  top: 145px;
+  bottom: auto;
+  pointer-events: none;
+}
+.drafting-app .toast button {
+  pointer-events: auto;
+}
+.drafting-app .room-diagram {
+  height: 105px;
+  margin-bottom: 12px;
+}
+.drafting-app .room-diagram > div {
+  height: 65px;
+}
+.form-units {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #4c6c84;
+  font-size: 12px;
+}
+.form-units select {
+  border: 1px solid #cddce7;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: #294f6c;
+  background: #f4f8fb;
+}
+.drafting-app .stair-number > span,
+.drafting-app .stair-select > span,
+.drafting-app .connection-number > span {
+  font-size: 11px;
+  color: #526f83;
+}
+.drafting-app .stair-number > div,
+.drafting-app .connection-number > div {
+  min-height: 38px;
+  border-color: #cddbe6;
+  background: #fff;
+}
+.drafting-app .stair-number input,
+.drafting-app .connection-number input {
+  font-size: 13px;
+  color: #315b79;
+}
+.drafting-app .stair-select select {
+  min-height: 38px;
+  font-size: 12px;
+  background: #fff;
+  color: #315b79;
+  border-color: #cddbe6;
+}
+.drafting-app .stair-note,
+.drafting-app .stair-conflicts,
+.drafting-app .connection-hint {
+  font-size: 11px;
+}
+.drafting-app .numeric-field > .numeric-field-error,
+.drafting-app .stair-number > .numeric-field-error,
+.drafting-app .connection-number > .numeric-field-error {
+  color: #aa453b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+@media (max-width: 1200px) {
+  .drafting-app .sidebar,
+  .drafting-app .inspector {
+    width: 286px;
+    min-width: 286px;
+  }
+  .drafting-app .tool-dock {
+    left: 50%;
+  }
+  .drafting-app .canvas-bottom-left {
+    bottom: 67px;
+  }
+  .drafting-app .canvas-hint {
+    display: none;
+  }
+  .quick-floor span,
+  .quick-add-room span {
+    display: none;
+  }
+  .drafting-app .scale-note {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .drafting-app .sidebar,
+  .drafting-app .inspector {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 304px;
+    min-width: 0;
+    max-width: calc(100% - 58px);
+    z-index: 35;
+    box-shadow: -6px 0 28px #2c435b25;
+  }
+  .drafting-app.palette-open .sidebar {
+    display: none;
+  }
+  .drafting-app.palette-open .sidebar.mobile-open,
+  .drafting-app .inspector.mobile-open {
+    display: flex;
+  }
+  .drafting-app.palette-open .inspector {
+    display: none;
+  }
+  .drafting-app .toolbar-actions .mobile-panel-button {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    background: #e2edf5;
+    color: #2e678f;
+  }
+  .drafting-app .inspector-heading .mobile-close {
+    display: flex;
+    padding: 8px;
+  }
+  .drafting-app .app-header {
+    gap: 10px;
+  }
+  .drafting-app .project-switcher {
+    max-width: 175px;
+    font-size: 12px;
+  }
+  .drafting-app .canvas-bottom-left {
+    bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .drafting-app .dimension-fields,
+  .drafting-app .position-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .drafting-app .dimension-fields > :last-child,
+  .drafting-app .position-fields > :last-child {
+    grid-column: 1 / -1;
+  }
+  .drafting-app .systems-section {
+    display: none;
+  }
+  .drafting-app .app-header {
+    padding: 0 10px;
+    height: 48px;
+    min-height: 48px;
+    gap: 8px;
+  }
+  .drafting-app .brand {
+    font-size: 17px;
+  }
+  .drafting-app .brand-mark {
+    width: 28px;
+    height: 29px;
+  }
+  .drafting-app .project-switcher {
+    display: none;
+  }
+  .drafting-app .save-indicator {
+    font-size: 0;
+    gap: 0;
+  }
+  .drafting-app .save-indicator > span {
+    width: 6px;
+    height: 6px;
+  }
+  .drafting-app .app-header .button-primary {
+    min-height: 32px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+  .drafting-app .workspace-nav {
+    padding: 0 10px;
+    height: 30px;
+    min-height: 30px;
+  }
+  .drafting-app .breadcrumbs {
+    font-size: 10px;
+    min-width: 0;
+  }
+  .drafting-app .breadcrumbs > span:not(.draft-badge) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 150px;
+  }
+  .drafting-app .workspace-nav > .mobile-panel-button {
+    font-size: 10px;
+  }
+  .editor-rail {
+    width: 48px;
+    min-width: 48px;
+    padding: 5px 2px;
+  }
+  .editor-rail button {
+    font-size: 9px;
+    min-height: 47px;
+    gap: 3px;
+  }
+  .editor-rail button svg {
+    width: 19px;
+    height: 19px;
+  }
+  .rail-divider {
+    margin: 3px 6px;
+  }
+  .drafting-app .studio-toolbar {
+    padding: 5px;
+    gap: 4px;
+    min-height: 46px;
+    height: 46px;
+  }
+  .drafting-app .view-tabs {
+    padding: 2px;
+    gap: 0;
+  }
+  .drafting-app .view-tabs button {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    justify-content: center;
+  }
+  .drafting-app .view-tabs button span {
+    display: none;
+  }
+  .drafting-app .toolbar-actions {
+    gap: 1px;
+  }
+  .drafting-app .toolbar-actions .icon-button {
+    width: 28px;
+    height: 32px;
+  }
+  .drafting-app .toolbar-actions .small-divider,
+  .drafting-app .toolbar-actions > .icon-button:last-of-type {
+    display: none;
+  }
+  .quick-add-room,
+  .quick-floor {
+    padding: 6px;
+    margin: 0;
+    border: 0;
+  }
+  .drafting-app .toolbar-actions .mobile-panel-button {
+    width: 30px;
+    height: 32px;
+  }
+  .drafting-app .sidebar,
+  .drafting-app .inspector {
+    top: 46px;
+    max-width: calc(100% - 48px);
+    width: 304px;
+  }
+  .drafting-app .canvas-title {
+    left: 10px;
+    top: 10px;
+  }
+  .drafting-app .canvas-title h1 {
+    font-size: 12px;
+  }
+  .drafting-app .canvas-view-badge {
+    display: none;
+  }
+  .drafting-app .compass {
+    top: 10px;
+    right: 7px;
+  }
+  .drafting-app .canvas-bottom-left {
+    left: 8px;
+    bottom: 68px;
+  }
+  .drafting-app .layers-button {
+    height: 34px;
+    min-height: 34px;
+    padding: 7px;
+    font-size: 10px;
+  }
+  .drafting-app .tool-dock {
+    max-width: calc(100% - 12px);
+    bottom: 16px;
+    padding: 4px;
+    gap: 1px;
+  }
+  .drafting-app .tool-dock .icon-button {
+    width: 27px;
+    height: 32px;
+  }
+  .drafting-app .tool-dock .icon-button svg {
+    width: 16px;
+  }
+  .drafting-app .tool-dock .small-divider {
+    margin: 0 2px;
+  }
+  .drafting-app .zoom-controls {
+    right: 8px;
+    bottom: 70px;
+  }
+  .drafting-app .zoom-controls .icon-button {
+    width: 32px;
+    height: 32px;
+  }
+  .drafting-app .studio-footer {
+    padding: 0 8px;
+    font-size: 9px;
+    gap: 4px;
+  }
+  .drafting-app .studio-footer > span:nth-child(n + 3):nth-child(-n + 8) {
+    display: none;
+  }
+  .drafting-app .studio-footer button {
+    font-size: 10px;
+  }
+  .drafting-app .modal-backdrop {
+    padding: 10px;
+  }
+  .drafting-app .modal {
+    max-height: 94dvh;
+    padding: 18px;
+  }
+  .drafting-app .modal-header {
+    margin-bottom: 12px;
+  }
+  .drafting-app .modal h2 {
+    font-size: 21px;
+  }
+  .drafting-app .floor-new-form .floor-preview {
+    height: 210px;
+  }
+  .drafting-app .numeric-field input,
+  .drafting-app .project-name-field input,
+  .drafting-app .studio-select-label select,
+  .drafting-app .stair-number input,
+  .drafting-app .connection-number input,
+  .drafting-app .stair-select select {
+    font-size: 16px;
+  }
+  .drafting-app .numeric-field > div {
+    min-height: 42px;
+  }
+  .drafting-app .numeric-field input {
+    height: 40px;
+    padding: 7px;
+  }
+  .drafting-app .numeric-field small {
+    padding-right: 5px;
+  }
+  .drafting-app .floor-corner {
+    grid-template-columns: 13px 1fr 1fr 22px;
+  }
+  .drafting-app .floor-corner > button {
+    height: 40px;
+  }
+}
+
+.active-floor-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 16px;
+  color: #38617d;
+  min-width: 0;
+}
+.active-floor-controls select {
+  max-width: 170px;
+  min-width: 80px;
+  border: 0;
+  background: #edf4f9;
+  border-radius: 4px;
+  padding: 4px 22px 4px 8px;
+  color: #294e68;
+  font-size: 11px;
+}
+.active-floor-controls button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.editing-strip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 39px;
+  padding: 3px 12px;
+  background: #f8fbfd;
+  border-bottom: 1px solid #d5e2eb;
+  color: #426681;
+  flex-shrink: 0;
+}
+.editing-strip > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 9px;
+  font-size: 11px;
+  min-height: 31px;
+  border-radius: 4px;
+}
+.editing-strip > button:hover {
+  background: #e7eff6;
+}
+.editing-strip > button.active {
+  background: #d8eaf8;
+  color: #245e87;
+}
+.editing-strip > .icon-button {
+  width: 31px;
+  height: 31px;
+  padding: 5px;
+}
+.editing-strip .selection-count {
+  font-size: 10px;
+  color: #71899b;
+  margin-left: 4px;
+}
+.editing-strip .entire-building {
+  margin-left: auto;
+}
+.editing-strip .numeric-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.editing-strip .numeric-field > span {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.editing-strip .numeric-field > div {
+  min-height: 30px;
+  width: 92px;
+}
+.editing-strip .numeric-field input {
+  height: 29px;
+  font-size: 12px;
+}
+.editing-strip .numeric-field > .numeric-field-error {
+  white-space: normal;
+  max-width: 160px;
+}
+.walk-camera-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+  font-size: 11px;
+}
+.walk-camera-label select {
+  padding: 6px;
+  border: 1px solid #cad8e3;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 12px;
+  color: #345b77;
+}
+.group-inspector {
+  padding: 20px 16px;
+}
+.group-inspector h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+.group-inspector p,
+.stair-floor-link p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #627e92;
+}
+.group-inspector-actions {
+  display: flex;
+  gap: 7px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.group-inspector-actions button,
+.stair-floor-link > button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 8px;
+  font-size: 11px;
+  background: #e9f1f7;
+  border-radius: 4px;
+  color: #356789;
+}
+.group-element-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.group-element-list button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dbe5ed;
+  border-radius: 4px;
+  padding: 11px 9px;
+  font-size: 12px;
+  text-align: left;
+}
+.stair-floor-link {
+  padding: 14px 16px;
+  border-bottom: 1px solid #dce3e8;
+}
+@media (max-width: 900px) {
+  .drafting-app .sidebar,
+  .drafting-app .inspector {
+    top: 87px;
+  }
+  .drafting-app .breadcrumbs > button,
+  .drafting-app .breadcrumbs > svg {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .active-floor-controls {
+    margin-right: 5px;
+    gap: 2px;
+  }
+  .active-floor-controls select {
+    max-width: 115px;
+    font-size: 11px;
+  }
+  .active-floor-controls > svg,
+  .active-floor-controls button span,
+  .drafting-app .draft-badge {
+    display: none;
+  }
+  .drafting-app .breadcrumbs > span:not(.draft-badge) {
+    max-width: 90px;
+  }
+  .drafting-app .header-share {
+    padding: 7px;
+    min-height: 32px;
+  }
+  .header-share span {
+    display: none;
+  }
+  .editing-strip {
+    padding: 3px 5px;
+    gap: 2px;
+  }
+  .editing-strip > button {
+    padding: 6px;
+  }
+  .editing-strip > button > span {
+    display: none;
+  }
+  .editing-strip .selection-count {
+    font-size: 9px;
+  }
+  .editing-strip .small-divider {
+    margin: 0 2px;
+  }
+  .editing-strip .numeric-field {
+    gap: 4px;
+  }
+  .editing-strip .numeric-field > span {
+    font-size: 10px;
+  }
+  .editing-strip .numeric-field > div {
+    width: 69px;
+  }
+  .editing-strip .numeric-field input {
+    font-size: 16px;
+    padding: 4px;
+  }
+  .walk-camera-label {
+    margin-left: 4px;
+    gap: 4px;
+    font-size: 0;
+  }
+  .walk-camera-label select {
+    font-size: 11px;
+    max-width: 128px;
+  }
+  .drafting-app .sidebar,
+  .drafting-app .inspector {
+    top: 85px;
+  }
+}

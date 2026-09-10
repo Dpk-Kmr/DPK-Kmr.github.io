@@ -1,0 +1,233 @@
+/* Static entrances only: the design studio loads after following its link. */
+.naksha-entry {
+  padding-bottom: 64px;
+}
+.naksha-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 60px);
+  padding: clamp(24px, 3.5vw, 48px);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--surface), var(--soft-cyan));
+}
+.naksha-copy h2 {
+  margin-top: 16px;
+  font-size: clamp(38px, 4.2vw, 58px);
+}
+.naksha-copy .naksha-tagline {
+  margin-top: 18px;
+  color: var(--text);
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.naksha-description {
+  max-width: 540px;
+  margin-top: 16px;
+  font-size: 15px;
+}
+.naksha-features {
+  display: grid;
+  gap: 14px;
+  margin: 25px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.naksha-features li {
+  padding-left: 14px;
+  border-left: 2px solid var(--cyan);
+}
+.naksha-features strong,
+.naksha-features span {
+  display: block;
+}
+.naksha-features strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.naksha-features span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.naksha-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  margin-top: 28px;
+}
+.naksha-actions > p {
+  font-size: 12px;
+}
+.naksha-art {
+  padding: 20px 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  transform: rotate(2deg);
+}
+.naksha-art-topline,
+.naksha-art-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font: 500 9px/1.6 var(--font-mono);
+  letter-spacing: 0.07em;
+}
+.naksha-art-topline {
+  margin-bottom: 20px;
+}
+.naksha-art svg {
+  width: 100%;
+  height: auto;
+}
+.naksha-art-caption {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 15px;
+}
+.naksha-art-caption span {
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.naksha-grid-line {
+  stroke: var(--line);
+  stroke-width: 0.6;
+}
+.naksha-plan-base {
+  fill: var(--surface);
+}
+.naksha-room-cyan {
+  fill: var(--soft-cyan);
+}
+.naksha-room-amber {
+  fill: var(--soft-amber);
+}
+.naksha-room-green {
+  fill: var(--soft-accent);
+}
+.naksha-room-purple {
+  fill: var(--soft-purple);
+}
+.naksha-furniture {
+  fill: var(--surface);
+  stroke: var(--muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.naksha-walls {
+  stroke: var(--text);
+  stroke-width: 4;
+  stroke-linecap: square;
+}
+.naksha-openings {
+  stroke: var(--cyan);
+  stroke-width: 4;
+}
+.naksha-door-arcs {
+  stroke-width: 1;
+}
+.naksha-dimensions path {
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+.naksha-dimensions text,
+.naksha-plan-labels text {
+  fill: var(--muted);
+  font: 500 10px var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.naksha-plan-handle {
+  fill: var(--bg);
+  stroke: var(--cyan);
+  stroke-width: 2;
+}
+.naksha-learn-entry {
+  padding-bottom: 48px;
+}
+.naksha-learn-card {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.naksha-learn-icon {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--cyan);
+  background: var(--soft-cyan);
+}
+.naksha-learn-copy h2 {
+  margin-top: 8px;
+  font-size: clamp(23px, 2.3vw, 30px);
+}
+.naksha-learn-copy > p:last-child {
+  max-width: 640px;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 1000px) {
+  .naksha-learn-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .naksha-learn-card > .button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+@media (max-width: 820px) {
+  .naksha-showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .naksha-art {
+    width: 100%;
+    max-width: 440px;
+    justify-self: center;
+    transform: none;
+  }
+}
+@media (max-width: 480px) {
+  .naksha-entry {
+    padding-bottom: 40px;
+  }
+  .naksha-showcase {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+  .naksha-copy > .eyebrow {
+    font-size: 9px;
+  }
+  .naksha-actions .button {
+    width: 100%;
+  }
+  .naksha-art {
+    padding: 14px 8px;
+  }
+  .naksha-art-topline {
+    font-size: 8px;
+  }
+  .naksha-learn-card {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px 18px;
+  }
+  .naksha-learn-icon {
+    width: 64px;
+  }
+  .naksha-learn-card > .button {
+    grid-column: 1;
+    width: 100%;
+  }
+}

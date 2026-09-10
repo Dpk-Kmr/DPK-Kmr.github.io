@@ -1,0 +1,138 @@
+.plan-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  background: #f3f6f9;
+}
+.plan-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  font-family: inherit;
+}
+.plan-element {
+  cursor: pointer;
+  outline: none;
+}
+.plan-element:hover {
+  filter: brightness(1.035);
+}
+.plan-element:focus-visible {
+  outline: 0.035px solid #667d50;
+}
+.plan-element-movable {
+  cursor: grab;
+}
+.plan-is-dragging .plan-canvas,
+.plan-is-dragging .plan-element {
+  cursor: grabbing;
+}
+.plan-tool-measure .plan-element {
+  cursor: crosshair;
+}
+.plan-measurement text {
+  font-variant-numeric: tabular-nums;
+}
+.plan-floor-outline,
+.plan-floor-side {
+  cursor: pointer;
+  outline: none;
+}
+.plan-floor-side:hover text,
+.plan-floor-side:focus-visible text {
+  fill: #2d5d31;
+}
+.plan-floor-outline:focus-visible > path:first-child {
+  stroke: #507343;
+  stroke-width: 0.075;
+}
+.plan-room {
+  cursor: grab;
+  outline: none;
+}
+.plan-room:focus-visible > rect {
+  stroke: #2475d8;
+  stroke-width: 0.035;
+}
+.plan-transform-frame {
+  --handle-color: #2475d8;
+}
+.plan-resize-handle {
+  touch-action: none;
+}
+.plan-resize-handle:hover > rect,
+.plan-resize-handle:hover > circle:last-child {
+  fill: #e7f1ff;
+  stroke-width: 2;
+}
+.plan-rotation-control [role='button'] {
+  cursor: grab;
+  touch-action: none;
+}
+.plan-room-move-handle {
+  cursor: move;
+  touch-action: none;
+}
+.plan-floor-handles [role='button'] {
+  cursor: move;
+  touch-action: none;
+}
+.plan-floor-handles [data-floor-corner] {
+  cursor: nwse-resize;
+}
+.plan-is-dragging .plan-resize-handle,
+.plan-is-dragging .plan-rotation-control [role='button'],
+.plan-is-dragging .plan-room-move-handle {
+  cursor: grabbing !important;
+}
+.plan-gesture-hint {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 8px 12px;
+  border: 1px solid #d5e4f7;
+  border-radius: 6px;
+  color: #2663a8;
+  background: #ffffffed;
+  box-shadow: 0 2px 10px #243e5c10;
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (pointer: coarse) {
+  .plan-resize-handle > rect {
+    stroke-width: 2;
+  }
+  .plan-gesture-hint {
+    top: 10px;
+    font-size: 10px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+.plan-group-move-handle {
+  cursor: move;
+  touch-action: none;
+}
+.plan-group-move-handle:hover > rect {
+  fill: #e7f1ff;
+}
+.plan-multiselect .plan-canvas,
+.plan-multiselect .plan-room,
+.plan-multiselect .plan-floor-outline {
+  cursor: crosshair;
+}
+.plan-multiselect .plan-element {
+  cursor: copy;
+}
+.plan-element[aria-pressed='true'] {
+  filter: drop-shadow(0 0 0.025px #2475d8);
+}

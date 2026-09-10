@@ -1,0 +1,79 @@
+.share-project > p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #60788a;
+}
+.share-snapshot {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #d0dfeb;
+  background: #f0f6fa;
+  border-radius: 7px;
+  color: #326581;
+}
+.share-snapshot strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.share-snapshot span {
+  color: #6a8294;
+  font-size: 11px;
+}
+.share-project > label {
+  display: block;
+  font-size: 12px;
+  color: #42637c;
+  margin-top: 17px;
+}
+.share-project input,
+.share-project textarea {
+  display: block;
+  margin-top: 7px;
+  width: 100%;
+  border: 1px solid #c9d9e6;
+  border-radius: 5px;
+  padding: 10px;
+  font: inherit;
+  color: #325875;
+  background: #fff;
+}
+.share-project textarea {
+  resize: vertical;
+  word-break: break-all;
+  font-size: 11px;
+}
+.share-project .share-local-note {
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff5df;
+  color: #82622f;
+  margin-top: 10px;
+  font-size: 11px;
+}
+.share-actions {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.share-project .share-note {
+  font-size: 11px;
+}
+.share-project .share-error {
+  margin-top: 10px;
+  color: #a7463a;
+}
+@media (max-width: 600px) {
+  .share-project input,
+  .share-project textarea {
+    font-size: 16px;
+  }
+  .share-actions > * {
+    flex: 1;
+    justify-content: center;
+  }
+}

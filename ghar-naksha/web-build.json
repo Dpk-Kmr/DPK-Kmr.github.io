@@ -1,0 +1,61 @@
+{
+  "name": "ghar-naksha-studio",
+  "version": "1.0.0",
+  "base": "/ghar-naksha/",
+  "generatedAt": "2026-09-10T17:14:31.924Z",
+  "source": "Ghar_Naksha/",
+  "backendRequired": false,
+  "files": [
+    {
+      "path": "assets/Scene-BfOk3Ulf.css",
+      "bytes": 2008,
+      "sha256": "fbee05dfb5fe27f5bcdf0c4f13f95ae6669319553f1f599e8eeda67dcdcca198"
+    },
+    {
+      "path": "assets/Scene-BnIKQOZD.js",
+      "bytes": 1000944,
+      "sha256": "3887f04cc4ffb4f6b7ac7c5cfbe882da1dfbff1dce03a4d66513dd0a8e5b0426"
+    },
+    {
+      "path": "assets/index-BSfNTPgm.css",
+      "bytes": 81364,
+      "sha256": "ccfadc3ed7c818569f826f80dcbe60b5ae9e10d66f81cc1b7109c04ee141f94c"
+    },
+    {
+      "path": "assets/index-C6UYYPzc.js",
+      "bytes": 395994,
+      "sha256": "67ecaf42acd65e11eecf7ebdcf402681be2478250caecbc42a6a578bf59a8f44"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 286,
+      "sha256": "08aec33c50adc805bb48c99f9d7d85c7596ea02192c4756d8b468cc9e52ef76b"
+    },
+    {
+      "path": "fonts/OFL.txt",
+      "bytes": 4482,
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "path": "fonts/dm-sans-regular.ttf",
+      "bytes": 48280,
+      "sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9"
+    },
+    {
+      "path": "fonts/dm-sans-semibold.ttf",
+      "bytes": 48280,
+      "sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a"
+    },
+    {
+      "path": "index.html",
+      "bytes": 746,
+      "sha256": "1897b233a9676444184fd29c929808d8635275825de38f2d029d0b2e4b38bfbf"
+    },
+    {
+      "path": "software-licenses.txt",
+      "bytes": 469047,
+      "sha256": "30c77da2cb3560e2fd7dac37ff65ffb09668ef1ed8f864c2a5f2bc7dc4ffd4ee"
+    }
+  ],
+  "totalBytes": 2051431
+}

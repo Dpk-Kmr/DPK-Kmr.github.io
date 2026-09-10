@@ -18,10 +18,12 @@ Open http://127.0.0.1:4173. Serving the checked-in files needs no build step or 
 - `pages/services.html`: four service categories, search, and expandable descriptions of all 35 capabilities, including research mentoring.
 - `pages/quotation.html`: separate estimates for CAD design services and manufacturing a part.
 - `pages/research.html`: seven verified publications, original concept illustrations, short stories, publication citations, and individual research support.
-- `pages/learn.html`: the Little Sprout children's app plus ten real-time game worlds, fifty missions, three difficulties, physics and evolving environments, live AI agents, saved scores, and combined filters.
+- `pages/learn.html`: launch Little Sprout and Ghar Naksha, plus ten real-time game worlds, fifty missions, three difficulties, physics and evolving environments, live AI agents, saved scores, and combined filters.
 - `little-sprout/`: the complete production web copy of Little Sprout, with 100 age-based activities, six cartoon teachers, and six spoken languages.
+- `pages/products.html`: Ghar Naksha home-design studio and upcoming hardware concepts.
+- `ghar-naksha/`: Ghar Naksha's production web app; `Ghar_Naksha/` contains its complete source project.
 - `pages/playground.html`: optional robotic-arm, AI fault-detection, and learning-path demos.
-- `pages/company.html`, `products.html`, `career.html`, and `contact.html`: about, product development, roles, and inquiries.
+- `pages/company.html`, `career.html`, and `contact.html`: about, roles, and inquiries.
 - `pages/home.html`: legacy redirect to the homepage, preserving query strings and fragment links.
 
 ## Quotations and pricing
@@ -69,6 +71,36 @@ GAMEPLAY_URL=http://127.0.0.1:4173/little-sprout/ npm run test:gameplay
 ```
 
 The integration test uses Playwright from the original app's installed dependencies. It checks navigation, mobile layouts, all four website themes, 100 catalogue entries, real playback in all six languages, local persistence, and missing/remote asset requests. The gameplay suite checks the static web copy's board types, scoring, retries, and completed history. Reports and screenshots are written to `../little-sprout/artifacts/website-sync/`, outside the published repository.
+
+## Ghar Naksha
+
+Ghar Naksha is available from Products and Learn & play at **[/ghar-naksha/](https://atriksha.com/ghar-naksha/)**. It runs entirely in the browser: editable 2D floor plans, furniture and room controls, multiple storeys, a lazy-loaded 3D view and walkthrough, undo/redo, and JSON/SVG/PNG exports. Designs save in this browser under `ghar-naksha-project-v1`; units use `ghar-naksha-units`. Share links contain a compressed design snapshot in their `#home=` fragment; there is no account, backend, database, or live collaboration service. Loading the app requires the website; the 3D view requires WebGL.
+
+The **whole original project was moved** from the sibling `../Ghar_Naksha/` directory to `Ghar_Naksha/` inside this repository. Its source, tests, dependency lockfile, public assets and documentation are committed here. Dependencies and generated test/build artifacts stay on disk but are ignored by Git. The separately generated lowercase `ghar-naksha/` directory is the public app; use that launch URL, not the source directory.
+
+To update the published app, use Node 22.12+:
+
+```sh
+cd Ghar_Naksha
+npm ci
+npm test
+cd ..
+node scripts/sync-ghar-naksha.mjs
+```
+
+The sync command typechecks and builds with Vite's `/ghar-naksha/` public base, then replaces the managed production copy. Scripts, local fonts, favicon and lazy 3D assets use the app subpath. `ghar-naksha/web-build.json` records file sizes and hashes; dependency/font notices are included. The website entry cards do not embed or preload the editor. Commit changes to the source and regenerated production files together, then push `main` to publish through the existing GitHub Pages setup.
+
+With the static server running, check the integration and app from this directory:
+
+```sh
+SITE_TEST_URL=http://127.0.0.1:4173 node tests/ghar-naksha-browser.mjs
+cd Ghar_Naksha
+SMOKE_BASE_URL=http://127.0.0.1:4173/ghar-naksha node tests/browser-smoke.mjs
+SMOKE_BASE_URL=http://127.0.0.1:4173/ghar-naksha node tests/share-browser-smoke.mjs
+SMOKE_BASE_URL=http://127.0.0.1:4173/ghar-naksha node tests/mobile-building-browser.mjs
+```
+
+These checks use the app's installed Playwright and Google Chrome. Reports and screenshots stay under ignored `Ghar_Naksha/test-results/`. The website check also accepts `SITE_TEST_URL=https://atriksha.com` to verify the published app.
 
 ## Live learning arcade
 

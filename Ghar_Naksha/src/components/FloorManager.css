@@ -1,0 +1,164 @@
+.floor-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border, #dce4e9);
+  color: var(--text, #223641);
+}
+.floor-manager-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.floor-manager-icon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  background: #e5effa;
+  color: #2761a0;
+  border: 1px solid #d1e0ef;
+  border-radius: 9px;
+}
+.floor-manager-heading h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+.floor-manager-heading p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #7a8993;
+}
+.floor-manager-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 225px;
+  overflow: auto;
+}
+.floor-manager-list > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 8px;
+  width: 100%;
+  background: #f7f9fa;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+.floor-manager-list > button.active {
+  background: #edf4fb;
+  border-color: #9fc0e1;
+}
+.floor-manager-list > button:hover {
+  background: #eef3f7;
+}
+.floor-manager-layer {
+  color: #7993a6;
+  display: flex;
+}
+.floor-manager-list > button.active .floor-manager-layer {
+  color: #2774b9;
+}
+.floor-manager-list strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  max-width: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.floor-manager-list small {
+  display: block;
+  font-size: 9px;
+  color: #7b8b97;
+  margin-top: 3px;
+}
+.floor-manager-list em {
+  margin-left: auto;
+  font-size: 10px;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  color: #5d788b;
+  white-space: nowrap;
+}
+.floor-manager-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+.floor-manager-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #ccd9e2;
+  border-radius: 6px;
+  background: white;
+  padding: 8px 4px;
+  color: #36576f;
+  font-size: 10px;
+  cursor: pointer;
+}
+.floor-manager-actions button:hover {
+  background: #edf5fb;
+}
+.floor-manager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.floor-manager-name {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 10px;
+  color: #677d8c;
+}
+.floor-manager-name input {
+  height: 33px;
+  padding: 0 9px;
+  background: white;
+  border: 1px solid #d1dce4;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 12px;
+  color: #294252;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.floor-manager-help {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #7f8c95;
+}
+.floor-manager-remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #e2d5d5;
+  color: #946969;
+  padding: 7px 4px;
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.floor-manager-error {
+  margin: 0;
+  background: #fff3f0;
+  border: 1px solid #efd6cf;
+  color: #a04936;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 1.5;
+}
