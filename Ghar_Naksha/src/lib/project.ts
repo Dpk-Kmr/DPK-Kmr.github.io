@@ -554,19 +554,21 @@ export function matchesStarter(candidate: Project, starter: Project): boolean {
 
 /** Upgrade the named measured default saved by earlier app versions. */
 export function migrateMeasuredDefault(saved: Project, latest: Project): Project {
-  if (saved.name !== latest.name) return saved;
+  const blankStarterName=saved.name==='My new home';
+  if (saved.name !== latest.name && !blankStarterName) return saved;
   const living=saved.rooms.find(r=>r.id==='living');
   const temple=saved.elements.find(e=>e.id==='temple');
   const upper=saved.elements.find(e=>e.id==='stair-high-9');
   const fridge=saved.elements.find(e=>e.id==='refrigerator');
   const currentFridge=latest.elements.find(e=>e.id==='refrigerator');
-  const outdated=!!living && !!temple && (
+  const emptyDefault=!saved.rooms.length || !saved.elements.some(e=>e.visible);
+  const outdated=blankStarterName || emptyDefault || (!!living && !!temple && (
     Math.abs(living.depth-180*.0254)>1e-8 ||
     Math.abs(temple.dimensions.width-24*.0254)>1e-8 ||
     !saved.elements.some(e=>e.id==='temple-kitchen-storage') ||
     (!!upper && upper.position[1]<.01) ||
     (!!fridge && !!currentFridge && Math.abs(fridge.position[2]-currentFridge.position[2])>1e-8)
-  );
+  ));
   if (!outdated) return saved;
   // A backup is required before replacing any saved model; failure keeps it intact.
   try {

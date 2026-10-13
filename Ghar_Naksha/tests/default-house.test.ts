@@ -12,6 +12,11 @@ describe('measured default house',()=>{
      expect(migrateMeasuredDefault(old,initialProject).rooms.find(r=>r.id==='living')!.depth).toBe(180*.0254);
      expect(JSON.parse(store.get('ghar-naksha-before-default-upgrade-v2')!).rooms.find((r:{id:string})=>r.id==='living').depth).toBe(126*.0254);
      expect(migrateMeasuredDefault(initialProject,initialProject)).toBe(initialProject);
+     const empty=structuredClone(initialProject);empty.elements=[];empty.rooms=[];
+     expect(migrateMeasuredDefault(empty,initialProject).elements.length).toBe(initialProject.elements.length);
+     const hidden=structuredClone(initialProject);hidden.elements.forEach(e=>e.visible=false);
+     expect(migrateMeasuredDefault(hidden,initialProject).elements.some(e=>e.visible)).toBe(true);
+     old.name='My new home';expect(migrateMeasuredDefault(old,initialProject).name).toBe(initialProject.name);
      old.name='My edited house';expect(migrateMeasuredDefault(old,initialProject)).toBe(old);
    } finally {Object.defineProperty(globalThis,'localStorage',{configurable:true,value:oldStorage});}
  });

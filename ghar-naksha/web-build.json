@@ -2,7 +2,7 @@
   "name": "ghar-naksha-studio",
   "version": "1.0.0",
   "base": "/ghar-naksha/",
-  "generatedAt": "2026-10-13T10:15:22.227Z",
+  "generatedAt": "2026-10-13T10:28:37.971Z",
   "source": "Ghar_Naksha/",
   "backendRequired": false,
   "files": [
@@ -12,9 +12,9 @@
       "sha256": "fbee05dfb5fe27f5bcdf0c4f13f95ae6669319553f1f599e8eeda67dcdcca198"
     },
     {
-      "path": "assets/Scene-C9njd14A.js",
+      "path": "assets/Scene-pC05WL0_.js",
       "bytes": 1006144,
-      "sha256": "e09f3b5e85d767d148bc9987a250ade95c33acf024d581c6153078dcf460f2c5"
+      "sha256": "d8f8d0e5be47eaed06036f266c96a0d3d780f7153d96bd282e91ffd9e67c363f"
     },
     {
       "path": "assets/index-CaA02zeT.css",
@@ -22,9 +22,9 @@
       "sha256": "b6e97d9f675e568812dab446a471fd3ea13cb9a3e4cc17cf2b7c84f55c56da39"
     },
     {
-      "path": "assets/index-FluGZ8cT.js",
-      "bytes": 433537,
-      "sha256": "8263bc94e4f7cbc0e4640f9b054369ebc846bb4ec4f089708e2e05a11d5b9a1f"
+      "path": "assets/index-D0G_eBDy.js",
+      "bytes": 433628,
+      "sha256": "c1c370600c82603a279d46f6f83efb76055bc812c814844b122d1eea140d9ec3"
     },
     {
       "path": "favicon.svg",
@@ -49,7 +49,7 @@
     {
       "path": "index.html",
       "bytes": 746,
-      "sha256": "36e57f3ea2ec11151cb5914c0ef991bd9346a1b4dc5d9fac4da0dacfd401b0ce"
+      "sha256": "32bc52597b5cbf927403c9f61fc5edde0eb337aabb00453d99097f51b91ab2bf"
     },
     {
       "path": "measured-house/README.md",
@@ -142,5 +142,5 @@
       "sha256": "30c77da2cb3560e2fd7dac37ff65ffb09668ef1ed8f864c2a5f2bc7dc4ffd4ee"
     }
   ],
-  "totalBytes": 17606694
+  "totalBytes": 17606785
 }

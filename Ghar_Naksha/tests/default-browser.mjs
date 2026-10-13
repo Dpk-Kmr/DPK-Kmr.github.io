@@ -19,9 +19,9 @@ p=await model();expect(p.elements.find(e=>e.id==='r1-wardrobe').dimensions.heigh
 await page.reload();await expect(page.locator('.scene-container canvas')).toBeVisible({timeout:30000});p=await model();expect(p.elements.find(e=>e.id==='r1-wardrobe').dimensions.height).toBe(54*.0254);
 await page.locator('.project-switcher').click();await page.getByRole('button',{name:'Restore default house'}).click();await expect(page.locator('.save-indicator')).toHaveText('All changes saved');
 p=await model();expect(p.elements.find(e=>e.id==='r1-wardrobe').dimensions.height).toBe(60*.0254);expect(p.rooms.find(r=>r.id==='living').depth).toBe(180*.0254);expect(p.elements.find(e=>e.id==='temple').dimensions.width).toBe(24*.0254);expect(p.elements.find(e=>e.id==='stair-high-9').position[1]).toBe(96*.0254);expect(p.elements.find(e=>e.id==='refrigerator').position[2]).toBe((397.5-298.5)*.0254);await expect(page.locator('.scene-container canvas')).toBeVisible();
-expect(errors).toEqual([]);const old=JSON.parse(await readFile('public/measured-house/project.json','utf8'));old.rooms.find(r=>r.id==='living').depth=126*.0254;
+expect(errors).toEqual([]);const old=JSON.parse(await readFile('public/measured-house/project.json','utf8'));old.name='My new home';old.elements=[];old.rooms=[];
 const returning=await browser.newPage();await returning.addInitScript(value=>localStorage.setItem('ghar-naksha-project-v1',JSON.stringify(value)),old);
 await returning.goto(process.env.SMOKE_BASE_URL || 'http://localhost:5173');await returning.bringToFront();await expect(returning.locator('.save-indicator')).toHaveText('All changes saved',{timeout:30000});
 const upgraded=await returning.evaluate(()=>({project:JSON.parse(localStorage.getItem('ghar-naksha-project-v1')),backup:JSON.parse(localStorage.getItem('ghar-naksha-before-default-upgrade-v2'))}));
-expect(upgraded.project.rooms.find(r=>r.id==='living').depth).toBe(180*.0254);expect(upgraded.backup.rooms.find(r=>r.id==='living').depth).toBe(126*.0254);
+expect(upgraded.project.rooms.find(r=>r.id==='living').depth).toBe(180*.0254);expect(upgraded.backup.name).toBe('My new home');expect(upgraded.backup.elements).toHaveLength(0);expect(upgraded.project.name).toContain('Measured family house');
 await browser.close();console.log('PASS: fresh default 3D, appliances, walkthrough, plan, invalid edits and saved workspace reload.');
