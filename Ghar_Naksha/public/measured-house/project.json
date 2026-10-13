@@ -1,0 +1,2111 @@
+{
+  "version": 1,
+  "name": "Measured family house - 25 ft x 54 ft site",
+  "elements": [
+    {
+      "id": "rear",
+      "name": "rear",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        0.0,
+        0.0,
+        -7.4676
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 7.62,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "front",
+      "name": "front",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        0.0,
+        0.0,
+        7.4676
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 7.62,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "left",
+      "name": "left",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        -3.6957,
+        0.0,
+        0.0
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 14.7066
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "right",
+      "name": "right",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        3.6957,
+        0.0,
+        0.0
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 14.7066
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "service-cross",
+      "name": "service cross",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        -0.7239,
+        0.0,
+        -5.715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 5.715,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "wc-front",
+      "name": "wc front",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        2.8575,
+        0.0,
+        -5.715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.4478,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "room-cross",
+      "name": "room cross",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        0.0,
+        0.0,
+        -1.8288
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 7.1628,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "front-cross",
+      "name": "front cross",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        -1.6382999999999999,
+        0.0,
+        2.9718
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 3.8861999999999997,
+        "height": 2.7432,
+        "depth": 0.2286
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "room-divider",
+      "name": "room divider",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        0.0,
+        0.0,
+        -3.7719
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 3.6576
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "r3-divider",
+      "name": "r3 divider",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        0.1905,
+        0.0,
+        5.2197
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 4.2672
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "bath-divider",
+      "name": "bath divider",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        -1.6382999999999999,
+        0.0,
+        -6.5912999999999995
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 1.524
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "wc-divider",
+      "name": "wc divider",
+      "kind": "wall",
+      "roomId": "living",
+      "position": [
+        2.2479,
+        0.0,
+        -6.5912999999999995
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.2286,
+        "height": 2.7432,
+        "depth": 1.524
+      },
+      "color": "#efe2cc",
+      "material": "plaster",
+      "visible": true,
+      "locked": false,
+      "fullHeight": true
+    },
+    {
+      "id": "temple",
+      "name": "temple",
+      "kind": "temple",
+      "roomId": "kitchen",
+      "position": [
+        -2.667,
+        0.0,
+        -1.4097
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.9144,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "temple-kitchen-storage",
+      "name": "temple kitchen storage",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.2765999999999997,
+        0.0,
+        -1.4097
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.8635999999999999,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r1-wardrobe",
+      "name": "r1 wardrobe",
+      "kind": "wardrobe",
+      "roomId": "r1",
+      "position": [
+        -2.9718,
+        0.9144,
+        -1.4097
+      ],
+      "rotation": 180,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 1.524,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "counter-single",
+      "name": "counter single",
+      "kind": "kitchen-counter",
+      "roomId": "kitchen",
+      "position": [
+        -3.2765999999999997,
+        0.0,
+        0.5715
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 3.3528,
+        "height": 0.9144,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "counter-rear",
+      "name": "counter rear",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -2.9718,
+        0.8635999999999999,
+        -1.4097
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 0.0508,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "counter-front",
+      "name": "counter front",
+      "kind": "kitchen-counter",
+      "roomId": "kitchen",
+      "position": [
+        -2.9718,
+        0.0,
+        2.5526999999999997
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 0.9144,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "kitchen-sink",
+      "name": "kitchen sink",
+      "kind": "sink",
+      "roomId": "kitchen",
+      "position": [
+        -3.2765999999999997,
+        0.9144,
+        -0.8000999999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.5588,
+        "height": 0.07619999999999999,
+        "depth": 0.5588
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "cooktop",
+      "name": "cooktop",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.2765999999999997,
+        0.9144,
+        0.0635
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.5588,
+        "height": 0.0508,
+        "depth": 0.508
+      },
+      "color": "#34443e",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r1-bed",
+      "name": "r1 bed",
+      "kind": "bed",
+      "roomId": "r1",
+      "position": [
+        -2.5907999999999998,
+        0.0,
+        -4.1529
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.524,
+        "height": 0.6095999999999999,
+        "depth": 1.9811999999999999
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r2-bed",
+      "name": "r2 bed",
+      "kind": "bed",
+      "roomId": "r2",
+      "position": [
+        2.4383999999999997,
+        0.0,
+        -4.1529
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.524,
+        "height": 0.6095999999999999,
+        "depth": 1.9811999999999999
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r3-bed",
+      "name": "r3 bed",
+      "kind": "bed",
+      "roomId": "r3",
+      "position": [
+        -2.5907999999999998,
+        0.0,
+        4.6863
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.524,
+        "height": 0.6095999999999999,
+        "depth": 1.9811999999999999
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r2-wardrobe",
+      "name": "r2 wardrobe",
+      "kind": "wardrobe",
+      "roomId": "r2",
+      "position": [
+        3.2765999999999997,
+        0.0,
+        -2.5526999999999997
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 2.1336,
+        "depth": 0.9144
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r3-wardrobe",
+      "name": "r3 wardrobe",
+      "kind": "wardrobe",
+      "roomId": "r3",
+      "position": [
+        -2.5907999999999998,
+        0.0,
+        6.5912999999999995
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.524,
+        "height": 2.1336,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "sofa",
+      "name": "sofa",
+      "kind": "sofa",
+      "roomId": "living",
+      "position": [
+        2.2098,
+        0.0,
+        -0.5715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.8288,
+        "height": 0.762,
+        "depth": 0.762
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "coffee",
+      "name": "coffee",
+      "kind": "coffee-table",
+      "roomId": "living",
+      "position": [
+        2.1336,
+        0.0,
+        0.49529999999999996
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.4572
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "dining",
+      "name": "dining",
+      "kind": "dining-table",
+      "roomId": "living",
+      "position": [
+        -0.9144,
+        0.0,
+        0.1143
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.762,
+        "depth": 0.9144
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "chair1",
+      "name": "chair1",
+      "kind": "chair",
+      "roomId": "living",
+      "position": [
+        -0.9144,
+        0.0,
+        -0.6730999999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.4572,
+        "height": 0.8128,
+        "depth": 0.4572
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "chair2",
+      "name": "chair2",
+      "kind": "chair",
+      "roomId": "living",
+      "position": [
+        -0.9144,
+        0.0,
+        0.9017
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.4572,
+        "height": 0.8128,
+        "depth": 0.4572
+      },
+      "color": "#ab6d37",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "shower",
+      "name": "shower",
+      "kind": "shower",
+      "roomId": "bath",
+      "position": [
+        -3.1242,
+        0.0,
+        -6.8961
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.07619999999999999,
+        "depth": 0.762
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "basin",
+      "name": "basin",
+      "kind": "sink",
+      "roomId": "bath",
+      "position": [
+        -2.286,
+        0.0,
+        -7.0485
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.8128,
+        "depth": 0.4572
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "wc-fixture",
+      "name": "wc fixture",
+      "kind": "toilet",
+      "roomId": "wc",
+      "position": [
+        2.8956,
+        0.0,
+        -6.9723
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.4572,
+        "height": 0.7111999999999999,
+        "depth": 0.6095999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "refrigerator",
+      "name": "refrigerator",
+      "kind": "block",
+      "roomId": "living",
+      "position": [
+        -2.0193,
+        0.0,
+        2.5145999999999997
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.6858,
+        "height": 1.8288,
+        "depth": 0.6858
+      },
+      "color": "#e6e9e5",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "washing-machine",
+      "name": "washing machine",
+      "kind": "block",
+      "roomId": "lobby",
+      "position": [
+        -0.9905999999999999,
+        0.0,
+        -7.0485
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.8635999999999999,
+        "depth": 0.6095999999999999
+      },
+      "color": "#f0f1ec",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "microwave",
+      "name": "microwave",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.302,
+        0.9144,
+        1.2572999999999999
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 0.4064,
+        "height": 0.30479999999999996,
+        "depth": 0.508
+      },
+      "color": "#b7c1c2",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "chimney",
+      "name": "chimney",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.2765999999999997,
+        1.6764,
+        0.0635
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.4064,
+        "depth": 0.6095999999999999
+      },
+      "color": "#566365",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-purifier",
+      "name": "water purifier",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.429,
+        1.6764,
+        -0.9270999999999999
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 0.30479999999999996,
+        "height": 0.4572,
+        "depth": 0.30479999999999996
+      },
+      "color": "#eef2ee",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "living-tv",
+      "name": "living tv",
+      "kind": "block",
+      "roomId": "living",
+      "position": [
+        3.4798,
+        1.2191999999999998,
+        -0.038099999999999995
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.6095999999999999,
+        "depth": 0.2032
+      },
+      "color": "#152c35",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "bath-geyser",
+      "name": "bath geyser",
+      "kind": "block",
+      "roomId": "bath",
+      "position": [
+        -3.2765999999999997,
+        1.9811999999999999,
+        -7.0992999999999995
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.4572,
+        "height": 0.5588,
+        "depth": 0.35559999999999997
+      },
+      "color": "#eee8db",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r1-fan",
+      "name": "r1 fan",
+      "kind": "block",
+      "roomId": "r1",
+      "position": [
+        -1.8288,
+        2.5145999999999997,
+        -3.7719
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.15239999999999998,
+        "depth": 0.762
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r2-fan",
+      "name": "r2 fan",
+      "kind": "block",
+      "roomId": "r2",
+      "position": [
+        1.7526,
+        2.5145999999999997,
+        -3.7719
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.15239999999999998,
+        "depth": 0.762
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r3-fan",
+      "name": "r3 fan",
+      "kind": "block",
+      "roomId": "r3",
+      "position": [
+        -1.0668,
+        2.5145999999999997,
+        4.991099999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.15239999999999998,
+        "depth": 0.762
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "living-fan",
+      "name": "living fan",
+      "kind": "block",
+      "roomId": "living",
+      "position": [
+        0.8382,
+        2.5145999999999997,
+        -0.1143
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.15239999999999998,
+        "depth": 0.762
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "lobby-light",
+      "name": "lobby light",
+      "kind": "block",
+      "roomId": "lobby",
+      "position": [
+        0.5334,
+        2.5907999999999998,
+        -6.7437
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.30479999999999996,
+        "height": 0.07619999999999999,
+        "depth": 0.30479999999999996
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "kitchen-light",
+      "name": "kitchen light",
+      "kind": "block",
+      "roomId": "kitchen",
+      "position": [
+        -3.048,
+        2.5907999999999998,
+        0.5715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.30479999999999996,
+        "height": 0.07619999999999999,
+        "depth": 0.30479999999999996
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r1-ac",
+      "name": "r1 ac",
+      "kind": "block",
+      "roomId": "r1",
+      "position": [
+        -3.4798,
+        2.1336,
+        -4.6863
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.30479999999999996,
+        "depth": 0.2032
+      },
+      "color": "#edf0eb",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r2-ac",
+      "name": "r2 ac",
+      "kind": "block",
+      "roomId": "r2",
+      "position": [
+        3.4798,
+        2.1336,
+        -4.6863
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.30479999999999996,
+        "depth": 0.2032
+      },
+      "color": "#edf0eb",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "r3-ac",
+      "name": "r3 ac",
+      "kind": "block",
+      "roomId": "r3",
+      "position": [
+        -3.4798,
+        2.1336,
+        4.1529
+      ],
+      "rotation": 90,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.30479999999999996,
+        "depth": 0.2032
+      },
+      "color": "#edf0eb",
+      "material": "metal",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-main",
+      "name": "water main",
+      "kind": "water-port",
+      "roomId": "wc",
+      "position": [
+        3.4671,
+        0.30479999999999996,
+        -7.239
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.07619999999999999,
+        "height": 0.07619999999999999,
+        "depth": 0.07619999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-kitchen",
+      "name": "water kitchen",
+      "kind": "water-port",
+      "roomId": "kitchen",
+      "position": [
+        -3.5179,
+        0.4572,
+        -0.43179999999999996
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.07619999999999999,
+        "height": 0.07619999999999999,
+        "depth": 0.07619999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-shower",
+      "name": "water shower",
+      "kind": "water-port",
+      "roomId": "bath",
+      "position": [
+        -3.4671,
+        1.0668,
+        -7.239
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.07619999999999999,
+        "height": 0.07619999999999999,
+        "depth": 0.07619999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-basin",
+      "name": "water basin",
+      "kind": "water-port",
+      "roomId": "bath",
+      "position": [
+        -2.3241,
+        0.4572,
+        -7.239
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.07619999999999999,
+        "height": 0.07619999999999999,
+        "depth": 0.07619999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "water-washer",
+      "name": "water washer",
+      "kind": "water-port",
+      "roomId": "lobby",
+      "position": [
+        -1.2572999999999999,
+        0.30479999999999996,
+        -7.3152
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.07619999999999999,
+        "height": 0.07619999999999999,
+        "depth": 0.07619999999999999
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "electrical-main",
+      "name": "electrical main",
+      "kind": "electrical-panel",
+      "roomId": "hall",
+      "position": [
+        0.35559999999999997,
+        1.2191999999999998,
+        4.0767
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.1016,
+        "height": 0.6095999999999999,
+        "depth": 0.4572
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "wc-storage-shelf",
+      "name": "wc storage shelf",
+      "kind": "block",
+      "roomId": "wc",
+      "position": [
+        2.9718,
+        1.9811999999999999,
+        -6.5912999999999995
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 0.07619999999999999,
+        "depth": 1.524
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-1",
+      "name": "stair low 1",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.0,
+        3.2131
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.15239999999999998,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-1",
+      "name": "stair high 1",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.2191999999999998,
+        5.2451
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-2",
+      "name": "stair low 2",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.0,
+        3.4671
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.30479999999999996,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-2",
+      "name": "stair high 2",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.3716,
+        4.991099999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-3",
+      "name": "stair low 3",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.0,
+        3.7211
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-3",
+      "name": "stair high 3",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.524,
+        4.7371
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-4",
+      "name": "stair low 4",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.15239999999999998,
+        3.9751
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-4",
+      "name": "stair high 4",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.6764,
+        4.483099999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-5",
+      "name": "stair low 5",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.30479999999999996,
+        4.2291
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-5",
+      "name": "stair high 5",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.8288,
+        4.2291
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-6",
+      "name": "stair low 6",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.4572,
+        4.483099999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-6",
+      "name": "stair high 6",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        1.9811999999999999,
+        3.9751
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-7",
+      "name": "stair low 7",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.6095999999999999,
+        4.7371
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-7",
+      "name": "stair high 7",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        2.1336,
+        3.7211
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-8",
+      "name": "stair low 8",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.762,
+        4.991099999999999
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-8",
+      "name": "stair high 8",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        2.286,
+        3.4671
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-low-9",
+      "name": "stair low 9",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        3.1242,
+        0.9144,
+        5.2451
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-high-9",
+      "name": "stair high 9",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.0574,
+        2.4383999999999997,
+        3.2131
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.4572,
+        "depth": 0.254
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "stair-landing",
+      "name": "stair landing",
+      "kind": "block",
+      "roomId": "hall",
+      "position": [
+        2.5907999999999998,
+        1.3716,
+        5.8293
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.9811999999999999,
+        "height": 0.15239999999999998,
+        "depth": 0.9144
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "upper-arrival",
+      "name": "upper arrival",
+      "kind": "block",
+      "roomId": "living",
+      "position": [
+        2.0574,
+        2.8956,
+        2.6289
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 0.15239999999999998,
+        "depth": 0.9144
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false
+    },
+    {
+      "id": "D01",
+      "name": "D01 into bath (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        -1.6382999999999999,
+        0.0,
+        -6.362699999999999
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.762,
+        "height": 1.9811999999999999,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "bath-divider",
+        "offset": 0.2286
+      },
+      "doorSwing": -1,
+      "doorSide": 1
+    },
+    {
+      "id": "D02",
+      "name": "D02 into WC (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        2.2479,
+        0.0,
+        -6.362699999999999
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.762,
+        "height": 1.9811999999999999,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "wc-divider",
+        "offset": 0.2286
+      },
+      "doorSwing": -1,
+      "doorSide": -1
+    },
+    {
+      "id": "S01",
+      "name": "S01 WC storage opens toward utility lobby (proposed size / offset)",
+      "kind": "window",
+      "roomId": "living",
+      "position": [
+        2.2479,
+        2.0574,
+        -6.5912999999999995
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.762,
+        "height": 0.6095999999999999,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "glass",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "wc-divider",
+        "offset": 0.0
+      },
+      "doorSwing": 1,
+      "doorSide": 1,
+      "apertureOnly": true
+    },
+    {
+      "id": "D03",
+      "name": "D03 into Room 1 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        -0.6858,
+        0.0,
+        -5.715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "service-cross",
+        "offset": 0.038099999999999995
+      },
+      "doorSwing": -1,
+      "doorSide": 1
+    },
+    {
+      "id": "D04",
+      "name": "D04 into Room 2 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        0.6858,
+        0.0,
+        -5.715
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "service-cross",
+        "offset": 1.4097
+      },
+      "doorSwing": 1,
+      "doorSide": 1
+    },
+    {
+      "id": "D05",
+      "name": "D05 into Room 1 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        -0.6858,
+        0.0,
+        -1.8288
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "room-cross",
+        "offset": -0.6858
+      },
+      "doorSwing": -1,
+      "doorSide": -1
+    },
+    {
+      "id": "D06",
+      "name": "D06 into Room 2 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        0.6858,
+        0.0,
+        -1.8288
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "room-cross",
+        "offset": 0.6858
+      },
+      "doorSwing": 1,
+      "doorSide": -1
+    },
+    {
+      "id": "D07",
+      "name": "D07 into Room 3 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        -0.5841999999999999,
+        0.0,
+        2.9718
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "front-cross",
+        "offset": 1.0541
+      },
+      "doorSwing": -1,
+      "doorSide": 1
+    },
+    {
+      "id": "D08",
+      "name": "D08 into Room 3 (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        -0.5334,
+        0.0,
+        7.4676
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "front",
+        "offset": -0.5334
+      },
+      "doorSwing": -1,
+      "doorSide": -1
+    },
+    {
+      "id": "D09",
+      "name": "D09 into entrance hall (proposed size / offset)",
+      "kind": "door",
+      "roomId": "living",
+      "position": [
+        1.0668,
+        0.0,
+        7.4676
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 0.9144,
+        "height": 2.1336,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "front",
+        "offset": 1.0668
+      },
+      "doorSwing": 1,
+      "doorSide": -1
+    },
+    {
+      "id": "A01",
+      "name": "A01 wardrobe doors face Room 1 (proposed size / offset)",
+      "kind": "window",
+      "roomId": "living",
+      "position": [
+        -2.9718,
+        0.9144,
+        -1.8288
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 1.524,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "glass",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "room-cross",
+        "offset": -2.9718
+      },
+      "doorSwing": 1,
+      "doorSide": -1,
+      "apertureOnly": true
+    },
+    {
+      "id": "W01",
+      "name": "W01 fixed glazing (proposed size / offset)",
+      "kind": "window",
+      "roomId": "living",
+      "position": [
+        -3.6957,
+        1.0668,
+        -0.1905
+      ],
+      "rotation": 270,
+      "dimensions": {
+        "width": 0.6095999999999999,
+        "height": 0.9144,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "left",
+        "offset": -0.1905
+      },
+      "doorSwing": 1,
+      "doorSide": 1
+    },
+    {
+      "id": "W02",
+      "name": "W02 sliding (proposed size / offset)",
+      "kind": "window",
+      "roomId": "living",
+      "position": [
+        -2.286,
+        0.9144,
+        7.4676
+      ],
+      "rotation": 0,
+      "dimensions": {
+        "width": 1.2191999999999998,
+        "height": 1.2191999999999998,
+        "depth": 0.2286
+      },
+      "color": "#cfa168",
+      "material": "wood",
+      "visible": true,
+      "locked": false,
+      "wallAttachment": {
+        "wallId": "front",
+        "offset": -2.286
+      },
+      "doorSwing": 1,
+      "doorSide": -1
+    }
+  ],
+  "rooms": [
+    {
+      "id": "bath",
+      "name": "Bath",
+      "subtitle": "from sketch",
+      "center": [
+        -2.667,
+        -6.5912999999999995
+      ],
+      "width": 1.8288,
+      "depth": 1.524,
+      "color": "#eeeade"
+    },
+    {
+      "id": "wc",
+      "name": "WC",
+      "subtitle": "from sketch",
+      "center": [
+        2.9718,
+        -6.5912999999999995
+      ],
+      "width": 1.2191999999999998,
+      "depth": 1.524,
+      "color": "#eeeade"
+    },
+    {
+      "id": "lobby",
+      "name": "Utility lobby",
+      "subtitle": "calculated",
+      "center": [
+        0.30479999999999996,
+        -6.5912999999999995
+      ],
+      "width": 3.6576,
+      "depth": 1.524,
+      "color": "#eeeade"
+    },
+    {
+      "id": "r1",
+      "name": "Room 1",
+      "subtitle": "calculated width; sketch depth",
+      "center": [
+        -1.84785,
+        -3.7719
+      ],
+      "width": 3.4671,
+      "depth": 3.6576,
+      "color": "#eeeade"
+    },
+    {
+      "id": "r2",
+      "name": "Room 2",
+      "subtitle": "calculated width; sketch depth",
+      "center": [
+        1.84785,
+        -3.7719
+      ],
+      "width": 3.4671,
+      "depth": 3.6576,
+      "color": "#eeeade"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "subtitle": "from sketch",
+      "center": [
+        -2.9718,
+        0.5715
+      ],
+      "width": 1.2191999999999998,
+      "depth": 4.572,
+      "color": "#eeeade"
+    },
+    {
+      "id": "living",
+      "name": "Living / dining",
+      "subtitle": "calculated; kitchen open to living",
+      "center": [
+        0.6095999999999999,
+        0.5715
+      ],
+      "width": 5.9436,
+      "depth": 4.572,
+      "color": "#eeeade"
+    },
+    {
+      "id": "r3",
+      "name": "Room 3",
+      "subtitle": "from sketch",
+      "center": [
+        -1.7526,
+        5.2197
+      ],
+      "width": 3.6576,
+      "depth": 4.2672,
+      "color": "#eeeade"
+    },
+    {
+      "id": "hall",
+      "name": "Entry / stair",
+      "subtitle": "calculated",
+      "center": [
+        1.9430999999999998,
+        5.2197
+      ],
+      "width": 3.2765999999999997,
+      "depth": 4.2672,
+      "color": "#eeeade"
+    },
+    {
+      "id": "court",
+      "name": "Open front court",
+      "subtitle": "Proposed placement; calculated 4' 3\"",
+      "center": [
+        0,
+        8.2296
+      ],
+      "width": 7.62,
+      "depth": 1.2953999999999999,
+      "color": "#d9dfd4"
+    }
+  ],
+  "floorPlan": {
+    "outline": [
+      [
+        -3.81,
+        -7.5819
+      ],
+      [
+        3.81,
+        -7.5819
+      ],
+      [
+        3.81,
+        8.8773
+      ],
+      [
+        -3.81,
+        8.8773
+      ]
+    ],
+    "wallHeight": 2.7432,
+    "wallThickness": 0.2286
+  }
+}

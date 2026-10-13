@@ -152,9 +152,9 @@ export function WalkController({
     const room =
       project.rooms.find((item) => item.id === focusRoomId) ??
       (!initialized.current
-        ? project.rooms.find(
+        ? (project.rooms.find(item=>item.id==='living' && (item.levelId ?? world.levels[0].id) === requestedLevelId) ?? project.rooms.find(
             (item) => (item.levelId ?? world.levels[0].id) === requestedLevelId,
-          )
+          ))
         : undefined);
     const focusChanged = !!room && focusRoomId !== lastFocus.current;
     // Auto level changes at the last tread preserve the person's position.

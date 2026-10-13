@@ -1,3 +1,5 @@
+> The fresh default is now the measured family house: a 4 ft x 4 ft x 3 ft temple with wardrobe above, 4 ft-wide kitchen with a single 2 ft-deep counter open to living, scaled appliances, 3D entry and walkthrough (including the exact return stair). See [dimension ledger and offline generator](design/README.md). The project menu offers **Restore default house**; edited saved projects are retained. Validate startup with `node tests/default-browser.mjs` against the dev server.
+
 # Ghar Naksha · Design Studio
 
 A home-design web app that opens in an editable **2D floor plan**, with a connected multi-storey 3D model and an adjustable-height, game-style walkthrough. Explore the furnished sample home or start with an overall floor outline, then add rooms, furniture, stairs, openings, and utility connections.

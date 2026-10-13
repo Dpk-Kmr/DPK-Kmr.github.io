@@ -156,7 +156,29 @@ const frameBounds = (bounds: Bounds, aspect: number): Camera => ({
   ),
 });
 
+function SketchStairArrows({ elements }: { elements: HomeElement[] }) {
+  return <g pointerEvents="none" data-sketch-stair-directions="true">
+    {(['low','high'] as const).map(flight=>{
+      const first=elements.find(e=>e.id===`stair-${flight}-1` && e.visible);
+      const last=elements.find(e=>e.id===`stair-${flight}-9` && e.visible);
+      if(!first||!last)return null;
+      const [x,,y]=first.position;const [ex,,ey]=last.position;
+      const len=Math.hypot(ex-x,ey-y);if(len<.1)return null;
+      const dx=(ex-x)/len,dy=(ey-y)/len;
+      return <g key={flight} fill="#315c49" stroke="#315c49">
+        <line x1={x} y1={y} x2={ex} y2={ey} strokeWidth={.04}/>
+        <polygon stroke="none" points={`${ex},${ey} ${ex-dx*.14+dy*.08},${ey-dy*.14-dx*.08} ${ex-dx*.14-dy*.08},${ey-dy*.14+dx*.08}`}/>
+        <text x={flight==='low'?x:ex} y={Math.min(y,ey)-.18} fontSize={.14} textAnchor="middle" stroke="none">{flight==='low'?'UP from living':'UP return'}</text>
+      </g>;
+    })}
+  </g>;
+}
+
 function FurnitureSymbol({ element }: { element: HomeElement }) {
+  if(element.id==='wc-storage-shelf'||element.id==='upper-arrival')return <g>
+    <rect x={-element.dimensions.width/2} y={-element.dimensions.depth/2} width={element.dimensions.width} height={element.dimensions.depth} fill="none" stroke="#847154" strokeWidth={.025} strokeDasharray=".08 .06"/>
+    <text x={0} y={0} fontSize={.13} fill="#5d6758" textAnchor="middle">{element.id==='wc-storage-shelf'?'Storage above WC':'Upper arrival'}</text>
+  </g>;
   const width = Math.max(0.35, element.dimensions.width);
   const depth = Math.max(0.35, element.dimensions.depth);
   const structure = STRUCTURAL_KINDS.includes(element.kind);
@@ -238,6 +260,21 @@ function FurnitureGraphic({ element }: { element: HomeElement }) {
         />
       </g>
     );
+  if (element.apertureOnly) return <rect x={x} y={z} width={w} height={d} fill={element.position[1]>0?'none':'#faf9f5'} stroke={element.position[1]>0?'#847154':'none'} strokeWidth={.025} strokeDasharray={element.position[1]>0?'.08 .06':undefined}/>;
+  if (kind === 'door' && element.doorSwing) {
+    const hinge = element.doorSwing === -1 ? w / 2 : -w / 2;
+    const end = -hinge;
+    const side = element.doorSide ?? 1;
+    const points = Array.from({length: 25}, (_, i) => {
+      const a = i / 24 * Math.PI / 2;
+      return `${hinge + (end-hinge)*Math.cos(a)},${side*w*Math.sin(a)}`;
+    }).join(' ');
+    return <g stroke="#928373" strokeWidth={0.026} fill="none">
+      <rect x={x} y={z} width={w} height={d} fill="#faf9f5" stroke="none"/>
+      <polyline points={points} strokeDasharray=".045 .035"/>
+      <path d={`M ${hinge} 0 L ${hinge} ${side*w}`} strokeWidth={0.048}/>
+    </g>;
+  }
   if (kind === 'door')
     return (
       <g stroke="#928373" strokeWidth={0.026} fill="none">
@@ -1869,7 +1906,7 @@ export default function PlanView({
                 {(element.dimensions.depth * factor).toFixed(2)} ×{' '}
                 {(element.dimensions.height * factor).toFixed(2)} {units}
               </title>
-              {element.wallAttachment &&
+              {element.wallAttachment && !(element.apertureOnly && element.position[1]>0) &&
                 ['door', 'window'].includes(element.kind) && (
                   <rect
                     x={-element.dimensions.width / 2}
@@ -1891,6 +1928,7 @@ export default function PlanView({
               />
             </g>
           ))}
+        {layers.furniture && <SketchStairArrows elements={project.elements}/> }
         <g pointerEvents="none" fill="none">
           {connections.map(({ connection, points }) => (
             <g key={connection.id}>

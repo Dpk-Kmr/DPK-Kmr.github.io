@@ -62,7 +62,7 @@ import {
   Zap,
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
-import { catalog, createElement, initialProject } from './data';
+import { catalog, createElement, initialProject, courtyardProject } from './data';
 import type {
   CatalogItem,
   FloorPlan,
@@ -84,6 +84,8 @@ import {
 import {
   downloadProject,
   loadProject,
+  matchesStarter,
+  migrateMeasuredDefault,
   saveProject,
   validateProject,
 } from './lib/project';
@@ -111,6 +113,7 @@ import ConnectionsEditor from './components/ConnectionsEditor';
 import { StairInspector } from './components/StairInspector';
 import ElementThumbnail from './components/ElementThumbnail';
 import PlanView from './components/PlanView';
+import SketchDesign from './components/SketchDesign';
 import { NumberField as NumericField } from './components/Fields';
 import FloorManager from './components/FloorManager';
 import ShareProject from './components/ShareProject';
@@ -189,7 +192,10 @@ function IconButton({
 
 function useProject() {
   const [project, setProject] = useState<Project>(() =>
-    loadProject(clone(initialProject)),
+    (() => {
+      const saved=loadProject(clone(initialProject));
+      return matchesStarter(saved,courtyardProject)?validateProject(clone(initialProject)):migrateMeasuredDefault(saved,initialProject);
+    })(),
   );
   const current = useRef(project);
   const history = useRef<{ past: Project[]; future: Project[] }>({
@@ -282,8 +288,8 @@ export default function App() {
     },
     [commitBuilding],
   );
-  const [selectedId, setSelectedId] = useState<string | null>('living-sofa');
-  const [selectedIds, setSelectedIds] = useState<string[]>(['living-sofa']);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [multiSelect, setMultiSelect] = useState(false);
   const [elementClipboard, setElementClipboard] =
     useState<ElementClipboard | null>(null);
@@ -292,7 +298,7 @@ export default function App() {
     height: number;
     camera: 'first' | 'follow' | 'front';
   }>({ height: 1.75, camera: 'follow' });
-  const [viewMode, setViewMode] = useState<ViewMode>('2d');
+  const [viewMode, setViewMode] = useState<ViewMode>('3d');
   const [tool, setTool] = useState<ToolMode>('select');
   const [focusRoomId, setFocusRoomId] = useState<string | null>(null);
   const [cameraAction, setCameraAction] = useState<{
@@ -319,9 +325,9 @@ export default function App() {
   const [layersOpen, setLayersOpen] = useState(false);
   const [units, setUnits] = useState<'m' | 'ft'>(() => {
     try {
-      return localStorage.getItem('ghar-naksha-units') === 'ft' ? 'ft' : 'm';
+      return localStorage.getItem('ghar-naksha-units') === 'm' ? 'm' : 'ft';
     } catch {
-      return 'm';
+      return 'ft';
     }
   });
   useEffect(() => {
@@ -1210,6 +1216,7 @@ export default function App() {
           <ChevronDown size={14} />
         </button>
         <div className="header-spacer" />
+        <SketchDesign onApply={(p) => {commitBuilding(p); setUnits('ft'); setSelectedId(null); setSelectedIds([]); setViewMode('2d'); setCameraAction(prev=>({type:'reset',nonce:prev.nonce+1})); notify('Measured sketch design loaded. Proposed assumptions are in the sketch panel.');}} />
         <span className={`save-indicator ${effectiveSaveStatus}`}>
           <span />
           {effectiveSaveStatus === 'saved'
@@ -2033,7 +2040,7 @@ export default function App() {
               </div>
             )}
             <div className="compass" aria-hidden="true">
-              <span>N</span>
+              <span>{project.elements.some(e=>e.id==='temple') ? 'Rear / top' : 'N'}</span>
               <svg viewBox="0 0 42 42">
                 <circle
                   cx="21"
@@ -3297,18 +3304,20 @@ export default function App() {
                 className="reset-project"
                 onClick={() => {
                   commitBuilding(clone(initialProject));
-                  setSelectedId('living-sofa');
-                  setSelectedIds(['living-sofa']);
+                  setSelectedId(null);
+                  setSelectedIds([]);
+                  setViewMode('3d');
+                  setUnits('ft');
                   setFocusRoomId(null);
                   camera('reset');
                   setDialog(null);
                   notify(
-                    'Sample home restored. Undo to return to your previous design.',
+                    'Default measured house restored. Undo to return to your previous design.',
                   );
                 }}
               >
                 <RotateCcw size={12} />
-                Restore the sample home
+                Restore default house
               </button>
             </div>
           )}

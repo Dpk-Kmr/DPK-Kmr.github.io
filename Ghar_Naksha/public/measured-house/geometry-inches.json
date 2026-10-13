@@ -1,0 +1,1120 @@
+{
+  "fixed": {
+    "site_width": 300,
+    "site_depth": 648,
+    "wall": 9,
+    "service": 60,
+    "bedrooms": 144,
+    "living": 180,
+    "front": 168,
+    "bath_width": 72,
+    "wc_width": 48,
+    "kitchen_width": 48,
+    "room3_width": 144,
+    "wall_height": 108,
+    "wc_height": 78,
+    "temple_height": 36
+  },
+  "proposed": {
+    "temple_depth": 24,
+    "wardrobe_height": 60,
+    "floor_height": 120,
+    "slab": 6,
+    "stair_risers": 20,
+    "stair_width": 36,
+    "stair_gap": 6,
+    "tread": 10,
+    "landing": 36,
+    "door_width": 36,
+    "service_door": 30,
+    "door_height": 84,
+    "window_width": 48,
+    "window_height": 48,
+    "window_sill": 36,
+    "counter_depth": 24,
+    "counter_height": 36,
+    "counter_slab": 2,
+    "front_court": true,
+    "kitchen_sink_x": 13,
+    "kitchen_sink_offset": 1,
+    "kitchen_sink_depth": 22,
+    "kitchen_sink_thickness": 3,
+    "door_leaf_thickness": 2,
+    "wc_storage_shelf": 3,
+    "wc_storage_height": 27,
+    "wc_storage_opening_height": 24,
+    "stair_waist": 12,
+    "temple_panel": 1,
+    "cooktop_x": 43,
+    "cooktop_offset": 2,
+    "cooktop_width": 22,
+    "cooktop_depth": 20,
+    "cooktop_thickness": 2
+  },
+  "width": 300,
+  "depth": 597,
+  "court": 51,
+  "inside_width": 282,
+  "room_width": 136.5,
+  "walls": [
+    {
+      "id": "rear",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "front",
+      "x": 0,
+      "y": 588,
+      "w": 300,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "left",
+      "x": 0,
+      "y": 9,
+      "w": 9,
+      "d": 579,
+      "h": 108
+    },
+    {
+      "id": "right",
+      "x": 291,
+      "y": 9,
+      "w": 9,
+      "d": 579,
+      "h": 108
+    },
+    {
+      "id": "service-cross",
+      "x": 9,
+      "y": 69,
+      "w": 225,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "wc-front",
+      "x": 234,
+      "y": 69,
+      "w": 57,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "room-cross",
+      "x": 9,
+      "y": 222,
+      "w": 282,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "front-cross",
+      "x": 9,
+      "y": 411,
+      "w": 153,
+      "d": 9,
+      "h": 108
+    },
+    {
+      "id": "room-divider",
+      "x": 145.5,
+      "y": 78,
+      "w": 9,
+      "d": 144,
+      "h": 108
+    },
+    {
+      "id": "r3-divider",
+      "x": 153,
+      "y": 420,
+      "w": 9,
+      "d": 168,
+      "h": 108
+    },
+    {
+      "id": "bath-divider",
+      "x": 81,
+      "y": 9,
+      "w": 9,
+      "d": 60,
+      "h": 108
+    },
+    {
+      "id": "wc-divider",
+      "x": 234,
+      "y": 9,
+      "w": 9,
+      "d": 60,
+      "h": 108
+    }
+  ],
+  "openings": [
+    {
+      "id": "D01",
+      "wall": "bath-divider",
+      "start": 24,
+      "width": 30,
+      "height": 78,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into bath",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D02",
+      "wall": "wc-divider",
+      "start": 24,
+      "width": 30,
+      "height": 78,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into WC",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "S01",
+      "wall": "wc-divider",
+      "start": 15,
+      "width": 30,
+      "height": 24,
+      "sill": 81,
+      "kind": "access",
+      "direction": "WC storage opens toward utility lobby",
+      "basis": "user-requested storage; shelf, height and hatch dimensions proposed"
+    },
+    {
+      "id": "D03",
+      "wall": "service-cross",
+      "start": 96,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 1",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D04",
+      "wall": "service-cross",
+      "start": 150,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 2",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D05",
+      "wall": "room-cross",
+      "start": 96,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 1",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D06",
+      "wall": "room-cross",
+      "start": 150,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 2",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D07",
+      "wall": "front-cross",
+      "start": 100,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 3",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D08",
+      "wall": "front",
+      "start": 111,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into Room 3",
+      "basis": "from sketch; exact offset and size proposed"
+    },
+    {
+      "id": "D09",
+      "wall": "front",
+      "start": 174,
+      "width": 36,
+      "height": 84,
+      "sill": 0,
+      "kind": "door",
+      "direction": "into entrance hall",
+      "basis": "proposed main entry; sketch shows only Room 3 exterior door"
+    },
+    {
+      "id": "A01",
+      "wall": "room-cross",
+      "start": 0,
+      "width": 48,
+      "height": 60,
+      "sill": 36,
+      "kind": "access",
+      "direction": "wardrobe doors face Room 1",
+      "basis": "proposed upper recess over temple, requires lintel/support design"
+    },
+    {
+      "id": "W01",
+      "wall": "left",
+      "start": 270,
+      "width": 24,
+      "height": 36,
+      "sill": 42,
+      "kind": "window",
+      "direction": "fixed glazing",
+      "basis": "from kitchen mark; exact placement and size proposed"
+    },
+    {
+      "id": "W02",
+      "wall": "front",
+      "start": 36,
+      "width": 48,
+      "height": 48,
+      "sill": 36,
+      "kind": "window",
+      "direction": "sliding",
+      "basis": "from Room 3 front hatch; size/offset proposed"
+    }
+  ],
+  "boxes": [
+    {
+      "id": "temple",
+      "kind": "temple",
+      "x": 33,
+      "y": 231,
+      "w": 24,
+      "d": 24,
+      "h": 36,
+      "z": 0
+    },
+    {
+      "id": "temple-kitchen-storage",
+      "kind": "block",
+      "x": 9,
+      "y": 231,
+      "w": 24,
+      "d": 24,
+      "h": 34,
+      "z": 0
+    },
+    {
+      "id": "r1-wardrobe",
+      "kind": "wardrobe",
+      "x": 9,
+      "y": 231,
+      "w": 48,
+      "d": 24,
+      "h": 60,
+      "z": 36
+    },
+    {
+      "id": "counter-single",
+      "kind": "kitchen-counter",
+      "x": 9,
+      "y": 255,
+      "w": 24,
+      "d": 132,
+      "h": 36,
+      "z": 0
+    },
+    {
+      "id": "counter-rear",
+      "kind": "block",
+      "x": 9,
+      "y": 231,
+      "w": 48,
+      "d": 24,
+      "h": 2,
+      "z": 34
+    },
+    {
+      "id": "counter-front",
+      "kind": "kitchen-counter",
+      "x": 9,
+      "y": 387,
+      "w": 48,
+      "d": 24,
+      "h": 36,
+      "z": 0
+    },
+    {
+      "id": "kitchen-sink",
+      "kind": "sink",
+      "x": 10,
+      "y": 256,
+      "w": 22,
+      "d": 22,
+      "h": 3,
+      "z": 36
+    },
+    {
+      "id": "cooktop",
+      "kind": "block",
+      "x": 10,
+      "y": 291,
+      "w": 22,
+      "d": 20,
+      "h": 2,
+      "z": 36
+    },
+    {
+      "id": "r1-bed",
+      "kind": "bed",
+      "x": 18,
+      "y": 96,
+      "w": 60,
+      "d": 78,
+      "h": 24,
+      "z": 0
+    },
+    {
+      "id": "r2-bed",
+      "kind": "bed",
+      "x": 216,
+      "y": 96,
+      "w": 60,
+      "d": 78,
+      "h": 24,
+      "z": 0
+    },
+    {
+      "id": "r3-bed",
+      "kind": "bed",
+      "x": 18,
+      "y": 444,
+      "w": 60,
+      "d": 78,
+      "h": 24,
+      "z": 0
+    },
+    {
+      "id": "r2-wardrobe",
+      "kind": "wardrobe",
+      "x": 267,
+      "y": 180,
+      "w": 24,
+      "d": 36,
+      "h": 84,
+      "z": 0
+    },
+    {
+      "id": "r3-wardrobe",
+      "kind": "wardrobe",
+      "x": 18,
+      "y": 546,
+      "w": 60,
+      "d": 24,
+      "h": 84,
+      "z": 0
+    },
+    {
+      "id": "sofa",
+      "kind": "sofa",
+      "x": 201,
+      "y": 261,
+      "w": 72,
+      "d": 30,
+      "h": 30,
+      "z": 0
+    },
+    {
+      "id": "coffee",
+      "kind": "coffee-table",
+      "x": 216,
+      "y": 309,
+      "w": 36,
+      "d": 18,
+      "h": 18,
+      "z": 0
+    },
+    {
+      "id": "dining",
+      "kind": "dining-table",
+      "x": 96,
+      "y": 285,
+      "w": 36,
+      "d": 36,
+      "h": 30,
+      "z": 0
+    },
+    {
+      "id": "chair1",
+      "kind": "chair",
+      "x": 105,
+      "y": 263,
+      "w": 18,
+      "d": 18,
+      "h": 32,
+      "z": 0
+    },
+    {
+      "id": "chair2",
+      "kind": "chair",
+      "x": 105,
+      "y": 325,
+      "w": 18,
+      "d": 18,
+      "h": 32,
+      "z": 0
+    },
+    {
+      "id": "shower",
+      "kind": "shower",
+      "x": 12,
+      "y": 12,
+      "w": 30,
+      "d": 30,
+      "h": 3,
+      "z": 0
+    },
+    {
+      "id": "basin",
+      "kind": "sink",
+      "x": 48,
+      "y": 12,
+      "w": 24,
+      "d": 18,
+      "h": 32,
+      "z": 0
+    },
+    {
+      "id": "wc-fixture",
+      "kind": "toilet",
+      "x": 255,
+      "y": 12,
+      "w": 18,
+      "d": 24,
+      "h": 28,
+      "z": 0
+    },
+    {
+      "id": "refrigerator",
+      "kind": "block",
+      "x": 57,
+      "y": 384,
+      "w": 27,
+      "d": 27,
+      "h": 72,
+      "z": 0
+    },
+    {
+      "id": "washing-machine",
+      "kind": "block",
+      "x": 99,
+      "y": 9,
+      "w": 24,
+      "d": 24,
+      "h": 34,
+      "z": 0
+    },
+    {
+      "id": "microwave",
+      "kind": "block",
+      "x": 10,
+      "y": 340,
+      "w": 20,
+      "d": 16,
+      "h": 12,
+      "z": 36
+    },
+    {
+      "id": "chimney",
+      "kind": "block",
+      "x": 9,
+      "y": 289,
+      "w": 24,
+      "d": 24,
+      "h": 16,
+      "z": 66
+    },
+    {
+      "id": "water-purifier",
+      "kind": "block",
+      "x": 9,
+      "y": 256,
+      "w": 12,
+      "d": 12,
+      "h": 18,
+      "z": 66
+    },
+    {
+      "id": "living-tv",
+      "kind": "block",
+      "x": 283,
+      "y": 279,
+      "w": 8,
+      "d": 36,
+      "h": 24,
+      "z": 48
+    },
+    {
+      "id": "bath-geyser",
+      "kind": "block",
+      "x": 12,
+      "y": 12,
+      "w": 18,
+      "d": 14,
+      "h": 22,
+      "z": 78
+    },
+    {
+      "id": "r1-fan",
+      "kind": "block",
+      "x": 63,
+      "y": 135,
+      "w": 30,
+      "d": 30,
+      "h": 6,
+      "z": 99
+    },
+    {
+      "id": "r2-fan",
+      "kind": "block",
+      "x": 204,
+      "y": 135,
+      "w": 30,
+      "d": 30,
+      "h": 6,
+      "z": 99
+    },
+    {
+      "id": "r3-fan",
+      "kind": "block",
+      "x": 93,
+      "y": 480,
+      "w": 30,
+      "d": 30,
+      "h": 6,
+      "z": 99
+    },
+    {
+      "id": "living-fan",
+      "kind": "block",
+      "x": 168,
+      "y": 279,
+      "w": 30,
+      "d": 30,
+      "h": 6,
+      "z": 99
+    },
+    {
+      "id": "lobby-light",
+      "kind": "block",
+      "x": 165,
+      "y": 27,
+      "w": 12,
+      "d": 12,
+      "h": 3,
+      "z": 102
+    },
+    {
+      "id": "kitchen-light",
+      "kind": "block",
+      "x": 24,
+      "y": 315,
+      "w": 12,
+      "d": 12,
+      "h": 3,
+      "z": 102
+    },
+    {
+      "id": "r1-ac",
+      "kind": "block",
+      "x": 9,
+      "y": 96,
+      "w": 8,
+      "d": 36,
+      "h": 12,
+      "z": 84
+    },
+    {
+      "id": "r2-ac",
+      "kind": "block",
+      "x": 283,
+      "y": 96,
+      "w": 8,
+      "d": 36,
+      "h": 12,
+      "z": 84
+    },
+    {
+      "id": "r3-ac",
+      "kind": "block",
+      "x": 9,
+      "y": 444,
+      "w": 8,
+      "d": 36,
+      "h": 12,
+      "z": 84
+    },
+    {
+      "id": "water-main",
+      "kind": "water-port",
+      "x": 285,
+      "y": 12,
+      "w": 3,
+      "d": 3,
+      "h": 3,
+      "z": 12
+    },
+    {
+      "id": "water-kitchen",
+      "kind": "water-port",
+      "x": 10,
+      "y": 280,
+      "w": 3,
+      "d": 3,
+      "h": 3,
+      "z": 18
+    },
+    {
+      "id": "water-shower",
+      "kind": "water-port",
+      "x": 12,
+      "y": 12,
+      "w": 3,
+      "d": 3,
+      "h": 3,
+      "z": 42
+    },
+    {
+      "id": "water-basin",
+      "kind": "water-port",
+      "x": 57,
+      "y": 12,
+      "w": 3,
+      "d": 3,
+      "h": 3,
+      "z": 18
+    },
+    {
+      "id": "water-washer",
+      "kind": "water-port",
+      "x": 99,
+      "y": 9,
+      "w": 3,
+      "d": 3,
+      "h": 3,
+      "z": 12
+    },
+    {
+      "id": "electrical-main",
+      "kind": "electrical-panel",
+      "x": 162,
+      "y": 450,
+      "w": 4,
+      "d": 18,
+      "h": 24,
+      "z": 48
+    },
+    {
+      "id": "wc-storage-shelf",
+      "kind": "block",
+      "x": 243,
+      "y": 9,
+      "w": 48,
+      "d": 60,
+      "h": 3,
+      "z": 78
+    },
+    {
+      "id": "stair-low-1",
+      "kind": "stair",
+      "x": 255,
+      "y": 420,
+      "w": 36,
+      "d": 10,
+      "h": 6.0,
+      "z": 0,
+      "bottom_start": 0,
+      "bottom_end": 0
+    },
+    {
+      "id": "stair-high-1",
+      "kind": "stair",
+      "x": 213,
+      "y": 500,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 48.0,
+      "bottom_start": 54.0,
+      "bottom_end": 48.0
+    },
+    {
+      "id": "stair-low-2",
+      "kind": "stair",
+      "x": 255,
+      "y": 430,
+      "w": 36,
+      "d": 10,
+      "h": 12.0,
+      "z": 0,
+      "bottom_start": 0,
+      "bottom_end": 0
+    },
+    {
+      "id": "stair-high-2",
+      "kind": "stair",
+      "x": 213,
+      "y": 490,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 54.0,
+      "bottom_start": 60.0,
+      "bottom_end": 54.0
+    },
+    {
+      "id": "stair-low-3",
+      "kind": "stair",
+      "x": 255,
+      "y": 440,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 0,
+      "bottom_start": 0,
+      "bottom_end": 6.0
+    },
+    {
+      "id": "stair-high-3",
+      "kind": "stair",
+      "x": 213,
+      "y": 480,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 60.0,
+      "bottom_start": 66.0,
+      "bottom_end": 60.0
+    },
+    {
+      "id": "stair-low-4",
+      "kind": "stair",
+      "x": 255,
+      "y": 450,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 6.0,
+      "bottom_start": 6.0,
+      "bottom_end": 12.0
+    },
+    {
+      "id": "stair-high-4",
+      "kind": "stair",
+      "x": 213,
+      "y": 470,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 66.0,
+      "bottom_start": 72.0,
+      "bottom_end": 66.0
+    },
+    {
+      "id": "stair-low-5",
+      "kind": "stair",
+      "x": 255,
+      "y": 460,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 12.0,
+      "bottom_start": 12.0,
+      "bottom_end": 18.0
+    },
+    {
+      "id": "stair-high-5",
+      "kind": "stair",
+      "x": 213,
+      "y": 460,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 72.0,
+      "bottom_start": 78.0,
+      "bottom_end": 72.0
+    },
+    {
+      "id": "stair-low-6",
+      "kind": "stair",
+      "x": 255,
+      "y": 470,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 18.0,
+      "bottom_start": 18.0,
+      "bottom_end": 24.0
+    },
+    {
+      "id": "stair-high-6",
+      "kind": "stair",
+      "x": 213,
+      "y": 450,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 78.0,
+      "bottom_start": 84.0,
+      "bottom_end": 78.0
+    },
+    {
+      "id": "stair-low-7",
+      "kind": "stair",
+      "x": 255,
+      "y": 480,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 24.0,
+      "bottom_start": 24.0,
+      "bottom_end": 30.0
+    },
+    {
+      "id": "stair-high-7",
+      "kind": "stair",
+      "x": 213,
+      "y": 440,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 84.0,
+      "bottom_start": 90.0,
+      "bottom_end": 84.0
+    },
+    {
+      "id": "stair-low-8",
+      "kind": "stair",
+      "x": 255,
+      "y": 490,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 30.0,
+      "bottom_start": 30.0,
+      "bottom_end": 36.0
+    },
+    {
+      "id": "stair-high-8",
+      "kind": "stair",
+      "x": 213,
+      "y": 430,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 90.0,
+      "bottom_start": 96.0,
+      "bottom_end": 90.0
+    },
+    {
+      "id": "stair-low-9",
+      "kind": "stair",
+      "x": 255,
+      "y": 500,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 36.0,
+      "bottom_start": 36.0,
+      "bottom_end": 42.0
+    },
+    {
+      "id": "stair-high-9",
+      "kind": "stair",
+      "x": 213,
+      "y": 420,
+      "w": 36,
+      "d": 10,
+      "h": 18.0,
+      "z": 96.0,
+      "bottom_start": 102.0,
+      "bottom_end": 96.0
+    },
+    {
+      "id": "stair-landing",
+      "kind": "stair",
+      "x": 213,
+      "y": 510,
+      "w": 78,
+      "d": 36,
+      "h": 6,
+      "z": 54.0
+    },
+    {
+      "id": "upper-arrival",
+      "kind": "stair",
+      "x": 213,
+      "y": 384,
+      "w": 36,
+      "d": 36,
+      "h": 6,
+      "z": 114
+    }
+  ],
+  "rooms": [
+    {
+      "id": "bath",
+      "name": "Bath",
+      "x": 9,
+      "y": 9,
+      "w": 72,
+      "d": 60,
+      "basis": "from sketch"
+    },
+    {
+      "id": "wc",
+      "name": "WC",
+      "x": 243,
+      "y": 9,
+      "w": 48,
+      "d": 60,
+      "basis": "from sketch"
+    },
+    {
+      "id": "lobby",
+      "name": "Utility lobby",
+      "x": 90,
+      "y": 9,
+      "w": 144,
+      "d": 60,
+      "basis": "calculated"
+    },
+    {
+      "id": "r1",
+      "name": "Room 1",
+      "x": 9,
+      "y": 78,
+      "w": 136.5,
+      "d": 144,
+      "basis": "calculated width; sketch depth"
+    },
+    {
+      "id": "r2",
+      "name": "Room 2",
+      "x": 154.5,
+      "y": 78,
+      "w": 136.5,
+      "d": 144,
+      "basis": "calculated width; sketch depth"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "x": 9,
+      "y": 231,
+      "w": 48,
+      "d": 180,
+      "basis": "from sketch"
+    },
+    {
+      "id": "living",
+      "name": "Living / dining",
+      "x": 57,
+      "y": 231,
+      "w": 234,
+      "d": 180,
+      "basis": "calculated; kitchen open to living"
+    },
+    {
+      "id": "r3",
+      "name": "Room 3",
+      "x": 9,
+      "y": 420,
+      "w": 144,
+      "d": 168,
+      "basis": "from sketch"
+    },
+    {
+      "id": "hall",
+      "name": "Entry / stair",
+      "x": 162,
+      "y": 420,
+      "w": 129,
+      "d": 168,
+      "basis": "calculated"
+    }
+  ],
+  "stair": {
+    "x": 213,
+    "y": 420,
+    "w": 78,
+    "d": 126,
+    "risers": 20,
+    "riser": 6.0,
+    "tread": 10,
+    "flight_width": 36,
+    "landing": 36,
+    "headroom": 108,
+    "shaft": [
+      213,
+      420,
+      78,
+      126
+    ],
+    "note": "Full open shaft to roof underside 228 in; arrival underside 114 in."
+  },
+  "kitchen": {
+    "width": 48,
+    "counter_depth": 24,
+    "aisle": 24,
+    "open_clearance": 60,
+    "orientation": "three-wall counter: full left run and 48 in rear/front returns, open right to living"
+  },
+  "accesses": [
+    {
+      "id": "living-to-stair",
+      "x": 162,
+      "y": 384,
+      "w": 129,
+      "d": 36
+    },
+    {
+      "id": "open-kitchen-aisle",
+      "x": 33,
+      "y": 255,
+      "w": 60,
+      "d": 129
+    }
+  ],
+  "stair_entry": {
+    "x": 255,
+    "y": 420,
+    "from_space": "living",
+    "flight": "right exterior wall"
+  },
+  "storage": {
+    "x": 243,
+    "y": 9,
+    "w": 48,
+    "d": 60,
+    "z": 81,
+    "h": 27,
+    "opening": "S01"
+  }
+}

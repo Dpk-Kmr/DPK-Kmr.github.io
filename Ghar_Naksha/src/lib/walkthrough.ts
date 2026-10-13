@@ -168,6 +168,21 @@ export function makeWalkWorld(project: Project): WalkWorld {
         footprint: footprint.map((point) => worldPoint(element, point)),
       };
     });
+  // The measured house uses exact editable cuboids rather than a refitted stair asset.
+  const measured=visible.filter(e=>/^stair-(low|high)-[0-9]+$/.test(e.id)||e.id==='stair-landing'||e.id==='upper-arrival');
+  if(measured.length && measured.some(e=>e.id==='stair-low-1')) {
+    const minX=Math.min(...measured.map(e=>e.position[0]-e.dimensions.width/2));
+    const maxX=Math.max(...measured.map(e=>e.position[0]+e.dimensions.width/2));
+    const minZ=Math.min(...measured.map(e=>e.position[2]-e.dimensions.depth/2));
+    const maxZ=Math.max(...measured.map(e=>e.position[2]+e.dimensions.depth/2));
+    const origin:Point3=[(minX+maxX)/2,0,(minZ+maxZ)/2];
+    const element:LeveledElement={...measured[0],id:'measured-stair',kind:'stairs',position:origin,rotation:0,dimensions:{width:maxX-minX,depth:maxZ-minZ,height:Math.max(...measured.map(e=>e.position[1]+e.dimensions.height))}};
+    const treads=measured.map(e=>{
+      const x=e.position[0]-origin[0],z=e.position[2]-origin[2],w=e.dimensions.width/2,d=e.dimensions.depth/2;
+      return {polygon:[[x-w,z-d],[x+w,z-d],[x+w,z+d],[x-w,z+d]] as Point2[],top:e.position[1]+e.dimensions.height,thickness:e.id==='stair-landing'||e.id==='upper-arrival'?e.dimensions.height:e.dimensions.height,landing:e.id==='stair-landing'||e.id==='upper-arrival'};
+    });
+    stairs.push({element,elevation:elevation(element),levelId:elementLevelId(element,levels),treads,footprint:[[minX,minZ],[maxX,minZ],[maxX,maxZ],[minX,maxZ]]});
+  }
   const holes: WalkWorld['holes'] = {};
   levels.forEach((level) => {
     holes[level.id] = stairs
@@ -203,8 +218,11 @@ export function makeWalkWorld(project: Project): WalkWorld {
           'coffee-table',
           'dining-table',
           'nightstand',
+          'block',
+          'temple',
         ].includes(element.kind),
       )
+      .filter(element=>!/^stair-(low|high)-[0-9]+$/.test(element.id)&&element.id!=='stair-landing'&&element.id!=='upper-arrival')
       .map((element) => ({ element, elevation: elevation(element) })),
     seats: visible
       .filter((element) => ['sofa', 'armchair', 'chair'].includes(element.kind))
@@ -338,6 +356,7 @@ export function bodyBlocked(
   if (
     world.stairs.some((stair) => {
       const point = localPoint(stair.element, x, z);
+
       return stair.treads.some((tread) => {
         const bottom =
           stair.elevation +

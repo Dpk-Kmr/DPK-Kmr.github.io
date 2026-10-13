@@ -16,6 +16,7 @@ import { defaultStairs } from './stairs';
 export const STORAGE_KEY = 'ghar-naksha-project-v1';
 
 const KINDS = new Set<ElementKind>([
+  'block', 'temple',
   'sofa',
   'armchair',
   'coffee-table',
@@ -383,6 +384,10 @@ export function validateProject(value: unknown): Project {
       material: element.material as Material,
       visible: boolean(element.visible, `${label} visibility`),
       locked: boolean(element.locked, `${label} lock state`),
+      ...(element.apertureOnly === true ? { apertureOnly: true } : {}),
+      ...(element.fullHeight === true ? { fullHeight: true } : {}),
+      ...(element.doorSwing === -1 || element.doorSwing === 1 ? { doorSwing: element.doorSwing } : {}),
+      ...(element.doorSide === -1 || element.doorSide === 1 ? { doorSide: element.doorSide } : {}),
       ...(element.kind === 'stairs'
         ? { stairs: stairConfig(element.stairs, label) }
         : {}),
@@ -541,4 +546,31 @@ export function downloadProject(project: Project): void {
   link.click();
   link.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+export function matchesStarter(candidate: Project, starter: Project): boolean {
+  return JSON.stringify(validateProject(candidate)) === JSON.stringify(validateProject(starter));
+}
+
+/** Upgrade the named measured default saved by earlier app versions. */
+export function migrateMeasuredDefault(saved: Project, latest: Project): Project {
+  if (saved.name !== latest.name) return saved;
+  const living=saved.rooms.find(r=>r.id==='living');
+  const temple=saved.elements.find(e=>e.id==='temple');
+  const upper=saved.elements.find(e=>e.id==='stair-high-9');
+  const fridge=saved.elements.find(e=>e.id==='refrigerator');
+  const currentFridge=latest.elements.find(e=>e.id==='refrigerator');
+  const outdated=!!living && !!temple && (
+    Math.abs(living.depth-180*.0254)>1e-8 ||
+    Math.abs(temple.dimensions.width-24*.0254)>1e-8 ||
+    !saved.elements.some(e=>e.id==='temple-kitchen-storage') ||
+    (!!upper && upper.position[1]<.01) ||
+    (!!fridge && !!currentFridge && Math.abs(fridge.position[2]-currentFridge.position[2])>1e-8)
+  );
+  if (!outdated) return saved;
+  // A backup is required before replacing any saved model; failure keeps it intact.
+  try {
+    globalThis.localStorage.setItem('ghar-naksha-before-default-upgrade-v2',JSON.stringify(saved));
+  } catch { return saved; }
+  return validateProject(structuredClone(latest));
 }

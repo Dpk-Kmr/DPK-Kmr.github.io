@@ -425,6 +425,14 @@ function Structure({
 }) {
   const { width: w, height: h, depth: d } = element.dimensions;
   const surface = surfaceFor(element);
+  if (element.apertureOnly) return null;
+  if (element.kind === 'door' && element.doorSwing) {
+    const hinge = element.doorSwing === -1 ? w / 2 : -w / 2;
+    const reach = -2 * hinge;
+    return <group><group position={[hinge,0,0]} rotation={[0,-(element.doorSide ?? 1)*Math.sign(reach)*Math.PI/2,0]}>
+      <Box size={[w,h,0.05]} position={[reach/2,h/2,0]} color={element.color} {...surface}/>
+    </group></group>;
+  }
   if (element.kind === 'wall') {
     const outerFront =
       element.position[2] > bounds.maxZ - 0.35 ||
@@ -435,7 +443,7 @@ function Structure({
       element.position[0] > bounds.minX + 0.3 &&
       element.position[0] < bounds.maxX - 0.3;
     const height =
-      viewMode === '3d' ? Math.min(h, outerFront ? 0.45 : inner ? 1.35 : h) : h;
+      viewMode === '3d' && !element.fullHeight ? Math.min(h, outerFront ? 0.45 : inner ? 1.35 : h) : h;
     const segments = getWallSegments(element, elements, height);
     return (
       <group>
@@ -450,6 +458,7 @@ function Structure({
                 position={segment.position}
                 color={element.color || '#e9e8e0'}
                 {...surface}
+                {...(element.fullHeight && viewMode === '3d' ? {transparent: true, opacity: 0.27} : {})}
               />
               {Math.abs(top - height) < 0.001 && (
                 <Box
@@ -583,6 +592,14 @@ function Structure({
 function Utility({ element }: { element: HomeElement }) {
   const { width: w, height: h, depth: d } = element.dimensions;
   const surface = surfaceFor(element);
+  if (element.apertureOnly) return null;
+  if (element.kind === 'door' && element.doorSwing) {
+    const hinge = element.doorSwing === -1 ? w / 2 : -w / 2;
+    const reach = -2 * hinge;
+    return <group><group position={[hinge,0,0]} rotation={[0,-(element.doorSide ?? 1)*Math.sign(reach)*Math.PI/2,0]}>
+      <Box size={[w,h,0.05]} position={[reach/2,h/2,0]} color={element.color} {...surface}/>
+    </group></group>;
+  }
   const plumbing = element.kind === 'water-port';
   const color = plumbing ? '#4196c8' : '#e6aa37';
   if (element.kind === 'light')

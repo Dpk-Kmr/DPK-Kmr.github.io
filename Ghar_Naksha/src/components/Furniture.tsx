@@ -6,7 +6,7 @@ import {
   useRef,
 } from 'react';
 import { RoundedBox } from '@react-three/drei';
-import { Box3, Color, Group, Matrix4, Mesh, Vector3 } from 'three';
+import { BufferGeometry, Float32BufferAttribute, Box3, Color, Group, Matrix4, Mesh, Vector3 } from 'three';
 import type { HomeElement, Material } from '../types';
 
 type Vec3 = [number, number, number];
@@ -1280,6 +1280,33 @@ function Utility({ element }: { element: HomeElement }) {
   );
 }
 
+function Appliance({ element }: { element: HomeElement }) {
+  const id=element.id, color=element.color;
+  if(id.endsWith('-ac'))return <><Part position={[0,.5,0]} size={[1,1,1]} color={color} round={.04}/><Part position={[0,.2,.49]} size={[.85,.12,.02]} color="#7c9295"/></>;
+  if(id.endsWith('-fan')) return <><Part position={[0,.2,0]} size={[1,.16,.13]} color={color}/><Part position={[0,.2,0]} size={[.13,.16,1]} color={color}/><Cylinder position={[0,.5,0]} radius={.11} height={1} color={color}/></>;
+  if(id.endsWith('-light')) return <Part position={[0,.5,0]} size={[1,1,1]} color="#efd6a1"/>;
+  if(id==='living-tv')return <><Part position={[0,.5,0]} size={[1,1,1]} color="#29363c"/><Part position={[0,.5,.49]} size={[.91,.86,.02]} color="#102830"/></>;
+  if(id==='refrigerator')return <><Part position={[0,.5,0]} size={[1,1,1]} color={color}/><Part position={[0,.71,.49]} size={[.97,.01,.02]} color="#526064"/><Part position={[.37,.48,.49]} size={[.035,.25,.02]} color="#4e595c"/><Part position={[.37,.85,.49]} size={[.035,.14,.02]} color="#4e595c"/></>;
+  if(id==='washing-machine')return <><Part position={[0,.5,0]} size={[1,1,1]} color={color}/><Cylinder position={[0,.43,.46]} radius={.3} height={.07} color="#53636b" rotation={[Math.PI/2,0,0]}/><Part position={[0,.88,.49]} size={[.85,.12,.02]} color="#a2b1b3"/></>;
+  if(id==='microwave')return <><Part position={[0,.5,0]} size={[1,1,1]} color={color}/><Part position={[-.08,.5,.49]} size={[.72,.68,.02]} color="#1b3038"/><Part position={[.37,.5,.49]} size={[.06,.5,.02]} color="#5b686b"/></>;
+  if(id==='chimney')return <><Part position={[0,.12,0]} size={[1,.24,1]} color={color}/><Part position={[0,.61,-.15]} size={[.38,.78,.65]} color={color}/></>;
+  if(id==='water-purifier'||id==='bath-geyser')return <><Part position={[0,.5,0]} size={[1,1,1]} color={color} round={.06}/><Part position={[0,.25,.47]} size={[.15,.15,.05]} color="#4e707f"/></>;
+  return null;
+}
+
+function MeasuredStep({element}: {element:HomeElement}) {
+  const h=element.dimensions.height, top=element.position[1]+h;
+  const riser=top/(element.id.startsWith('stair-high-')?10+Number(element.id.split('-').at(-1)):Number(element.id.split('-').at(-1)));
+  let a=(Math.max(0,top-.3048-riser)-element.position[1])/h;
+  let b=(Math.max(0,top-.3048)-element.position[1])/h;
+  if(element.id.startsWith('stair-high-'))[a,b]=[b,a];
+  const v=[[-.5,a,-.5],[.5,a,-.5],[.5,b,.5],[-.5,b,.5],[-.5,1,-.5],[.5,1,-.5],[.5,1,.5],[-.5,1,.5]];
+  const faces=[[0,3,2,1],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7],[4,5,6,7]];
+  const points=faces.flatMap(([a,b,c,d])=>[a,b,c,a,c,d].flatMap(i=>v[i]));
+  const geometry=new BufferGeometry();geometry.setAttribute('position',new Float32BufferAttribute(points,3));geometry.computeVertexNormals();
+  return <mesh geometry={geometry}><meshStandardMaterial color={element.color}/></mesh>;
+}
+
 export const Furniture = memo(function Furniture({
   element,
 }: {
@@ -1318,7 +1345,7 @@ export const Furniture = memo(function Furniture({
     model.scale.set(sx, sy, sz);
     model.position.set(-center.x * sx, -bounds.min.y * sy, -center.z * sz);
     model.updateWorldMatrix(false, true);
-  }, [kind, storage]);
+  }, [kind, storage, kind === 'temple' ? dimensions.width : 0, kind === 'temple' ? dimensions.height : 0, kind === 'temple' ? dimensions.depth : 0, element.id.startsWith('stair-') ? dimensions.height : 0]);
 
   const accent = `#${new Color(color).lerp(new Color('#5c5548'), 0.18).getHexString()}`;
   let content;
@@ -1371,6 +1398,14 @@ export const Furniture = memo(function Furniture({
     case 'lamp':
       content = <Lamp color={color} />;
       break;
+    case 'temple': {
+      const px=.0254/dimensions.width, py=.0254/dimensions.height, pz=.0254/dimensions.depth;
+      content=<><Part position={[-.5+px/2,.5,0]} size={[px,1,1]} color={color}/><Part position={[0,.5,-.5+pz/2]} size={[1,1,pz]} color={color}/><Part position={[0,py/2,0]} size={[1,py,1]} color={color}/></>;
+      break;
+    }
+    case 'block':
+      content=/^stair-(low|high)-[0-9]+$/.test(element.id)?<MeasuredStep element={element}/>:element.id.endsWith('-ac')||element.id.endsWith('-fan')||element.id.endsWith('-light')||['refrigerator','washing-machine','microwave','chimney','water-purifier','living-tv','bath-geyser'].includes(element.id)?<Appliance element={element}/>:<Part position={[0,.5,0]} size={[1,1,1]} color={color}/>;
+      break;
     case 'wall':
       content = <Part position={[0, 0.5, 0]} size={[1, 1, 1]} color={color} />;
       break;
@@ -1383,6 +1418,7 @@ export const Furniture = memo(function Furniture({
     default:
       content = <Utility element={element} />;
   }
+  if (element.apertureOnly) return null;
   return (
     <FinishContext.Provider value={{ color, material: element.material }}>
       <group scale={[dimensions.width, dimensions.height, dimensions.depth]}>

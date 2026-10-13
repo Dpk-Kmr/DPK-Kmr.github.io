@@ -1,3 +1,4 @@
+import measuredDefault from '../public/measured-house/project.json';
 import { createId } from './lib/id';
 import { STAIR_CATALOG } from './lib/stairs';
 import type {
@@ -290,7 +291,7 @@ const wall = (
     locked: true,
   });
 
-export const initialProject: Project = {
+export const courtyardProject: Project = {
   version: 1,
   name: 'The Courtyard House',
   rooms,
@@ -496,3 +497,6 @@ export function createElement(
     ...(template.stairs ? { stairs: structuredClone(template.stairs) } : {}),
   };
 }
+
+// The generated measured house is the fresh-workspace and reset default.
+export const initialProject = measuredDefault as unknown as Project;

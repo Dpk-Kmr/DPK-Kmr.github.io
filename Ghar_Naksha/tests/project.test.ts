@@ -51,7 +51,7 @@ describe('project imports', () => {
     expect(
       project.elements.find((element) => element.kind === 'electrical-panel')
         ?.roomId,
-    ).toBe('living');
+    ).toBe('hall');
   });
 
   it('returns an independent validated project and strips unknown fields', () => {

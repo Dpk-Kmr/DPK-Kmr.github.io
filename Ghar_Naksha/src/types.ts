@@ -1,4 +1,6 @@
 export type ElementKind =
+  | 'block'
+  | 'temple'
   | 'sofa'
   | 'armchair'
   | 'coffee-table'
@@ -91,6 +93,10 @@ export interface HomeElement {
   material: Material;
   visible: boolean;
   locked: boolean;
+  apertureOnly?: boolean;
+  fullHeight?: boolean;
+  doorSwing?: number;
+  doorSide?: number;
   stairs?: StairConfig;
   wallAttachment?: { wallId: string; offset: number };
   floorEdge?: number;

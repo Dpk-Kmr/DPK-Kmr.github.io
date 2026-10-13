@@ -2,7 +2,7 @@
   "name": "ghar-naksha-studio",
   "version": "1.0.0",
   "base": "/ghar-naksha/",
-  "generatedAt": "2026-09-10T17:14:31.924Z",
+  "generatedAt": "2026-10-13T10:15:22.227Z",
   "source": "Ghar_Naksha/",
   "backendRequired": false,
   "files": [
@@ -12,19 +12,19 @@
       "sha256": "fbee05dfb5fe27f5bcdf0c4f13f95ae6669319553f1f599e8eeda67dcdcca198"
     },
     {
-      "path": "assets/Scene-BnIKQOZD.js",
-      "bytes": 1000944,
-      "sha256": "3887f04cc4ffb4f6b7ac7c5cfbe882da1dfbff1dce03a4d66513dd0a8e5b0426"
+      "path": "assets/Scene-C9njd14A.js",
+      "bytes": 1006144,
+      "sha256": "e09f3b5e85d767d148bc9987a250ade95c33acf024d581c6153078dcf460f2c5"
     },
     {
-      "path": "assets/index-BSfNTPgm.css",
-      "bytes": 81364,
-      "sha256": "ccfadc3ed7c818569f826f80dcbe60b5ae9e10d66f81cc1b7109c04ee141f94c"
+      "path": "assets/index-CaA02zeT.css",
+      "bytes": 83438,
+      "sha256": "b6e97d9f675e568812dab446a471fd3ea13cb9a3e4cc17cf2b7c84f55c56da39"
     },
     {
-      "path": "assets/index-C6UYYPzc.js",
-      "bytes": 395994,
-      "sha256": "67ecaf42acd65e11eecf7ebdcf402681be2478250caecbc42a6a578bf59a8f44"
+      "path": "assets/index-FluGZ8cT.js",
+      "bytes": 433537,
+      "sha256": "8263bc94e4f7cbc0e4640f9b054369ebc846bb4ec4f089708e2e05a11d5b9a1f"
     },
     {
       "path": "favicon.svg",
@@ -49,7 +49,92 @@
     {
       "path": "index.html",
       "bytes": 746,
-      "sha256": "1897b233a9676444184fd29c929808d8635275825de38f2d029d0b2e4b38bfbf"
+      "sha256": "36e57f3ea2ec11151cb5914c0ef991bd9346a1b4dc5d9fac4da0dacfd401b0ce"
+    },
+    {
+      "path": "measured-house/README.md",
+      "bytes": 6234,
+      "sha256": "92eb7c23d3590df3aa46abac0aa7274775700eb130d5f492bb990f795ce3c6ff"
+    },
+    {
+      "path": "measured-house/floor-plan.png",
+      "bytes": 201317,
+      "sha256": "088c7f9e08b48bd0f61173b0e368e8e215f65c5440f808565d98795221cc9cbc"
+    },
+    {
+      "path": "measured-house/generate_house.py",
+      "bytes": 43073,
+      "sha256": "401b98bfbc3672f3838116a16d48101cced796b01e833330e2a0ee72a4ec2a92"
+    },
+    {
+      "path": "measured-house/geometry-inches.json",
+      "bytes": 19306,
+      "sha256": "e63d35a63eda799a2fe982f7dd7cea70e58ef6bc48de59cc602cf978b1e77cb4"
+    },
+    {
+      "path": "measured-house/house-design-bundle.zip",
+      "bytes": 7077772,
+      "sha256": "df69fee4285559cf8ea587e7bf6a6007f25b9181b10201842d24ae476e77777e"
+    },
+    {
+      "path": "measured-house/house-design.pdf",
+      "bytes": 4146907,
+      "sha256": "3308f4c74ae4964194b9875e0fe885035d10f9467051f5e64dc9f53575507af7"
+    },
+    {
+      "path": "measured-house/option-01.png",
+      "bytes": 389958,
+      "sha256": "5013a385f79f3ce7c429aefe54528ee46a7e4d0d0dcda3cbc01a8c99a451a747"
+    },
+    {
+      "path": "measured-house/option-02.png",
+      "bytes": 412468,
+      "sha256": "e21dcb2318a7200ee28d8e3ff71bb5459013c29c7cb9b8de7daa09848fea3505"
+    },
+    {
+      "path": "measured-house/option-03.png",
+      "bytes": 390467,
+      "sha256": "9a8540caf5b4ce307da77bd6270ef4c964d17c7792792181bd9d4b413334530d"
+    },
+    {
+      "path": "measured-house/option-04.png",
+      "bytes": 398055,
+      "sha256": "23dd38f6ea62559921d6d289def089564e105308686a8b01c1f2aafc93cad325"
+    },
+    {
+      "path": "measured-house/option-05.png",
+      "bytes": 397140,
+      "sha256": "42aff95dce048ffdcf2659617efd3543d2dc529df803ef818cdbaee42f448fb9"
+    },
+    {
+      "path": "measured-house/option-06.png",
+      "bytes": 398443,
+      "sha256": "d1b57c8c2b27b8c5cffe2c345faec2144a9bafd311d550077b43789f7a3f83db"
+    },
+    {
+      "path": "measured-house/option-07.png",
+      "bytes": 390722,
+      "sha256": "3b2d5abc1efb71dc548286bdc568a4dcd9eaafb824727367886e9d6b39b3234b"
+    },
+    {
+      "path": "measured-house/option-08.png",
+      "bytes": 391025,
+      "sha256": "bdcf4b52205b2bc8165bb65104230edfb8f2978813ffafe1522a785981996b02"
+    },
+    {
+      "path": "measured-house/option-09.png",
+      "bytes": 412335,
+      "sha256": "41c9de988ee7616b5e1197e87f1251bab75b373026461f0888681212985365bf"
+    },
+    {
+      "path": "measured-house/option-10.png",
+      "bytes": 391287,
+      "sha256": "7aa567731fed1cceb810c84913c993fbf583111328d4f3b87e83620f4516bccc"
+    },
+    {
+      "path": "measured-house/project.json",
+      "bytes": 43937,
+      "sha256": "dbd7c353daac1c4141832187451146fc967daa82b63cfdfc38b5c6059c6f5098"
     },
     {
       "path": "software-licenses.txt",
@@ -57,5 +142,5 @@
       "sha256": "30c77da2cb3560e2fd7dac37ff65ffb09668ef1ed8f864c2a5f2bc7dc4ffd4ee"
     }
   ],
-  "totalBytes": 2051431
+  "totalBytes": 17606694
 }
